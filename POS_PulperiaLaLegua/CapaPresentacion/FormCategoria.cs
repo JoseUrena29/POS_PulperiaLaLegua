@@ -54,5 +54,26 @@ namespace CapaPresentacion
             txtDescripcion.Text = "";
             comboxEstado.SelectedIndex = 0;
         }
+
+        private void btnbuscar_Click(object sender, EventArgs e)
+        {
+            string ColumnaFiltro = ((OpcionCombo)comboxBusqueda.SelectedItem).Valor.ToString();
+
+            if (dgv_Data.Rows.Count > 0) 
+            {
+                foreach (DataGridViewRow row in dgv_Data.Rows)
+                {
+                    if (row.Cells[ColumnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtBusqueda.Text.Trim().ToUpper())) 
+                    {
+                        row.Visible = true;
+                    }
+                    else 
+                    { 
+                        row.Visible = false;
+                    }
+                }
+
+            }
+        }
     }
 }
