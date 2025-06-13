@@ -26,9 +26,16 @@ namespace CapaPresentacion
             comboxEstado.ValueMember = "Valor";
             comboxEstado.SelectedIndex = 0;
 
-
-
-
+            foreach (DataGridViewColumn columna in dgv_Data.Columns)
+            {
+                if (columna.Visible == true && columna.Name != "btnSeleccionar")
+                {
+                    comboxBusqueda.Items.Add(new OpcionCombo() { Valor = columna.Name, Texto = columna.HeaderText});
+                }
+            }
+            comboxBusqueda.DisplayMember = "Texto";
+            comboxBusqueda.ValueMember = "Valor";
+            comboxBusqueda.SelectedIndex = 0;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

@@ -40,6 +40,11 @@
             this.dgv_Data = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboxBusqueda = new System.Windows.Forms.ComboBox();
+            this.txtBusqueda = new System.Windows.Forms.TextBox();
+            this.btnlimpiar = new FontAwesome.Sharp.IconButton();
+            this.btnbuscar = new FontAwesome.Sharp.IconButton();
             this.btnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.IDCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -165,12 +170,12 @@
             this.Descripción,
             this.Estado,
             this.EstadoValor});
-            this.dgv_Data.Location = new System.Drawing.Point(291, 73);
+            this.dgv_Data.Location = new System.Drawing.Point(291, 104);
             this.dgv_Data.MultiSelect = false;
             this.dgv_Data.Name = "dgv_Data";
             this.dgv_Data.ReadOnly = true;
             this.dgv_Data.RowTemplate.Height = 28;
-            this.dgv_Data.Size = new System.Drawing.Size(713, 434);
+            this.dgv_Data.Size = new System.Drawing.Size(745, 434);
             this.dgv_Data.TabIndex = 9;
             // 
             // label5
@@ -179,7 +184,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(291, 22);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(713, 34);
+            this.label5.Size = new System.Drawing.Size(745, 64);
             this.label5.TabIndex = 10;
             this.label5.Text = "Lista de Categorías:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -191,6 +196,68 @@
             this.txtID.Size = new System.Drawing.Size(22, 20);
             this.txtID.TabIndex = 11;
             this.txtID.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(569, 51);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(58, 13);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Buscar por";
+            // 
+            // comboxBusqueda
+            // 
+            this.comboxBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboxBusqueda.FormattingEnabled = true;
+            this.comboxBusqueda.Location = new System.Drawing.Point(633, 48);
+            this.comboxBusqueda.Name = "comboxBusqueda";
+            this.comboxBusqueda.Size = new System.Drawing.Size(116, 21);
+            this.comboxBusqueda.TabIndex = 13;
+            // 
+            // txtBusqueda
+            // 
+            this.txtBusqueda.Location = new System.Drawing.Point(755, 48);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(153, 20);
+            this.txtBusqueda.TabIndex = 14;
+            // 
+            // btnlimpiar
+            // 
+            this.btnlimpiar.BackColor = System.Drawing.Color.White;
+            this.btnlimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnlimpiar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnlimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnlimpiar.ForeColor = System.Drawing.Color.White;
+            this.btnlimpiar.IconChar = FontAwesome.Sharp.IconChar.Broom;
+            this.btnlimpiar.IconColor = System.Drawing.Color.Black;
+            this.btnlimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnlimpiar.IconSize = 18;
+            this.btnlimpiar.Location = new System.Drawing.Point(970, 48);
+            this.btnlimpiar.Name = "btnlimpiar";
+            this.btnlimpiar.Size = new System.Drawing.Size(50, 21);
+            this.btnlimpiar.TabIndex = 16;
+            this.btnlimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnlimpiar.UseVisualStyleBackColor = false;
+            // 
+            // btnbuscar
+            // 
+            this.btnbuscar.BackColor = System.Drawing.Color.White;
+            this.btnbuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnbuscar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnbuscar.ForeColor = System.Drawing.Color.White;
+            this.btnbuscar.IconChar = FontAwesome.Sharp.IconChar.SearchMinus;
+            this.btnbuscar.IconColor = System.Drawing.Color.Black;
+            this.btnbuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnbuscar.IconSize = 18;
+            this.btnbuscar.Location = new System.Drawing.Point(914, 48);
+            this.btnbuscar.Name = "btnbuscar";
+            this.btnbuscar.Size = new System.Drawing.Size(50, 21);
+            this.btnbuscar.TabIndex = 15;
+            this.btnbuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnbuscar.UseVisualStyleBackColor = false;
             // 
             // btnSeleccionar
             // 
@@ -204,6 +271,7 @@
             this.IDCategoria.HeaderText = "IDCategoria";
             this.IDCategoria.Name = "IDCategoria";
             this.IDCategoria.ReadOnly = true;
+            this.IDCategoria.Visible = false;
             // 
             // Descripción
             // 
@@ -230,7 +298,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(1028, 575);
+            this.ClientSize = new System.Drawing.Size(1060, 575);
+            this.Controls.Add(this.btnlimpiar);
+            this.Controls.Add(this.btnbuscar);
+            this.Controls.Add(this.txtBusqueda);
+            this.Controls.Add(this.comboxBusqueda);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dgv_Data);
@@ -264,6 +337,11 @@
         private System.Windows.Forms.DataGridView dgv_Data;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comboxBusqueda;
+        private System.Windows.Forms.TextBox txtBusqueda;
+        private FontAwesome.Sharp.IconButton btnlimpiar;
+        private FontAwesome.Sharp.IconButton btnbuscar;
         private System.Windows.Forms.DataGridViewButtonColumn btnSeleccionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDCategoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripción;
