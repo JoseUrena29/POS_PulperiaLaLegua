@@ -61,3 +61,5 @@ BEGIN
     END
 END
 GO
+
+Select IdCategoria,Descripcion,Estado from CATEGORIA
