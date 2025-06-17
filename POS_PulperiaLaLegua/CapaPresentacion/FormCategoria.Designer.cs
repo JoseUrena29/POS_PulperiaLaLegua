@@ -274,6 +274,7 @@
             this.btnlimpiar.TabIndex = 16;
             this.btnlimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnlimpiar.UseVisualStyleBackColor = false;
+            this.btnlimpiar.Click += new System.EventHandler(this.btnlimpiar_Click);
             // 
             // btnbuscar
             // 

@@ -57,22 +57,43 @@ namespace CapaPresentacion
 
         private void btnbuscar_Click(object sender, EventArgs e)
         {
-            string ColumnaFiltro = ((OpcionCombo)comboxBusqueda.SelectedItem).Valor.ToString();
+            string columnaFiltro = ((OpcionCombo)comboxBusqueda.SelectedItem).Valor.ToString();
+            string textoBusqueda = txtBusqueda.Text.Trim().ToUpper();
 
-            if (dgv_Data.Rows.Count > 0) 
+            if (dgv_Data.Rows.Count > 0)
             {
                 foreach (DataGridViewRow row in dgv_Data.Rows)
                 {
-                    if (row.Cells[ColumnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtBusqueda.Text.Trim().ToUpper())) 
-                    {
-                        row.Visible = true;
-                    }
-                    else 
-                    { 
-                        row.Visible = false;
-                    }
-                }
+                    bool visible = false;
 
+                    if (row.Cells[columnaFiltro].Value != null)
+                    {
+                        string valorCelda = row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper();
+
+                        if (columnaFiltro == "Estado")
+                        {
+                            visible = valorCelda.Equals(textoBusqueda); 
+                        }
+                        else
+                        {
+                            visible = valorCelda.Contains(textoBusqueda); 
+                        }
+                    }
+
+                    row.Visible = visible;
+                }
+            }
+        }
+
+        private void btnlimpiar_Click(object sender, EventArgs e)
+        {
+            txtBusqueda.Text = "";
+            comboxBusqueda.SelectedIndex = 0;
+
+            // Restaurar visibilidad de todas las filas
+            foreach (DataGridViewRow row in dgv_Data.Rows)
+            {
+                row.Visible = true;
             }
         }
     }
