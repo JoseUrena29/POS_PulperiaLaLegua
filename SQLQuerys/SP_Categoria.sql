@@ -5,7 +5,7 @@ use DB_POSPulperiaLaLegua
 --PROCEDIMIENTO PARA GUARDAR CATEGORIA
 CREATE PROCEDURE SP_RegistrarCategoria(
     @Descripcion VARCHAR(100),
-    @Estado BIT,
+	@Estado BIT,
     @Resultado INT OUTPUT,
     @Mensaje VARCHAR(500) OUTPUT
 )
@@ -14,10 +14,9 @@ BEGIN
     SET @Resultado = 0
     SET @Mensaje = ''
 
-    IF NOT EXISTS (SELECT 1 FROM CATEGORIA WHERE Descripcion = @Descripcion)
+    IF NOT EXISTS (SELECT * FROM CATEGORIA WHERE Descripcion = @Descripcion)
     BEGIN
-        INSERT INTO CATEGORIA (Descripcion, Estado)
-        VALUES (@Descripcion, @Estado)
+        INSERT INTO CATEGORIA (Descripcion,Estado) VALUES (@Descripcion,@Estado)
 
         SET @Resultado = SCOPE_IDENTITY()
         SET @Mensaje = 'Categoría creada con éxito.'
@@ -33,7 +32,7 @@ GO
 CREATE PROCEDURE SP_EditarCategoria(
     @IdCategoria INT,
     @Descripcion VARCHAR(100),
-    @Estado BIT,
+	@Estado BIT,
     @Resultado BIT OUTPUT,
     @Mensaje VARCHAR(500) OUTPUT
 )
@@ -48,8 +47,7 @@ BEGIN
     )
     BEGIN
         UPDATE CATEGORIA
-        SET Descripcion = @Descripcion,
-            Estado = @Estado
+        SET Descripcion = @Descripcion, Estado = @Estado
         WHERE IdCategoria = @IdCategoria
 
         SET @Mensaje = 'Categoría editada con éxito.'

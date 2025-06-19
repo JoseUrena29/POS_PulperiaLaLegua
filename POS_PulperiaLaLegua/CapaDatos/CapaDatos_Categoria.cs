@@ -12,6 +12,7 @@ namespace CapaDatos
 {
     public class CapaDatos_Categoria
     {
+        
         //Método para mostrar la lista de categorías
         public List<Categoria> Listar()
         {
@@ -64,6 +65,7 @@ namespace CapaDatos
                 {
                     SqlCommand comm = new SqlCommand("SP_RegistrarCategoria", objconexion);
                     comm.Parameters.AddWithValue("Descripcion", obj.Descripcion);
+                    comm.Parameters.AddWithValue("Estado", obj.Estado);
                     comm.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     comm.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                     comm.CommandType = CommandType.StoredProcedure;
@@ -97,6 +99,7 @@ namespace CapaDatos
                     SqlCommand comm = new SqlCommand("SP_EditarCategoria", objconexion);
                     comm.Parameters.AddWithValue("IdCategoria", obj.IdCategoria);
                     comm.Parameters.AddWithValue("Descripcion", obj.Descripcion);
+                    comm.Parameters.AddWithValue("Estado", obj.Estado);
                     comm.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     comm.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                     comm.CommandType = CommandType.StoredProcedure;
