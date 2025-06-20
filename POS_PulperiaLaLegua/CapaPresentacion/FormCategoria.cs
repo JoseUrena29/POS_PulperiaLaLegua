@@ -48,8 +48,8 @@ namespace CapaPresentacion
                 {   "",
                     item.IdCategoria,
                     item.Descripcion,
-                    //item.Estado == true ? 1 : 0 ,
-                    item.Estado == true ? "Activo" : "Inactivo"
+                    item.Estado == true ? "Activo" : "Inactivo",
+                    item.Estado ? 1 : 0
                 });
             }
         }
@@ -167,12 +167,14 @@ namespace CapaPresentacion
                     txtIndice.Text = indice.ToString();
                     txtID.Text = dgv_Data.Rows[indice].Cells["Id"].Value.ToString();
                     txtDescripcion.Text = dgv_Data.Rows[indice].Cells["Descripcion"].Value.ToString();
+                    
                     foreach (OpcionCombo oc in comboxEstado.Items)
                     {
                         if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgv_Data.Rows[indice].Cells["EstadoValor"].Value))
                         {
-                            int indice_combo = comboxEstado.Items.IndexOf(oc);
-                            comboxEstado.SelectedIndex = indice_combo;
+                            //int indice_combo = comboxEstado.Items.IndexOf(oc);
+                            //comboxEstado.SelectedItem = indice_combo;
+                            comboxEstado.SelectedItem = oc;
                             break;
                         }
                     }

@@ -38,11 +38,6 @@
             this.btnLimpiarFormulario = new FontAwesome.Sharp.IconButton();
             this.label4 = new System.Windows.Forms.Label();
             this.dgv_Data = new System.Windows.Forms.DataGridView();
-            this.btnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstadoValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -51,6 +46,11 @@
             this.btnlimpiar = new FontAwesome.Sharp.IconButton();
             this.btnbuscar = new FontAwesome.Sharp.IconButton();
             this.txtIndice = new System.Windows.Forms.TextBox();
+            this.btnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Data)).BeginInit();
             this.SuspendLayout();
             // 
@@ -182,40 +182,6 @@
             this.dgv_Data.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Data_CellContentClick);
             this.dgv_Data.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgv_Data_CellPainting_1);
             // 
-            // btnSeleccionar
-            // 
-            this.btnSeleccionar.HeaderText = "";
-            this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.ReadOnly = true;
-            this.btnSeleccionar.Width = 30;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "IDCategoria";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripción";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            this.Descripcion.Width = 150;
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            // 
-            // EstadoValor
-            // 
-            this.EstadoValor.HeaderText = "EstadoValor";
-            this.EstadoValor.Name = "EstadoValor";
-            this.EstadoValor.ReadOnly = true;
-            this.EstadoValor.Visible = false;
-            // 
             // label5
             // 
             this.label5.BackColor = System.Drawing.Color.White;
@@ -235,6 +201,7 @@
             this.txtID.TabIndex = 11;
             this.txtID.Text = "0";
             this.txtID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtID.Visible = false;
             // 
             // label6
             // 
@@ -308,6 +275,41 @@
             this.txtIndice.TabIndex = 18;
             this.txtIndice.Text = "-1";
             this.txtIndice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtIndice.Visible = false;
+            // 
+            // btnSeleccionar
+            // 
+            this.btnSeleccionar.HeaderText = "";
+            this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.ReadOnly = true;
+            this.btnSeleccionar.Width = 30;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "IDCategoria";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            this.Descripcion.Width = 150;
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            // 
+            // EstadoValor
+            // 
+            this.EstadoValor.HeaderText = "EstadoValor";
+            this.EstadoValor.Name = "EstadoValor";
+            this.EstadoValor.ReadOnly = true;
+            this.EstadoValor.Visible = false;
             // 
             // FormCategoria
             // 
