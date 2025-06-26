@@ -39,7 +39,7 @@ namespace CapaPresentacion
             comboxBusqueda.ValueMember = "Valor";
             comboxBusqueda.SelectedIndex = 0;
 
-         //Mostrar todas las categorias de la Base de Datos
+         //Mostrar todas las Categoria de la Base de Datos
          List<Categoria> lista = new CapaNegocio_Categoria().Listar();
 
             foreach (Categoria item in lista) 

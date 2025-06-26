@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CapaNegocio_Categoria.cs" />
+    <Compile Include="CapaNegocio_Producto.cs" />
     <Compile Include="CapaNegocio_Rol.cs" />
     <Compile Include="CapaNegocio_Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

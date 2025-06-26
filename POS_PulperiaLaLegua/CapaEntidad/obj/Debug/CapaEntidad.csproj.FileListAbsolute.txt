@@ -4,3 +4,9 @@ C:\Users\Jose Ureña\source\POS_PulperiaLaLegua\POS_PulperiaLaLegua\CapaEntidad\
 C:\Users\Jose Ureña\source\POS_PulperiaLaLegua\POS_PulperiaLaLegua\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
 C:\Users\Jose Ureña\source\POS_PulperiaLaLegua\POS_PulperiaLaLegua\CapaEntidad\obj\Debug\CapaEntidad.dll
 C:\Users\Jose Ureña\source\POS_PulperiaLaLegua\POS_PulperiaLaLegua\CapaEntidad\obj\Debug\CapaEntidad.pdb
+C:\Users\Jose Ureña\source\Repositorio_POS_PulperiaLaLegua\POS_PulperiaLaLegua\POS_PulperiaLaLegua\CapaEntidad\bin\Debug\CapaEntidad.dll
+C:\Users\Jose Ureña\source\Repositorio_POS_PulperiaLaLegua\POS_PulperiaLaLegua\POS_PulperiaLaLegua\CapaEntidad\bin\Debug\CapaEntidad.pdb
+C:\Users\Jose Ureña\source\Repositorio_POS_PulperiaLaLegua\POS_PulperiaLaLegua\POS_PulperiaLaLegua\CapaEntidad\obj\Debug\CapaEntidad.csproj.AssemblyReference.cache
+C:\Users\Jose Ureña\source\Repositorio_POS_PulperiaLaLegua\POS_PulperiaLaLegua\POS_PulperiaLaLegua\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
+C:\Users\Jose Ureña\source\Repositorio_POS_PulperiaLaLegua\POS_PulperiaLaLegua\POS_PulperiaLaLegua\CapaEntidad\obj\Debug\CapaEntidad.dll
+C:\Users\Jose Ureña\source\Repositorio_POS_PulperiaLaLegua\POS_PulperiaLaLegua\POS_PulperiaLaLegua\CapaEntidad\obj\Debug\CapaEntidad.pdb

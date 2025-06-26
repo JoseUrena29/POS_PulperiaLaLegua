@@ -3,9 +3,14 @@ use DB_POSPulperiaLaLegua
 select * from USUARIO
 select * from ROL
 select * from CATEGORIA
+select * from PRODUCTO
 
 select IdUsuario,NumeroIdentidad,NombreCompleto,Correo,Telefono,Usuario,Contraseña,Estado from USUARIO
+
 select IdCategoria,Descripcion,Estado from CATEGORIA
+
+Select IdProducto,Codigo,Nombre,p.Descripcion,c.IdCategoria,c.Descripcion[DescripcionCategoria],Stock,PrecioCompra,PrecioVenta from PRODUCTO p
+INNER JOIN CATEGORIA c on c.IdCategoria = p.IdCategoria
 
 insert into ROL(Descripcion)
 values ('ADMINISTRADOR')
@@ -24,6 +29,9 @@ VALUES
 ('Frutas y Verduras', 1),
 ('Panadería', 1),
 ('Bebidas', 0);
+
+INSERT INTO PRODUCTO (Codigo,Nombre,Descripcion,IdCategoria) VALUES ('7441003596122','Gaseosa Coca Cola','355 ml',5)
+
 
 
 
