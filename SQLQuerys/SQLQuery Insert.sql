@@ -9,8 +9,8 @@ select IdUsuario,NumeroIdentidad,NombreCompleto,Correo,Telefono,Usuario,Contrase
 
 select IdCategoria,Descripcion,Estado from CATEGORIA
 
-/*Select IdProducto,Codigo,Nombre,p.Descripcion,c.IdCategoria,c.Descripcion[DescripcionCategoria],Stock,PrecioCompra,PrecioVenta from PRODUCTO p
-INNER JOIN CATEGORIA c on c.IdCategoria = p.IdCategoria*/
+Select IdProducto,Codigo,Nombre,p.Descripcion,c.IdCategoria,c.Descripcion[DescripcionCategoria],Stock,PrecioCompra,PrecioVenta from PRODUCTO p
+INNER JOIN CATEGORIA c on c.IdCategoria = p.IdCategoria
 
 insert into ROL(Descripcion)
 values ('ADMINISTRADOR')
