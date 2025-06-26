@@ -9,8 +9,8 @@ select IdUsuario,NumeroIdentidad,NombreCompleto,Correo,Telefono,Usuario,Contrase
 
 select IdCategoria,Descripcion,Estado from CATEGORIA
 
-Select IdProducto,Codigo,Nombre,p.Descripcion,c.IdCategoria,c.Descripcion[DescripcionCategoria],Stock,PrecioCompra,PrecioVenta from PRODUCTO p
-INNER JOIN CATEGORIA c on c.IdCategoria = p.IdCategoria
+/*Select IdProducto,Codigo,Nombre,p.Descripcion,c.IdCategoria,c.Descripcion[DescripcionCategoria],Stock,PrecioCompra,PrecioVenta from PRODUCTO p
+INNER JOIN CATEGORIA c on c.IdCategoria = p.IdCategoria*/
 
 insert into ROL(Descripcion)
 values ('ADMINISTRADOR')
@@ -32,6 +32,8 @@ VALUES
 
 INSERT INTO PRODUCTO (Codigo,Nombre,Descripcion,IdCategoria) VALUES ('7441003596122','Gaseosa Coca Cola','355 ml',5)
 
+Select p.IdProducto,p.Codigo,p.Nombre,p.Descripcion,c.IdProducto, c.Descripcion[DescripcionProducto],p.Stock,p.PrecioCompra,p.PrecioVenta,p.Estado from Producto p 
+INNER JOIN Producto c on c.IdProducto = p.IdProducto
 
 
 

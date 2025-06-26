@@ -23,9 +23,9 @@ namespace CapaDatos
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("Select p.IdProducto,p.Codigo,p.Nombre,p.Descripcion,c.IdProducto," +
-                        "c.Descripcion[DescripcionProducto],p.Stock,p.PrecioCompra,p.PrecioVenta,p.Estado from Producto p");
-                    query.AppendLine("INNER JOIN Producto c on c.IdProducto = p.IdProducto");
+                    query.AppendLine("Select p.IdProducto,p.Codigo,p.Nombre,p.Descripcion,c.IdCategoria," +
+                        "c.Descripcion[DescripcionCategoria],p.Stock,p.PrecioCompra,p.PrecioVenta,p.Estado from Producto p");
+                    query.AppendLine("INNER JOIN Categoria c ON c.IdCategoria = p.IdCategoria");
                     SqlCommand comm = new SqlCommand(query.ToString(), objconexion);
                     comm.CommandType = CommandType.Text;
 
