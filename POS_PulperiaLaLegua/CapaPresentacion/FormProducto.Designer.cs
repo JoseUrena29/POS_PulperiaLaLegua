@@ -38,21 +38,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnbuscar = new FontAwesome.Sharp.IconButton();
             this.dgv_Data = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnLimpiarFormulario = new FontAwesome.Sharp.IconButton();
-            this.btnGuardar = new FontAwesome.Sharp.IconButton();
-            this.comboxEstado = new System.Windows.Forms.ComboBox();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.labelCodigo = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.comboxCategoria = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.btnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,6 +50,21 @@
             this.PrecioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EstadoValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnLimpiarFormulario = new FontAwesome.Sharp.IconButton();
+            this.btnGuardar = new FontAwesome.Sharp.IconButton();
+            this.comboxEstado = new System.Windows.Forms.ComboBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.labelCodigo = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnfiltro = new FontAwesome.Sharp.IconButton();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboxCategoria = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Data)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,7 +76,6 @@
             this.txtIndice.TabIndex = 35;
             this.txtIndice.Text = "-1";
             this.txtIndice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtIndice.Visible = false;
             // 
             // btnlimpiar
             // 
@@ -95,6 +94,7 @@
             this.btnlimpiar.TabIndex = 34;
             this.btnlimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnlimpiar.UseVisualStyleBackColor = false;
+            this.btnlimpiar.Click += new System.EventHandler(this.btnlimpiar_Click);
             // 
             // txtBusqueda
             // 
@@ -130,7 +130,6 @@
             this.txtID.TabIndex = 29;
             this.txtID.Text = "0";
             this.txtID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtID.Visible = false;
             // 
             // label5
             // 
@@ -195,174 +194,8 @@
             this.dgv_Data.RowTemplate.Height = 28;
             this.dgv_Data.Size = new System.Drawing.Size(860, 477);
             this.dgv_Data.TabIndex = 27;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(16, 15);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(165, 25);
-            this.label4.TabIndex = 26;
-            this.label4.Text = "Detalle Productos";
-            // 
-            // btnLimpiarFormulario
-            // 
-            this.btnLimpiarFormulario.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnLimpiarFormulario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpiarFormulario.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnLimpiarFormulario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiarFormulario.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiarFormulario.IconChar = FontAwesome.Sharp.IconChar.Broom;
-            this.btnLimpiarFormulario.IconColor = System.Drawing.Color.White;
-            this.btnLimpiarFormulario.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLimpiarFormulario.IconSize = 16;
-            this.btnLimpiarFormulario.Location = new System.Drawing.Point(21, 442);
-            this.btnLimpiarFormulario.Name = "btnLimpiarFormulario";
-            this.btnLimpiarFormulario.Size = new System.Drawing.Size(209, 32);
-            this.btnLimpiarFormulario.TabIndex = 25;
-            this.btnLimpiarFormulario.Text = "Limpiar";
-            this.btnLimpiarFormulario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLimpiarFormulario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLimpiarFormulario.UseVisualStyleBackColor = false;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.BackColor = System.Drawing.Color.ForestGreen;
-            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
-            this.btnGuardar.IconColor = System.Drawing.Color.White;
-            this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnGuardar.IconSize = 16;
-            this.btnGuardar.Location = new System.Drawing.Point(21, 387);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(209, 32);
-            this.btnGuardar.TabIndex = 24;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGuardar.UseVisualStyleBackColor = false;
-            // 
-            // comboxEstado
-            // 
-            this.comboxEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboxEstado.FormattingEnabled = true;
-            this.comboxEstado.Location = new System.Drawing.Point(21, 322);
-            this.comboxEstado.Name = "comboxEstado";
-            this.comboxEstado.Size = new System.Drawing.Size(209, 21);
-            this.comboxEstado.TabIndex = 23;
-            // 
-            // txtCodigo
-            // 
-            this.txtCodigo.Location = new System.Drawing.Point(21, 97);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(209, 20);
-            this.txtCodigo.TabIndex = 22;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(18, 301);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 13);
-            this.label3.TabIndex = 21;
-            this.label3.Text = "Estado";
-            // 
-            // labelCodigo
-            // 
-            this.labelCodigo.AutoSize = true;
-            this.labelCodigo.BackColor = System.Drawing.Color.White;
-            this.labelCodigo.Location = new System.Drawing.Point(18, 81);
-            this.labelCodigo.Name = "labelCodigo";
-            this.labelCodigo.Size = new System.Drawing.Size(40, 13);
-            this.labelCodigo.TabIndex = 20;
-            this.labelCodigo.Text = "Código";
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(273, 586);
-            this.label1.TabIndex = 19;
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.BackColor = System.Drawing.Color.White;
-            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.ForeColor = System.Drawing.Color.White;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.SearchMinus;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 18;
-            this.iconButton1.Location = new System.Drawing.Point(1021, 41);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(50, 21);
-            this.iconButton1.TabIndex = 36;
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton1.UseVisualStyleBackColor = false;
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(21, 147);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(209, 20);
-            this.txtNombre.TabIndex = 38;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(18, 131);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
-            this.label2.TabIndex = 37;
-            this.label2.Text = "Nombre";
-            // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.Location = new System.Drawing.Point(21, 202);
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(209, 20);
-            this.txtDescripcion.TabIndex = 40;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(18, 186);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(63, 13);
-            this.label7.TabIndex = 39;
-            this.label7.Text = "Descripción";
-            // 
-            // comboxCategoria
-            // 
-            this.comboxCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboxCategoria.FormattingEnabled = true;
-            this.comboxCategoria.Location = new System.Drawing.Point(21, 258);
-            this.comboxCategoria.Name = "comboxCategoria";
-            this.comboxCategoria.Size = new System.Drawing.Size(209, 21);
-            this.comboxCategoria.TabIndex = 42;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(18, 237);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(54, 13);
-            this.label8.TabIndex = 41;
-            this.label8.Text = "Categoría";
+            this.dgv_Data.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Data_CellContentClick);
+            this.dgv_Data.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgv_Data_CellPainting);
             // 
             // btnSeleccionar
             // 
@@ -443,6 +276,177 @@
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(16, 15);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(165, 25);
+            this.label4.TabIndex = 26;
+            this.label4.Text = "Detalle Productos";
+            // 
+            // btnLimpiarFormulario
+            // 
+            this.btnLimpiarFormulario.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnLimpiarFormulario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiarFormulario.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLimpiarFormulario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiarFormulario.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiarFormulario.IconChar = FontAwesome.Sharp.IconChar.Broom;
+            this.btnLimpiarFormulario.IconColor = System.Drawing.Color.White;
+            this.btnLimpiarFormulario.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLimpiarFormulario.IconSize = 16;
+            this.btnLimpiarFormulario.Location = new System.Drawing.Point(21, 442);
+            this.btnLimpiarFormulario.Name = "btnLimpiarFormulario";
+            this.btnLimpiarFormulario.Size = new System.Drawing.Size(209, 32);
+            this.btnLimpiarFormulario.TabIndex = 25;
+            this.btnLimpiarFormulario.Text = "Limpiar";
+            this.btnLimpiarFormulario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLimpiarFormulario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLimpiarFormulario.UseVisualStyleBackColor = false;
+            this.btnLimpiarFormulario.Click += new System.EventHandler(this.btnLimpiarFormulario_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
+            this.btnGuardar.IconColor = System.Drawing.Color.White;
+            this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnGuardar.IconSize = 16;
+            this.btnGuardar.Location = new System.Drawing.Point(21, 387);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(209, 32);
+            this.btnGuardar.TabIndex = 24;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // comboxEstado
+            // 
+            this.comboxEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboxEstado.FormattingEnabled = true;
+            this.comboxEstado.Location = new System.Drawing.Point(21, 322);
+            this.comboxEstado.Name = "comboxEstado";
+            this.comboxEstado.Size = new System.Drawing.Size(209, 21);
+            this.comboxEstado.TabIndex = 23;
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Location = new System.Drawing.Point(21, 97);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(209, 20);
+            this.txtCodigo.TabIndex = 22;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(18, 301);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(40, 13);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "Estado";
+            // 
+            // labelCodigo
+            // 
+            this.labelCodigo.AutoSize = true;
+            this.labelCodigo.BackColor = System.Drawing.Color.White;
+            this.labelCodigo.Location = new System.Drawing.Point(18, 81);
+            this.labelCodigo.Name = "labelCodigo";
+            this.labelCodigo.Size = new System.Drawing.Size(40, 13);
+            this.labelCodigo.TabIndex = 20;
+            this.labelCodigo.Text = "Código";
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(273, 586);
+            this.label1.TabIndex = 19;
+            // 
+            // btnfiltro
+            // 
+            this.btnfiltro.BackColor = System.Drawing.Color.White;
+            this.btnfiltro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnfiltro.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnfiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnfiltro.ForeColor = System.Drawing.Color.White;
+            this.btnfiltro.IconChar = FontAwesome.Sharp.IconChar.SearchMinus;
+            this.btnfiltro.IconColor = System.Drawing.Color.Black;
+            this.btnfiltro.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnfiltro.IconSize = 18;
+            this.btnfiltro.Location = new System.Drawing.Point(1021, 41);
+            this.btnfiltro.Name = "btnfiltro";
+            this.btnfiltro.Size = new System.Drawing.Size(50, 21);
+            this.btnfiltro.TabIndex = 36;
+            this.btnfiltro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnfiltro.UseVisualStyleBackColor = false;
+            this.btnfiltro.Click += new System.EventHandler(this.btnfiltro_Click);
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(21, 147);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(209, 20);
+            this.txtNombre.TabIndex = 38;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(18, 131);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.TabIndex = 37;
+            this.label2.Text = "Nombre";
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(21, 202);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(209, 20);
+            this.txtDescripcion.TabIndex = 40;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(18, 186);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(63, 13);
+            this.label7.TabIndex = 39;
+            this.label7.Text = "Descripción";
+            // 
+            // comboxCategoria
+            // 
+            this.comboxCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboxCategoria.FormattingEnabled = true;
+            this.comboxCategoria.Location = new System.Drawing.Point(21, 258);
+            this.comboxCategoria.Name = "comboxCategoria";
+            this.comboxCategoria.Size = new System.Drawing.Size(209, 21);
+            this.comboxCategoria.TabIndex = 42;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(18, 237);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(54, 13);
+            this.label8.TabIndex = 41;
+            this.label8.Text = "Categoría";
+            // 
             // FormProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -454,7 +458,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.iconButton1);
+            this.Controls.Add(this.btnfiltro);
             this.Controls.Add(this.txtIndice);
             this.Controls.Add(this.btnlimpiar);
             this.Controls.Add(this.txtBusqueda);
@@ -500,7 +504,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label labelCodigo;
         private System.Windows.Forms.Label label1;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btnfiltro;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtDescripcion;

@@ -71,7 +71,10 @@ namespace CapaDatos
                 using (SqlConnection objconexion = new SqlConnection(Conexion.cadena))
                 {
                     SqlCommand comm = new SqlCommand("SP_RegistrarProducto", objconexion);
+                    comm.Parameters.AddWithValue("Codigo", obj.Codigo);
+                    comm.Parameters.AddWithValue("Nombre", obj.Nombre);
                     comm.Parameters.AddWithValue("Descripcion", obj.Descripcion);
+                    comm.Parameters.AddWithValue("IdCategoria", obj.oCategoria.IdCategoria);
                     comm.Parameters.AddWithValue("Estado", obj.Estado);
                     comm.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     comm.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
@@ -105,7 +108,10 @@ namespace CapaDatos
                 {
                     SqlCommand comm = new SqlCommand("SP_EditarProducto", objconexion);
                     comm.Parameters.AddWithValue("IdProducto", obj.IdProducto);
+                    comm.Parameters.AddWithValue("Codigo", obj.Codigo);
+                    comm.Parameters.AddWithValue("Nombre", obj.Nombre);
                     comm.Parameters.AddWithValue("Descripcion", obj.Descripcion);
+                    comm.Parameters.AddWithValue("IdCategoria", obj.oCategoria.IdCategoria);
                     comm.Parameters.AddWithValue("Estado", obj.Estado);
                     comm.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     comm.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;

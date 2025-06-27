@@ -31,6 +31,7 @@ VALUES
 ('Bebidas', 0);
 
 INSERT INTO PRODUCTO (Codigo,Nombre,Descripcion,IdCategoria) VALUES ('7441003596122','Gaseosa Coca Cola','355 ml',5)
+INSERT INTO PRODUCTO (Codigo,Nombre,Descripcion,IdCategoria) VALUES ('7441002601001','Sardina','Sardimal ',6)
 
 Select p.IdProducto,p.Codigo,p.Nombre,p.Descripcion,c.IdProducto, c.Descripcion[DescripcionProducto],p.Stock,p.PrecioCompra,p.PrecioVenta,p.Estado from Producto p 
 INNER JOIN Producto c on c.IdProducto = p.IdProducto
