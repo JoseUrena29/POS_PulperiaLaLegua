@@ -113,7 +113,7 @@
             this.SubMenuCategoría.IconColor = System.Drawing.Color.Black;
             this.SubMenuCategoría.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuCategoría.Name = "SubMenuCategoría";
-            this.SubMenuCategoría.Size = new System.Drawing.Size(139, 22);
+            this.SubMenuCategoría.Size = new System.Drawing.Size(180, 22);
             this.SubMenuCategoría.Text = "Categoría";
             this.SubMenuCategoría.Click += new System.EventHandler(this.SubMenuCategoría_Click);
             // 
@@ -123,7 +123,7 @@
             this.SubMenuProductos.IconColor = System.Drawing.Color.Black;
             this.SubMenuProductos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuProductos.Name = "SubMenuProductos";
-            this.SubMenuProductos.Size = new System.Drawing.Size(139, 22);
+            this.SubMenuProductos.Size = new System.Drawing.Size(180, 22);
             this.SubMenuProductos.Text = "Productos";
             this.SubMenuProductos.Click += new System.EventHandler(this.SubMenuProductos_Click);
             // 
@@ -133,7 +133,7 @@
             this.SubMenuClientes.IconColor = System.Drawing.Color.Black;
             this.SubMenuClientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuClientes.Name = "SubMenuClientes";
-            this.SubMenuClientes.Size = new System.Drawing.Size(139, 22);
+            this.SubMenuClientes.Size = new System.Drawing.Size(180, 22);
             this.SubMenuClientes.Text = "Clientes";
             this.SubMenuClientes.Click += new System.EventHandler(this.SubMenuClientes_Click);
             // 
@@ -143,7 +143,7 @@
             this.SubMenuProveedores.IconColor = System.Drawing.Color.Black;
             this.SubMenuProveedores.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuProveedores.Name = "SubMenuProveedores";
-            this.SubMenuProveedores.Size = new System.Drawing.Size(139, 22);
+            this.SubMenuProveedores.Size = new System.Drawing.Size(180, 22);
             this.SubMenuProveedores.Text = "Proveedores";
             this.SubMenuProveedores.Click += new System.EventHandler(this.SubMenuProveedores_Click);
             // 
@@ -153,7 +153,7 @@
             this.SubMenuNegocio.IconColor = System.Drawing.Color.Black;
             this.SubMenuNegocio.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuNegocio.Name = "SubMenuNegocio";
-            this.SubMenuNegocio.Size = new System.Drawing.Size(139, 22);
+            this.SubMenuNegocio.Size = new System.Drawing.Size(180, 22);
             this.SubMenuNegocio.Text = "Negocio";
             this.SubMenuNegocio.Click += new System.EventHandler(this.SubMenuNegocio_Click);
             // 

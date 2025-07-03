@@ -65,6 +65,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.comboxCategoria = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.btnexportar = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Data)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,7 +89,7 @@
             this.btnlimpiar.IconColor = System.Drawing.Color.Black;
             this.btnlimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnlimpiar.IconSize = 18;
-            this.btnlimpiar.Location = new System.Drawing.Point(1077, 41);
+            this.btnlimpiar.Location = new System.Drawing.Point(1077, 50);
             this.btnlimpiar.Name = "btnlimpiar";
             this.btnlimpiar.Size = new System.Drawing.Size(50, 21);
             this.btnlimpiar.TabIndex = 34;
@@ -98,7 +99,7 @@
             // 
             // txtBusqueda
             // 
-            this.txtBusqueda.Location = new System.Drawing.Point(862, 41);
+            this.txtBusqueda.Location = new System.Drawing.Point(862, 50);
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.Size = new System.Drawing.Size(153, 20);
             this.txtBusqueda.TabIndex = 32;
@@ -107,7 +108,7 @@
             // 
             this.comboxBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboxBusqueda.FormattingEnabled = true;
-            this.comboxBusqueda.Location = new System.Drawing.Point(740, 41);
+            this.comboxBusqueda.Location = new System.Drawing.Point(740, 50);
             this.comboxBusqueda.Name = "comboxBusqueda";
             this.comboxBusqueda.Size = new System.Drawing.Size(116, 21);
             this.comboxBusqueda.TabIndex = 31;
@@ -116,7 +117,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(676, 44);
+            this.label6.Location = new System.Drawing.Point(676, 53);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 13);
             this.label6.TabIndex = 30;
@@ -135,13 +136,12 @@
             // 
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(279, 15);
+            this.label5.Location = new System.Drawing.Point(279, 12);
             this.label5.Name = "label5";
-            this.label5.Padding = new System.Windows.Forms.Padding(3);
-            this.label5.Size = new System.Drawing.Size(860, 64);
+            this.label5.Padding = new System.Windows.Forms.Padding(6);
+            this.label5.Size = new System.Drawing.Size(860, 82);
             this.label5.TabIndex = 28;
             this.label5.Text = "Lista de Productos:";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnbuscar
             // 
@@ -386,7 +386,7 @@
             this.btnfiltro.IconColor = System.Drawing.Color.Black;
             this.btnfiltro.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnfiltro.IconSize = 18;
-            this.btnfiltro.Location = new System.Drawing.Point(1021, 41);
+            this.btnfiltro.Location = new System.Drawing.Point(1021, 50);
             this.btnfiltro.Name = "btnfiltro";
             this.btnfiltro.Size = new System.Drawing.Size(50, 21);
             this.btnfiltro.TabIndex = 36;
@@ -447,11 +447,32 @@
             this.label8.TabIndex = 41;
             this.label8.Text = "Categoría";
             // 
+            // btnexportar
+            // 
+            this.btnexportar.BackColor = System.Drawing.Color.White;
+            this.btnexportar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnexportar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnexportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnexportar.ForeColor = System.Drawing.Color.Black;
+            this.btnexportar.IconChar = FontAwesome.Sharp.IconChar.Download;
+            this.btnexportar.IconColor = System.Drawing.Color.ForestGreen;
+            this.btnexportar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnexportar.IconSize = 22;
+            this.btnexportar.Location = new System.Drawing.Point(293, 53);
+            this.btnexportar.Name = "btnexportar";
+            this.btnexportar.Size = new System.Drawing.Size(119, 33);
+            this.btnexportar.TabIndex = 43;
+            this.btnexportar.Text = "Descargar Excel";
+            this.btnexportar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnexportar.UseVisualStyleBackColor = false;
+            this.btnexportar.Click += new System.EventHandler(this.btnexportar_Click);
+            // 
             // FormProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1151, 586);
+            this.Controls.Add(this.btnexportar);
             this.Controls.Add(this.comboxCategoria);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtDescripcion);
@@ -523,5 +544,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn EstadoValor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private FontAwesome.Sharp.IconButton btnexportar;
     }
 }
