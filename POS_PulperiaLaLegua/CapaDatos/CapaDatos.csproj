@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CapaDatos_Categoria.cs" />
+    <Compile Include="CapaDatos_Cliente.cs" />
     <Compile Include="CapaDatos_Producto.cs" />
     <Compile Include="CapaDatos_Rol.cs" />
     <Compile Include="CapaDatos_Usuario.cs" />

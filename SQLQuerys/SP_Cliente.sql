@@ -3,8 +3,11 @@ use DB_POSPulperiaLaLegua
 /* ----------------- PROCEDIMIENTOS PARA CLIENTE ------------------*/
 
 --PROCEDIMIENTO PARA GUARDAR CLIENTE
-CREATE PROCEDURE SP_RegistrarCategoria(
-    @Descripcion VARCHAR(100),
+CREATE PROCEDURE SP_RegistrarCliente(
+    @NumeroIdentidad VARCHAR(50),
+	@NombreCompleto VARCHAR(50),
+	@Correo VARCHAR(50),
+	@Telefono VARCHAR(50),
 	@Estado BIT,
     @Resultado INT OUTPUT,
     @Mensaje VARCHAR(500) OUTPUT
@@ -14,24 +17,27 @@ BEGIN
     SET @Resultado = 0
     SET @Mensaje = ''
 
-    IF NOT EXISTS (SELECT * FROM CATEGORIA WHERE Descripcion = @Descripcion)
+    IF NOT EXISTS (SELECT * FROM CLIENTE WHERE NumeroIdentidad = @NumeroIdentidad)
     BEGIN
-        INSERT INTO CATEGORIA (Descripcion,Estado) VALUES (@Descripcion,@Estado)
+        INSERT INTO CLIENTE (NumeroIdentidad,NombreCompleto,Correo,Telefono,Estado) VALUES (@NumeroIdentidad,@NombreCompleto,@Correo,@Telefono,@Estado)
 
         SET @Resultado = SCOPE_IDENTITY()
-        SET @Mensaje = 'Categoría creada con éxito.'
+        SET @Mensaje = 'Cliente creado con éxito.'
     END
     ELSE
     BEGIN
-        SET @Mensaje = 'Ya existe una categoría con esa descripción.'
+        SET @Mensaje = 'Ya existe un cliente con ese numero de identidad.'
     END
 END
 GO
 
 --PROCEDIMIENTO PARA EDITAR CLIENTE
-CREATE PROCEDURE SP_EditarCategoria(
-    @IdCategoria INT,
-    @Descripcion VARCHAR(100),
+CREATE PROCEDURE SP_EditarCliente(
+    @IdCliente INT,
+    @NumeroIdentidad VARCHAR(50),
+	@NombreCompleto VARCHAR(50),
+	@Correo VARCHAR(50),
+	@Telefono VARCHAR(50),
 	@Estado BIT,
     @Resultado BIT OUTPUT,
     @Mensaje VARCHAR(500) OUTPUT
@@ -42,20 +48,24 @@ BEGIN
     SET @Mensaje = ''
 
     IF NOT EXISTS (
-        SELECT 1 FROM CATEGORIA 
-        WHERE Descripcion = @Descripcion AND IdCategoria != @IdCategoria
+        SELECT * FROM CLIENTE 
+        WHERE NumeroIdentidad = @NumeroIdentidad AND IdCliente != @IdCliente
     )
     BEGIN
-        UPDATE CATEGORIA
-        SET Descripcion = @Descripcion, Estado = @Estado
-        WHERE IdCategoria = @IdCategoria
+        UPDATE CLIENTE SET 
+		NumeroIdentidad = @NumeroIdentidad, 
+		NombreCompleto = @NombreCompleto, 
+		Correo = @Correo, 
+		Telefono = @Telefono, 
+		Estado = @Estado
+        WHERE IdCliente = @IdCliente
 
-        SET @Mensaje = 'Categoría editada con éxito.'
+        SET @Mensaje = 'Cliente editado con éxito.'
     END
     ELSE
     BEGIN
         SET @Resultado = 0
-        SET @Mensaje = 'Ya existe otra categoría con esa descripción.'
+        SET @Mensaje = 'Ya existe un cliente con ese numero de indentidad.'
     END
 END
 GO
