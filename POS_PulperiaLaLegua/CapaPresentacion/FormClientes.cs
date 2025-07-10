@@ -53,16 +53,16 @@ namespace CapaPresentacion
                     item.NombreCompleto,
                     item.Correo,
                     item.Telefono,
-                    item.Estado ? 1 : 0,
                     item.Estado == true ? "Activo" : "Inactivo",
+                    item.Estado ? 1 : 0,
                 });
             }
         }
 
         private void Limpiar()
         {
-            txtIndice.Text = "-1";
-            txtID.Text = "0";
+            textIndice.Text = "-1";
+            textID.Text = "0";
             txtNumeroIdentidad.Text = "";
             txtNombreCompleto.Text = "";
             txtCorreo.Text = "";
@@ -125,7 +125,7 @@ namespace CapaPresentacion
 
             Cliente obj = new Cliente()
             {
-                IdCliente = Convert.ToInt32(txtID.Text),
+                IdCliente = Convert.ToInt32(textID.Text),
                 NumeroIdentidad = txtNumeroIdentidad.Text,
                 NombreCompleto = txtNombreCompleto.Text,
                 Correo = txtCorreo.Text,
@@ -164,8 +164,8 @@ namespace CapaPresentacion
 
                 if (resultado)
                 {
-                    DataGridViewRow row = dgv_Data.Rows[Convert.ToInt32(txtIndice.Text)];
-                    row.Cells["Id"].Value = txtID.Text;
+                    DataGridViewRow row = dgv_Data.Rows[Convert.ToInt32(textIndice.Text)];
+                    row.Cells["Id"].Value = textID.Text;
                     row.Cells["NumeroIdentidad"].Value = txtNumeroIdentidad.Text;
                     row.Cells["NombreCompleto"].Value = txtNombreCompleto.Text;
                     row.Cells["Correo"].Value = txtCorreo.Text;
@@ -210,8 +210,8 @@ namespace CapaPresentacion
 
                 if (indice >= 0)
                 {
-                    txtIndice.Text = indice.ToString();
-                    txtID.Text = dgv_Data.Rows[indice].Cells["Id"].Value.ToString();
+                    textIndice.Text = indice.ToString();
+                    textID.Text = dgv_Data.Rows[indice].Cells["Id"].Value.ToString();
 
                     txtNumeroIdentidad.Text = dgv_Data.Rows[indice].Cells["NumeroIdentidad"].Value.ToString();
                     txtNombreCompleto.Text = dgv_Data.Rows[indice].Cells["NombreCompleto"].Value.ToString();

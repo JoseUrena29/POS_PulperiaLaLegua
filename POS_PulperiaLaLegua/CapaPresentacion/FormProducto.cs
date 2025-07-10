@@ -159,13 +159,13 @@ namespace CapaPresentacion
                         txtCodigo.Text,
                         txtNombre.Text, 
                         txtDescripcion.Text,
-                        ((OpcionCombo)comboxCategoria.SelectedItem).Texto.ToString(),
                         ((OpcionCombo)comboxCategoria.SelectedItem).Valor.ToString(),
+                        ((OpcionCombo)comboxCategoria.SelectedItem).Texto.ToString(),
                         "0",
                         "0.00",
                         "0.00",
-                        ((OpcionCombo)comboxEstado.SelectedItem).Texto.ToString(),
-                        ((OpcionCombo)comboxEstado.SelectedItem).Valor.ToString()
+                        ((OpcionCombo)comboxEstado.SelectedItem).Valor.ToString(),
+                        ((OpcionCombo)comboxEstado.SelectedItem).Texto.ToString()
                     });
 
                     Limpiar();
@@ -187,7 +187,7 @@ namespace CapaPresentacion
                     row.Cells["Codigo"].Value = txtCodigo.Text;
                     row.Cells["Nombre"].Value = txtNombre.Text;
                     row.Cells["Descripcion"].Value = txtDescripcion.Text;
-                    row.Cells["IdCategoria"].Value = ((OpcionCombo)comboxCategoria.SelectedItem).Texto.ToString();
+                    row.Cells["IdCategoria"].Value = ((OpcionCombo)comboxCategoria.SelectedItem).Valor.ToString();
                     row.Cells["Categoria"].Value = ((OpcionCombo)comboxCategoria.SelectedItem).Texto.ToString();
                     row.Cells["EstadoValor"].Value = ((OpcionCombo)comboxEstado.SelectedItem).Valor.ToString();
                     row.Cells["Estado"].Value = ((OpcionCombo)comboxEstado.SelectedItem).Texto.ToString();

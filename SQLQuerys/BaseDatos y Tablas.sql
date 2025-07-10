@@ -29,7 +29,7 @@ GO
 CREATE TABLE PROVEEDOR(
 IdProveedor INT PRIMARY KEY IDENTITY,
 NumeroIdentidad varchar(50),
-RazonSocial varchar(50),
+NombreComercial varchar(50),
 Correo varchar(50),
 Telefono varchar(50),
 Direccion varchar(150),
@@ -37,6 +37,7 @@ Estado bit,
 FechaRegistro datetime default getdate()
 )
 GO
+
 --NOTAS DE CORRECCIONES POR PROFESOR: Agregar direcciòn en tabla proveedores --> LISTO!
 
 -- Tabla de Clientes

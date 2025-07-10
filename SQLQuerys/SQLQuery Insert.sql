@@ -5,6 +5,16 @@ select * from ROL
 select * from CATEGORIA
 select * from PRODUCTO
 select * from CLIENTE
+select * from PROVEEDOR
+
+DBCC CHECKIDENT ('CLIENTE', NORESEED);
+DBCC CHECKIDENT ('CLIENTE', RESEED, 4);
+
+DBCC CHECKIDENT ('PRODUCTO', NORESEED);
+DBCC CHECKIDENT ('PRODUCTO', RESEED, 3);
+
+DBCC CHECKIDENT ('CATEGORIA', NORESEED);
+DBCC CHECKIDENT ('CATEGORIA', RESEED, 8);
 
 /*USUARIOS*/
 select IdUsuario,NumeroIdentidad,NombreCompleto,Correo,Telefono,Usuario,Contraseña,Estado from USUARIO
@@ -39,6 +49,10 @@ VALUES
 
 INSERT INTO PRODUCTO (Codigo,Nombre,Descripcion,IdCategoria) VALUES ('7441003596122','Gaseosa Coca Cola','355 ml',5)
 INSERT INTO PRODUCTO (Codigo,Nombre,Descripcion,IdCategoria) VALUES ('7441002601001','Sardina','Sardimal ',6)
+
+INSERT INTO CLIENTE(NumeroIdentidad,NombreCompleto,Correo,Telefono,Estado)
+VALUES 
+('207770863','Jose Ureña Aguilar','urea.jose29@gmail.com','86348556',1)
 
 
 

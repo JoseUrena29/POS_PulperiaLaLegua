@@ -3,15 +3,27 @@
   "WorkspaceRootPath": "C:\\Users\\Jose Ure\u00F1a\\source\\Repositorio_POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E8F81A33-38A7-4CA4-AD28-1790AA3C49BB}|CapaPresentacion\\CapaPresentacion.csproj|C:\\Users\\Jose Ure\u00F1a\\source\\Repositorio_POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\capapresentacion\\formclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E8F81A33-38A7-4CA4-AD28-1790AA3C49BB}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\formclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{E8F81A33-38A7-4CA4-AD28-1790AA3C49BB}|CapaPresentacion\\CapaPresentacion.csproj|C:\\Users\\Jose Ure\u00F1a\\source\\Repositorio_POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\capapresentacion\\formproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8F81A33-38A7-4CA4-AD28-1790AA3C49BB}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\formproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E8F81A33-38A7-4CA4-AD28-1790AA3C49BB}|CapaPresentacion\\CapaPresentacion.csproj|c:\\users\\jose ure\u00F1a\\source\\repositorio_pos_pulperialalegua\\pos_pulperialalegua\\pos_pulperialalegua\\capapresentacion\\formproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E8F81A33-38A7-4CA4-AD28-1790AA3C49BB}|CapaPresentacion\\CapaPresentacion.csproj|C:\\Users\\Jose Ure\u00F1a\\source\\Repositorio_POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\capapresentacion\\formproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E8F81A33-38A7-4CA4-AD28-1790AA3C49BB}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\formproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E8F81A33-38A7-4CA4-AD28-1790AA3C49BB}|CapaPresentacion\\CapaPresentacion.csproj|c:\\users\\jose ure\u00F1a\\source\\repositorio_pos_pulperialalegua\\pos_pulperialalegua\\pos_pulperialalegua\\capapresentacion\\inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E8F81A33-38A7-4CA4-AD28-1790AA3C49BB}|CapaPresentacion\\CapaPresentacion.csproj|C:\\Users\\Jose Ure\u00F1a\\source\\Repositorio_POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\capapresentacion\\formclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8F81A33-38A7-4CA4-AD28-1790AA3C49BB}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\formclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8F81A33-38A7-4CA4-AD28-1790AA3C49BB}|CapaPresentacion\\CapaPresentacion.csproj|c:\\users\\jose ure\u00F1a\\source\\repositorio_pos_pulperialalegua\\pos_pulperialalegua\\pos_pulperialalegua\\capapresentacion\\formclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E8F81A33-38A7-4CA4-AD28-1790AA3C49BB}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\formclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8F81A33-38A7-4CA4-AD28-1790AA3C49BB}|CapaPresentacion\\CapaPresentacion.csproj|C:\\Users\\Jose Ure\u00F1a\\source\\Repositorio_POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\capapresentacion\\formcategoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E8F81A33-38A7-4CA4-AD28-1790AA3C49BB}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\formcategoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8F81A33-38A7-4CA4-AD28-1790AA3C49BB}|CapaPresentacion\\CapaPresentacion.csproj|C:\\Users\\Jose Ure\u00F1a\\source\\Repositorio_POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\capapresentacion\\inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E8F81A33-38A7-4CA4-AD28-1790AA3C49BB}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -22,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,16 +42,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Inicio.cs",
-              "DocumentMoniker": "C:\\Users\\Jose Ure\u00F1a\\source\\Repositorio_POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\CapaPresentacion\\Inicio.cs",
-              "RelativeDocumentMoniker": "CapaPresentacion\\Inicio.cs",
-              "ToolTip": "C:\\Users\\Jose Ure\u00F1a\\source\\Repositorio_POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\CapaPresentacion\\Inicio.cs",
-              "RelativeToolTip": "CapaPresentacion\\Inicio.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAiAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "FormProducto.cs",
+              "DocumentMoniker": "C:\\Users\\Jose Ure\u00F1a\\source\\Repositorio_POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\CapaPresentacion\\FormProducto.cs",
+              "RelativeDocumentMoniker": "CapaPresentacion\\FormProducto.cs",
+              "ToolTip": "C:\\Users\\Jose Ure\u00F1a\\source\\Repositorio_POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\CapaPresentacion\\FormProducto.cs",
+              "RelativeToolTip": "CapaPresentacion\\FormProducto.cs",
+              "ViewState": "AgIAAOgAAAAAAAAAAAAYwL0AAABmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-08T03:58:25.942Z",
+              "WhenOpened": "2025-07-10T02:35:24.379Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FormCategoria.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Jose Ure\u00F1a\\source\\Repositorio_POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\CapaPresentacion\\FormCategoria.cs",
+              "RelativeDocumentMoniker": "CapaPresentacion\\FormCategoria.cs",
+              "ToolTip": "C:\\Users\\Jose Ure\u00F1a\\source\\Repositorio_POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\CapaPresentacion\\FormCategoria.cs [Dise\u00F1o]",
+              "RelativeToolTip": "CapaPresentacion\\FormCategoria.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-09T01:01:18.874Z",
+              "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
@@ -50,12 +74,37 @@
               "ToolTip": "C:\\Users\\Jose Ure\u00F1a\\source\\Repositorio_POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\CapaPresentacion\\FormProducto.cs [Dise\u00F1o]",
               "RelativeToolTip": "CapaPresentacion\\FormProducto.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-08T03:29:04.564Z",
+              "WhenOpened": "2025-07-09T01:01:16.51Z",
               "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
+              "Title": "FormClientes.cs",
+              "DocumentMoniker": "C:\\Users\\Jose Ure\u00F1a\\source\\Repositorio_POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\CapaPresentacion\\FormClientes.cs",
+              "RelativeDocumentMoniker": "CapaPresentacion\\FormClientes.cs",
+              "ToolTip": "C:\\Users\\Jose Ure\u00F1a\\source\\Repositorio_POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\CapaPresentacion\\FormClientes.cs",
+              "RelativeToolTip": "CapaPresentacion\\FormClientes.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAowDcAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-09T00:58:54.924Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Inicio.cs",
+              "DocumentMoniker": "C:\\Users\\Jose Ure\u00F1a\\source\\Repositorio_POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\CapaPresentacion\\Inicio.cs",
+              "RelativeDocumentMoniker": "CapaPresentacion\\Inicio.cs",
+              "ToolTip": "C:\\Users\\Jose Ure\u00F1a\\source\\Repositorio_POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\CapaPresentacion\\Inicio.cs",
+              "RelativeToolTip": "CapaPresentacion\\Inicio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-08T03:58:25.942Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "FormClientes.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\Jose Ure\u00F1a\\source\\Repositorio_POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\CapaPresentacion\\FormClientes.cs",
               "RelativeDocumentMoniker": "CapaPresentacion\\FormClientes.cs",
