@@ -45,6 +45,7 @@
     <Compile Include="CapaDatos_Categoria.cs" />
     <Compile Include="CapaDatos_Cliente.cs" />
     <Compile Include="CapaDatos_Producto.cs" />
+    <Compile Include="CapaDatos_Proveedor.cs" />
     <Compile Include="CapaDatos_Rol.cs" />
     <Compile Include="CapaDatos_Usuario.cs" />
     <Compile Include="Conexion.cs" />

@@ -77,10 +77,11 @@ namespace CapaPresentacion
                     });
 
                     Limpiar();
+                    MessageBox.Show("¡Categoría guardada exitosamente!", "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show(mensaje);
+                    MessageBox.Show(mensaje, "Error al guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }
@@ -96,10 +97,11 @@ namespace CapaPresentacion
                     row.Cells["EstadoValor"].Value = ((OpcionCombo)comboxEstado.SelectedItem).Valor.ToString();
                     row.Cells["Estado"].Value = ((OpcionCombo)comboxEstado.SelectedItem).Texto.ToString();
                     Limpiar();
+                    MessageBox.Show("¡Categoría editada exitosamente!", "Edición", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show(mensaje);
+                    MessageBox.Show(mensaje, "Error al editar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

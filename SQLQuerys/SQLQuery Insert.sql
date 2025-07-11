@@ -29,6 +29,9 @@ INNER JOIN CATEGORIA c on c.IdCategoria = p.IdCategoria
 /*CLIENTES*/
 select IdCliente,NumeroIdentidad,NombreCompleto,Correo,Telefono,Estado from CLIENTE
 
+/*PROVEEDOR*/
+Select IdProveedor,NumeroIdentidad,NombreComercial,Correo,Telefono,Direccion,Estado from PROVEEDOR
+
 insert into ROL(Descripcion)
 values ('ADMINISTRADOR')
 
@@ -53,6 +56,10 @@ INSERT INTO PRODUCTO (Codigo,Nombre,Descripcion,IdCategoria) VALUES ('7441002601
 INSERT INTO CLIENTE(NumeroIdentidad,NombreCompleto,Correo,Telefono,Estado)
 VALUES 
 ('207770863','Jose Ureña Aguilar','urea.jose29@gmail.com','86348556',1)
+
+INSERT INTO PROVEEDOR(NumeroIdentidad,NombreComercial,Correo,Telefono,Direccion,Estado)
+VALUES 
+('3-101-005212','Coca Cola FEMSA','info@coca-cola.co.cr','8000-26522','Calle Blancos, San José, Costa Rica',1)
 
 
 

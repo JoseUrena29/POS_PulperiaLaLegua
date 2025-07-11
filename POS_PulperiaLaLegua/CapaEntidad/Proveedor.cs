@@ -10,9 +10,10 @@ namespace CapaEntidad
     {
         public int IdProveedor { get; set; }
         public string NumeroIdentidad { get; set; }
-        public string RazonSocial { get; set; }
+        public string NombreComercial { get; set; }
         public string Correo { get; set; }
         public string Telefono { get; set; }
+        public string Direccion { get; set; }
         public bool Estado { get; set; }
         public string FechaRegistro { get; set; }
     }

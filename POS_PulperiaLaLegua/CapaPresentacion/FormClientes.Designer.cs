@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnexportar = new FontAwesome.Sharp.IconButton();
             this.label8 = new System.Windows.Forms.Label();
             this.txtCorreo = new System.Windows.Forms.TextBox();
@@ -53,9 +53,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnbuscar = new FontAwesome.Sharp.IconButton();
             this.dgv_Data = new System.Windows.Forms.DataGridView();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.textIndice = new System.Windows.Forms.TextBox();
-            this.textID = new System.Windows.Forms.TextBox();
             this.btnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumeroIdentidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,6 +61,9 @@
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EstadoValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.textIndice = new System.Windows.Forms.TextBox();
+            this.textID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Data)).BeginInit();
             this.SuspendLayout();
             // 
@@ -345,15 +345,15 @@
             // 
             this.dgv_Data.AllowUserToAddRows = false;
             this.dgv_Data.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Data.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Data.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_Data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Data.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.btnSeleccionar,
@@ -369,37 +369,10 @@
             this.dgv_Data.Name = "dgv_Data";
             this.dgv_Data.ReadOnly = true;
             this.dgv_Data.RowTemplate.Height = 28;
-            this.dgv_Data.Size = new System.Drawing.Size(855, 477);
+            this.dgv_Data.Size = new System.Drawing.Size(859, 477);
             this.dgv_Data.TabIndex = 52;
             this.dgv_Data.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Data_CellContentClick);
             this.dgv_Data.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgv_Data_CellPainting);
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Location = new System.Drawing.Point(22, 253);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(209, 20);
-            this.txtTelefono.TabIndex = 69;
-            // 
-            // textIndice
-            // 
-            this.textIndice.Location = new System.Drawing.Point(178, 53);
-            this.textIndice.Name = "textIndice";
-            this.textIndice.Size = new System.Drawing.Size(25, 20);
-            this.textIndice.TabIndex = 71;
-            this.textIndice.Text = "-1";
-            this.textIndice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textIndice.Visible = false;
-            // 
-            // textID
-            // 
-            this.textID.Location = new System.Drawing.Point(206, 53);
-            this.textID.Name = "textID";
-            this.textID.Size = new System.Drawing.Size(25, 20);
-            this.textID.TabIndex = 70;
-            this.textID.Text = "0";
-            this.textID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textID.Visible = false;
             // 
             // btnSeleccionar
             // 
@@ -454,6 +427,33 @@
             this.EstadoValor.Name = "EstadoValor";
             this.EstadoValor.ReadOnly = true;
             this.EstadoValor.Visible = false;
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(22, 253);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(209, 20);
+            this.txtTelefono.TabIndex = 69;
+            // 
+            // textIndice
+            // 
+            this.textIndice.Location = new System.Drawing.Point(178, 53);
+            this.textIndice.Name = "textIndice";
+            this.textIndice.Size = new System.Drawing.Size(25, 20);
+            this.textIndice.TabIndex = 71;
+            this.textIndice.Text = "-1";
+            this.textIndice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textIndice.Visible = false;
+            // 
+            // textID
+            // 
+            this.textID.Location = new System.Drawing.Point(206, 53);
+            this.textID.Name = "textID";
+            this.textID.Size = new System.Drawing.Size(25, 20);
+            this.textID.TabIndex = 70;
+            this.textID.Text = "0";
+            this.textID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textID.Visible = false;
             // 
             // FormClientes
             // 
