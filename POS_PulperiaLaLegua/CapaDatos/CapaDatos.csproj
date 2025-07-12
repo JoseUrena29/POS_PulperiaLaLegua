@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="CapaDatos_Categoria.cs" />
     <Compile Include="CapaDatos_Cliente.cs" />
+    <Compile Include="CapaDatos_Negocio.cs" />
     <Compile Include="CapaDatos_Producto.cs" />
     <Compile Include="CapaDatos_Proveedor.cs" />
     <Compile Include="CapaDatos_Rol.cs" />

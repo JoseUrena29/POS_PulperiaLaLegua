@@ -83,3 +83,4 @@ C:\Users\Jose Ureña\source\Repositorio_POS_PulperiaLaLegua\POS_PulperiaLaLegua\
 C:\Users\Jose Ureña\source\Repositorio_POS_PulperiaLaLegua\POS_PulperiaLaLegua\POS_PulperiaLaLegua\CapaPresentacion\bin\Debug\System.Memory.xml
 C:\Users\Jose Ureña\source\Repositorio_POS_PulperiaLaLegua\POS_PulperiaLaLegua\POS_PulperiaLaLegua\CapaPresentacion\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\Jose Ureña\source\Repositorio_POS_PulperiaLaLegua\POS_PulperiaLaLegua\POS_PulperiaLaLegua\CapaPresentacion\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Jose Ureña\source\Repositorio_POS_PulperiaLaLegua\POS_PulperiaLaLegua\POS_PulperiaLaLegua\CapaPresentacion\obj\Debug\CapaPresentacion.FormNegocio.resources

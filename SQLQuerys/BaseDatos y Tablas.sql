@@ -1,4 +1,3 @@
-
 CREATE DATABASE DB_POSPulperiaLaLegua
 
 GO
@@ -166,6 +165,15 @@ CREATE TABLE DETALLE_AJUSTE(
 )
 GO
 
+-- Tabla de Información del Negocio
+CREATE TABLE NEGOCIO(
+IdNegocio INT PRIMARY KEY IDENTITY,
+Nombre varchar(60),
+NumeroIdentificacion varchar(60),
+Direccion varchar(100),
+Logo varbinary(max) NULL
+)
+GO
 
 
 

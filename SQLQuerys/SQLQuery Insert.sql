@@ -6,6 +6,7 @@ select * from CATEGORIA
 select * from PRODUCTO
 select * from CLIENTE
 select * from PROVEEDOR
+select * from NEGOCIO
 
 DBCC CHECKIDENT ('CLIENTE', NORESEED);
 DBCC CHECKIDENT ('CLIENTE', RESEED, 4);
@@ -60,6 +61,10 @@ VALUES
 INSERT INTO PROVEEDOR(NumeroIdentidad,NombreComercial,Correo,Telefono,Direccion,Estado)
 VALUES 
 ('3-101-005212','Coca Cola FEMSA','info@coca-cola.co.cr','8000-26522','Calle Blancos, San José, Costa Rica',1)
+
+INSERT INTO NEGOCIO(Nombre,NumeroIdentificacion,Direccion)
+VALUES 
+('Pulpería La Legua','101010','300m suroeste del Bar Linda Vista, La Legua, Mercedes Sur, Puriscal')
 
 
 

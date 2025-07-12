@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="CapaNegocio_Categoria.cs" />
     <Compile Include="CapaNegocio_Cliente.cs" />
+    <Compile Include="CapaNegocio_Negocio.cs" />
     <Compile Include="CapaNegocio_Producto.cs" />
     <Compile Include="CapaNegocio_Proveedor.cs" />
     <Compile Include="CapaNegocio_Rol.cs" />
