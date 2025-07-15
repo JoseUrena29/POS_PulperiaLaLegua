@@ -33,6 +33,9 @@ select IdCliente,NumeroIdentidad,NombreCompleto,Correo,Telefono,Estado from CLIE
 /*PROVEEDOR*/
 Select IdProveedor,NumeroIdentidad,NombreComercial,Correo,Telefono,Direccion,Estado from PROVEEDOR
 
+/*NEGOCIO*/
+Select IdNegocio,Nombre,NumeroIdentificacion,Direccion from NEGOCIO
+
 insert into ROL(Descripcion)
 values ('ADMINISTRADOR')
 
