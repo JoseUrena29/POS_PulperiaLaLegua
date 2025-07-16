@@ -18,7 +18,7 @@ DBCC CHECKIDENT ('CATEGORIA', NORESEED);
 DBCC CHECKIDENT ('CATEGORIA', RESEED, 8);
 
 /*USUARIOS*/
-select IdUsuario,NumeroIdentidad,NombreCompleto,Correo,Telefono,Usuario,Contraseña,Estado from USUARIO
+select IdUsuario,NumeroIdentidad,NombreCompleto,Correo,Telefono,Usuario,Clave,Estado from USUARIO
 
 /*CATEGORIAS*/
 select IdCategoria,Descripcion,Estado from CATEGORIA
@@ -42,7 +42,7 @@ values ('ADMINISTRADOR')
 insert into ROL(Descripcion)
 values ('EMPLEADO')
 
-insert into USUARIO(NumeroIdentidad,NombreCompleto,Correo,Telefono,Usuario,Contraseña,IdRol,Estado)
+insert into USUARIO(NumeroIdentidad,NombreCompleto,Correo,Telefono,Usuario,Clave,IdRol,Estado)
 values 
 ('207770863','Jose Ureña Aguilar','urea.jose29@gmail.com','86348556','207770863','1234',1,1)
 

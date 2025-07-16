@@ -41,18 +41,18 @@ namespace CapaPresentacion
         private void btnIngresar_Click(object sender, EventArgs e)
         {
 
-            /*if (string.IsNullOrWhiteSpace(txtUsuario.Text) || string.IsNullOrWhiteSpace(txtClave.Text))
+            if (string.IsNullOrWhiteSpace(txtUsuario.Text) || string.IsNullOrWhiteSpace(txtClave.Text))
             {
                 MessageBox.Show("Por favor, complete ambos campos: Usuario y Contraseña.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            List<Usuarios> TEST = new CapaNegocio_Usuario().Listar();
-            Usuarios ousuario = new CapaNegocio_Usuario().Listar().Where(u => u.NumeroIdentidad == txtUsuario.Text && u.Contraseña == txtClave.Text).FirstOrDefault();
+            List<Usuario> TEST = new CapaNegocio_Usuario().Listar();
+            Usuario ousuario = new CapaNegocio_Usuario().Listar().Where(u => u.NumeroIdentidad == txtUsuario.Text && u.Clave == txtClave.Text).FirstOrDefault();
 
             if (ousuario != null) 
             {
-                Inicio form = new Inicio();
+                Inicio form = new Inicio(ousuario);
 
                 form.Show();
                 this.Hide();
@@ -62,14 +62,7 @@ namespace CapaPresentacion
             else
             {
                 MessageBox.Show("Usuario o contraseña incorrectos.", "Acceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }*/
-
-            Inicio form = new Inicio();
-
-            form.Show();
-            this.Hide();
-
-            form.FormClosing += frm_closing;
+            }
         }
 
         private void frm_closing(object sender, FormClosingEventArgs e)

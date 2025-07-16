@@ -14,12 +14,13 @@ namespace CapaPresentacion
 {
     public partial class Inicio : Form
     {
-        private static Usuarios UsuarioActual;
+        private static Usuario UsuarioActual;
         private static IconMenuItem MenuActivo = null;
         private static Form FormularioActivo = null;
 
-        public Inicio()
+        public Inicio(Usuario objusuario)
         {
+            UsuarioActual = objusuario;
             InitializeComponent();
         }
 
@@ -35,7 +36,7 @@ namespace CapaPresentacion
 
         private void Inicio_Load(object sender, EventArgs e)
         {
-
+            lblusuario.Text = UsuarioActual.NombreCompleto;
         }
 
         private void AbrirFormulario(IconMenuItem menu, Form formulario)
