@@ -1,4 +1,5 @@
 ﻿using CapaEntidad;
+using CapaNegocio;
 using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
@@ -36,7 +37,24 @@ namespace CapaPresentacion
 
         private void Inicio_Load(object sender, EventArgs e)
         {
-            lblusuario.Text = UsuarioActual.NombreCompleto;
+            List<Permiso> ListaPermisos = new CapaNegocio_Permiso().Listar(UsuarioActual.IdUsuario);
+
+            foreach (IconMenuItem iconmenu in menu.Items)
+            {
+                bool tienePermisoMenu = ListaPermisos.Any(m => m.NombreMenu == iconmenu.Name);
+                iconmenu.Visible = tienePermisoMenu;
+
+                // Revisar los submenús dentro del menú principal
+                foreach (ToolStripItem subItem in iconmenu.DropDownItems)
+                {
+                    bool tienePermisoSubMenu = ListaPermisos.Any(m => m.NombreMenu == subItem.Name);
+                    subItem.Visible = tienePermisoSubMenu;
+                }
+            }
+
+
+
+                lblusuario.Text = UsuarioActual.NombreCompleto;
         }
 
         private void AbrirFormulario(IconMenuItem menu, Form formulario)
