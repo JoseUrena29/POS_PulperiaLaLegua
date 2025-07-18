@@ -103,6 +103,37 @@ FechaRegistro datetime default getdate()
 GO
 --NOTAS DE CORRECCIONES POR PROFESOR: Eliminar MontoTotal y agregar los campos (monto neto, descuento, iva, total)
 
+--TABLA CORREGIDA
+CREATE TABLE COMPRA (
+    IdCompra INT PRIMARY KEY IDENTITY,
+    IdUsuario INT FOREIGN KEY REFERENCES USUARIO(IdUsuario),
+    IdProveedor INT FOREIGN KEY REFERENCES PROVEEDOR(IdProveedor),
+    TipoCompra VARCHAR(50),
+    NumeroCompra VARCHAR(50),
+    MontoNeto DECIMAL(10,2),     -- Suma total de productos sin impuestos ni descuentos
+    Descuento DECIMAL(10,2),     -- Descuento total aplicado
+    Subtotal DECIMAL(10,2),      -- MontoNeto - Descuento
+    IVA DECIMAL(10,2),           -- Impuesto calculado sobre el subtotal
+    Total DECIMAL(10,2),         -- Subtotal + IVA
+    FechaRegistro DATETIME DEFAULT GETDATE()
+);
+GO
+
+--TABLA CORREGIDA
+CREATE TABLE DETALLE_COMPRA (
+    IdDetalleCompra INT PRIMARY KEY IDENTITY,
+    IdCompra INT FOREIGN KEY REFERENCES COMPRA(IdCompra),
+    IdProducto INT FOREIGN KEY REFERENCES PRODUCTO(IdProducto),
+    PrecioCompra DECIMAL(10,2) DEFAULT 0,  -- Precio por unidad
+	PrecioVenta decimal(10,2) default 0,
+    Cantidad INT,
+    MontoTotal DECIMAL(10,2),              -- PrecioCompra × Cantidad
+    FechaRegistro DATETIME DEFAULT GETDATE()
+);
+GO
+
+
+
 -- Detalle de cada compra
 CREATE TABLE DETALLE_COMPRA(
 IdDetalleCompra INT PRIMARY KEY IDENTITY,

@@ -37,6 +37,9 @@ namespace CapaPresentacion
 
         private void Inicio_Load(object sender, EventArgs e)
         {
+            timer1.Tick += Timer1_Tick;
+            timer1.Start();
+
             List<Permiso> ListaPermisos = new CapaNegocio_Permiso().Listar(UsuarioActual.IdUsuario);
 
             foreach (IconMenuItem iconmenu in menu.Items)
@@ -51,10 +54,13 @@ namespace CapaPresentacion
                     subItem.Visible = tienePermisoSubMenu;
                 }
             }
-
-
-
                 lblusuario.Text = UsuarioActual.NombreCompleto;
+        }
+
+        private void Timer1_Tick(object sender, EventArgs e)
+        {
+            string fechaHora = DateTime.Now.ToString("dddd, dd MMMM yyyy  HH:mm:ss");
+            lblFechaHora.Text = char.ToUpper(fechaHora[0]) + fechaHora.Substring(1);
         }
 
         private void AbrirFormulario(IconMenuItem menu, Form formulario)
@@ -122,7 +128,7 @@ namespace CapaPresentacion
 
         private void SubMenuRegistrarCompras_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(menucompras, new FormCompras());
+            AbrirFormulario(menucompras, new FormCompras(UsuarioActual));
         }
 
         private void SubMenuConsultarCompras_Click(object sender, EventArgs e)
