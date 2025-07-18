@@ -18,28 +18,33 @@ namespace CapaNegocio
             return objcd_Usuario.Listar();
         }
 
-        /*public int Registrar(Usuario obj, out string Mensaje)
+        public int Registrar(Usuario obj, out string Mensaje)
         {
             Mensaje = string.Empty;
 
             if (obj.NumeroIdentidad == "")
             {
-                Mensaje += "Por favor digitar el número de identidad del usuario";
+                Mensaje += "Por favor digitar el número de identidad del usuario\n";
             }
 
             if (obj.NombreCompleto == "")
             {
-                Mensaje += "Por favor digitar el nombre comnpleto del usuario";
+                Mensaje += "Por favor digitar el nombre comnpleto del usuario\n";
             }
 
             if (obj.Correo == "")
             {
-                Mensaje += "Por favor digitar el correo del usuario";
+                Mensaje += "Por favor digitar el correo del usuario\n";
             }
 
             if (obj.Telefono == "")
             {
-                Mensaje += "Por favor digitar el número de teléfono del usuario";
+                Mensaje += "Por favor digitar el número de teléfono del usuario\n";
+            }
+
+            if (obj.Clave == "")
+            {
+                Mensaje += "Por favor digitar la clave del usuario\n";
             }
 
             if (Mensaje != string.Empty)
@@ -59,22 +64,27 @@ namespace CapaNegocio
 
             if (obj.NumeroIdentidad == "")
             {
-                Mensaje += "Por favor digitar el número de identidad del usuario";
+                Mensaje += "Por favor digitar el número de identidad del usuario\n";
             }
 
             if (obj.NombreCompleto == "")
             {
-                Mensaje += "Por favor digitar el nombre comnpleto del usuario";
+                Mensaje += "Por favor digitar el nombre comnpleto del usuario\n";
             }
 
             if (obj.Correo == "")
             {
-                Mensaje += "Por favor digitar el correo del usuario";
+                Mensaje += "Por favor digitar el correo del usuario\n";
             }
 
             if (obj.Telefono == "")
             {
-                Mensaje += "Por favor digitar el número de teléfono del usuario";
+                Mensaje += "Por favor digitar el número de teléfono del usuario\n";
+            }
+
+            if (obj.Clave == "")
+            {
+                Mensaje += "Por favor digitar la clave del usuario\n";
             }
 
             if (Mensaje != string.Empty)
@@ -86,7 +96,6 @@ namespace CapaNegocio
             {
                 return objcd_Usuario.Editar(obj, out Mensaje);
             }
-            }
-        }*/
+        }
     }
 }

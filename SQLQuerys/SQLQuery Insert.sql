@@ -19,7 +19,8 @@ DBCC CHECKIDENT ('CATEGORIA', NORESEED);
 DBCC CHECKIDENT ('CATEGORIA', RESEED, 8);
 
 /*USUARIOS*/
-select IdUsuario,NumeroIdentidad,NombreCompleto,Correo,Telefono,UsuarioLogin,Clave,Estado from USUARIO
+select u.IdUsuario,u.NumeroIdentidad,u.NombreCompleto,u.Correo,u.Telefono,u.UsuarioLogin,u.Clave,u.Estado,r.IdRol,r.Descripcion from USUARIO u
+inner join ROl r on r.IdRol = u.IdRol
 
 /*PERMISOS*/
 select p.IdRol,p.NombreMenu from PERMISO p
@@ -50,13 +51,13 @@ values ('ADMINISTRADOR')
 insert into ROL(Descripcion)
 values ('EMPLEADO')
 
-insert into USUARIO(NumeroIdentidad,NombreCompleto,Correo,Telefono,UsuarioLogin,Clave,IdRol,Estado)
+insert into USUARIO(NumeroIdentidad,NombreCompleto,Correo,Telefono,Clave,IdRol,Estado)
 values 
-('207770863','Jose Ureña Aguilar','urea.jose29@gmail.com','86348556','207770863','1234',1,1)
+('207770863','Jose Ureña Aguilar','urea.jose29@gmail.com','86348556','1234',1,1)
 
-insert into USUARIO(NumeroIdentidad,NombreCompleto,Correo,Telefono,UsuarioLogin,Clave,IdRol,Estado)
+insert into USUARIO(NumeroIdentidad,NombreCompleto,Correo,Telefono,Clave,IdRol,Estado)
 values 
-('115620419','Cristian Ureña Aguilar','cristianurena@gmail.com','87429129','Empleado1','1234',2,1)
+('115620419','Cristian Ureña Aguilar','cristianurena@gmail.com','87429129','1234',2,1)
 
 /*Rol Administrador*/
 insert into PERMISO(IdRol,NombreMenu)

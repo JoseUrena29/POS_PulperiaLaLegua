@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using CapaEntidad;
+using System.Reflection;
 
 namespace CapaDatos
 {
@@ -22,7 +23,8 @@ namespace CapaDatos
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("select IdUsuario,NumeroIdentidad,NombreCompleto,Correo,Telefono,UsuarioLogin,Clave,Estado from USUARIO");
+                    query.AppendLine("select u.IdUsuario,u.NumeroIdentidad,u.NombreCompleto,u.Correo,u.Telefono,u.Clave,u.Estado,r.IdRol,r.Descripcion from USUARIO u");
+                    query.AppendLine("inner join ROl r on r.IdRol = u.IdRol");
                     SqlCommand comm = new SqlCommand(query.ToString(), objconexion);
                     comm.CommandType = CommandType.Text;
 
@@ -40,6 +42,7 @@ namespace CapaDatos
                                 Correo = dr["Correo"].ToString(),
                                 Telefono = dr["Telefono"].ToString(),
                                 Clave = dr["Clave"].ToString(),
+                                oRol = new Rol() { IdRol = Convert.ToInt32(dr["IdRol"]), Descripcion = dr["Descripcion"].ToString()}, 
                                 Estado = Convert.ToBoolean(dr["Estado"]),
                             });
                         }
@@ -55,7 +58,7 @@ namespace CapaDatos
 
 
         //Método para crear nuevos Usuarios
-        /*public int Registrar(Usuario obj, out string Mensaje)
+        public int Registrar(Usuario obj, out string Mensaje)
         {
             int IdUsuario_Generado = 0;
             Mensaje = string.Empty;
@@ -69,6 +72,8 @@ namespace CapaDatos
                     comm.Parameters.AddWithValue("NombreCompleto", obj.NombreCompleto);
                     comm.Parameters.AddWithValue("Correo", obj.Correo);
                     comm.Parameters.AddWithValue("Telefono", obj.Telefono);
+                    comm.Parameters.AddWithValue("Clave", obj.Clave);
+                    comm.Parameters.AddWithValue("IdRol", obj.oRol.IdRol);
                     comm.Parameters.AddWithValue("Estado", obj.Estado);
                     comm.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     comm.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
@@ -89,7 +94,7 @@ namespace CapaDatos
             }
             return IdUsuario_Generado;
         }
-
+        
         //Método para crear editar Usuarios
         public bool Editar(Usuario obj, out string Mensaje)
         {
@@ -106,6 +111,8 @@ namespace CapaDatos
                     comm.Parameters.AddWithValue("NombreCompleto", obj.NombreCompleto);
                     comm.Parameters.AddWithValue("Correo", obj.Correo);
                     comm.Parameters.AddWithValue("Telefono", obj.Telefono);
+                    comm.Parameters.AddWithValue("Clave", obj.Clave);
+                    comm.Parameters.AddWithValue("IdRol", obj.oRol.IdRol);
                     comm.Parameters.AddWithValue("Estado", obj.Estado);
                     comm.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     comm.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
@@ -125,6 +132,6 @@ namespace CapaDatos
                 Mensaje = ex.Message;
             }
             return respuesta;
-        }*/
+        }
     }
 }

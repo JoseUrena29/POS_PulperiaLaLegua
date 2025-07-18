@@ -46,7 +46,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.btnfiltro = new FontAwesome.Sharp.IconButton();
             this.txtNombreCompleto = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtCorreo = new System.Windows.Forms.TextBox();
@@ -66,8 +66,8 @@
             this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EstadoValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Data)).BeginInit();
@@ -189,8 +189,8 @@
             this.Correo,
             this.Telefono,
             this.Clave,
-            this.IdRol,
             this.Rol,
+            this.IdRol,
             this.Estado,
             this.EstadoValor});
             this.dgv_Data.Location = new System.Drawing.Point(285, 104);
@@ -198,7 +198,7 @@
             this.dgv_Data.Name = "dgv_Data";
             this.dgv_Data.ReadOnly = true;
             this.dgv_Data.RowTemplate.Height = 28;
-            this.dgv_Data.Size = new System.Drawing.Size(829, 394);
+            this.dgv_Data.Size = new System.Drawing.Size(829, 514);
             this.dgv_Data.TabIndex = 27;
             this.dgv_Data.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Data_CellContentClick);
             this.dgv_Data.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgv_Data_CellPainting);
@@ -254,6 +254,7 @@
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // comboxEstado
             // 
@@ -301,23 +302,24 @@
             this.label1.Size = new System.Drawing.Size(273, 618);
             this.label1.TabIndex = 19;
             // 
-            // iconButton1
+            // btnfiltro
             // 
-            this.iconButton1.BackColor = System.Drawing.Color.White;
-            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.ForeColor = System.Drawing.Color.White;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.SearchMinus;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 18;
-            this.iconButton1.Location = new System.Drawing.Point(988, 49);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(50, 21);
-            this.iconButton1.TabIndex = 36;
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton1.UseVisualStyleBackColor = false;
+            this.btnfiltro.BackColor = System.Drawing.Color.White;
+            this.btnfiltro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnfiltro.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnfiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnfiltro.ForeColor = System.Drawing.Color.White;
+            this.btnfiltro.IconChar = FontAwesome.Sharp.IconChar.SearchMinus;
+            this.btnfiltro.IconColor = System.Drawing.Color.Black;
+            this.btnfiltro.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnfiltro.IconSize = 18;
+            this.btnfiltro.Location = new System.Drawing.Point(988, 49);
+            this.btnfiltro.Name = "btnfiltro";
+            this.btnfiltro.Size = new System.Drawing.Size(50, 21);
+            this.btnfiltro.TabIndex = 36;
+            this.btnfiltro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnfiltro.UseVisualStyleBackColor = false;
+            this.btnfiltro.Click += new System.EventHandler(this.btnfiltro_Click);
             // 
             // txtNombreCompleto
             // 
@@ -473,18 +475,18 @@
             this.Clave.ReadOnly = true;
             this.Clave.Visible = false;
             // 
+            // Rol
+            // 
+            this.Rol.HeaderText = "Rol";
+            this.Rol.Name = "Rol";
+            this.Rol.ReadOnly = true;
+            // 
             // IdRol
             // 
             this.IdRol.HeaderText = "IdRol";
             this.IdRol.Name = "IdRol";
             this.IdRol.ReadOnly = true;
             this.IdRol.Visible = false;
-            // 
-            // Rol
-            // 
-            this.Rol.HeaderText = "Rol";
-            this.Rol.Name = "Rol";
-            this.Rol.ReadOnly = true;
             // 
             // Estado
             // 
@@ -516,7 +518,7 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtNombreCompleto);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.iconButton1);
+            this.Controls.Add(this.btnfiltro);
             this.Controls.Add(this.txtIndice);
             this.Controls.Add(this.btnlimpiar);
             this.Controls.Add(this.txtBusqueda);
@@ -562,7 +564,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btnfiltro;
         private System.Windows.Forms.TextBox txtNombreCompleto;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtCorreo;
@@ -582,8 +584,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn Clave;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdRol;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdRol;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn EstadoValor;
     }
