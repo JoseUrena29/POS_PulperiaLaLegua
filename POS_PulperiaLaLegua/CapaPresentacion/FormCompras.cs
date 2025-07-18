@@ -155,14 +155,14 @@ namespace CapaPresentacion
                     decimal descuento = montoNeto * (descuentoPorcentaje / 100);
                     decimal subtotal = montoNeto - descuento;
                     decimal iva = subtotal * 0.13m;
-                    decimal totalLinea = subtotal + iva;
+                    decimal total = subtotal + iva;
 
                     fila.Cells["Cantidad"].Value = nuevaCantidad;
                     fila.Cells["MontoNeto"].Value = montoNeto.ToString("0.00");
                     fila.Cells["Descuento"].Value = descuento.ToString("0.00");
                     fila.Cells["Subtotal"].Value = subtotal.ToString("0.00");
                     fila.Cells["IVA"].Value = iva.ToString("0.00");
-                    fila.Cells["TotalLinea"].Value = totalLinea.ToString("0.00");
+                    fila.Cells["Total"].Value = total.ToString("0.00");
 
                     productoExiste = true;
                     MessageBox.Show("Producto actualizado correctamente.", "Actualización", MessageBoxButtons.OK, MessageBoxIcon.Information);

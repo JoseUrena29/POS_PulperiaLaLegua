@@ -375,7 +375,7 @@
             this.lblFechaHora.BackColor = System.Drawing.Color.SteelBlue;
             this.lblFechaHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaHora.ForeColor = System.Drawing.Color.White;
-            this.lblFechaHora.Location = new System.Drawing.Point(599, 33);
+            this.lblFechaHora.Location = new System.Drawing.Point(607, 19);
             this.lblFechaHora.Name = "lblFechaHora";
             this.lblFechaHora.Size = new System.Drawing.Size(97, 20);
             this.lblFechaHora.TabIndex = 6;
