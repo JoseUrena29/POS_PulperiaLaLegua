@@ -352,6 +352,19 @@ namespace CapaPresentacion
             }
         }
 
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(txtIdProveedor.Text) == 0)
+            {
+                MessageBox.Show("Por favor, seleccione un proveedor antes de continuar.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            if (dgv_Data.Rows.Count < 1)
+            {
+                MessageBox.Show("Debe agregar al menos un producto a la compra.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
     }
 }
