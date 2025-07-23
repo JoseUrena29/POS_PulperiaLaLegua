@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtFecha = new System.Windows.Forms.TextBox();
-            this.comboxTipoDocumento = new System.Windows.Forms.ComboBox();
+            this.comboxTipoCompra = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNumeroIdentidadProveedor = new System.Windows.Forms.TextBox();
@@ -112,7 +112,7 @@
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.txtFecha);
-            this.groupBox1.Controls.Add(this.comboxTipoDocumento);
+            this.groupBox1.Controls.Add(this.comboxTipoCompra);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(44, 72);
@@ -129,13 +129,13 @@
             this.txtFecha.Size = new System.Drawing.Size(126, 20);
             this.txtFecha.TabIndex = 3;
             // 
-            // comboxTipoDocumento
+            // comboxTipoCompra
             // 
-            this.comboxTipoDocumento.FormattingEnabled = true;
-            this.comboxTipoDocumento.Location = new System.Drawing.Point(149, 52);
-            this.comboxTipoDocumento.Name = "comboxTipoDocumento";
-            this.comboxTipoDocumento.Size = new System.Drawing.Size(207, 21);
-            this.comboxTipoDocumento.TabIndex = 2;
+            this.comboxTipoCompra.FormattingEnabled = true;
+            this.comboxTipoCompra.Location = new System.Drawing.Point(149, 52);
+            this.comboxTipoCompra.Name = "comboxTipoCompra";
+            this.comboxTipoCompra.Size = new System.Drawing.Size(207, 21);
+            this.comboxTipoCompra.TabIndex = 2;
             // 
             // label3
             // 
@@ -376,15 +376,15 @@
             // 
             this.dgv_Data.AllowUserToAddRows = false;
             this.dgv_Data.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Data.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Data.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_Data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Data.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IDProducto,
@@ -640,7 +640,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtFecha;
-        private System.Windows.Forms.ComboBox comboxTipoDocumento;
+        private System.Windows.Forms.ComboBox comboxTipoCompra;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNumeroIdentidadProveedor;

@@ -8,6 +8,11 @@ select * from PRODUCTO
 select * from CLIENTE
 select * from PROVEEDOR
 select * from NEGOCIO
+select * from COMPRA
+select * from DETALLE_COMPRA
+
+select * from COMPRA where IdCompra = '00001'
+select * from DETALLE_COMPRA where IdCompra = '1'
 
 DBCC CHECKIDENT ('CLIENTE', NORESEED);
 DBCC CHECKIDENT ('CLIENTE', RESEED, 4);

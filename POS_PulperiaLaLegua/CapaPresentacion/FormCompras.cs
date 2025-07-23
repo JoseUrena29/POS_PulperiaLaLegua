@@ -26,13 +26,13 @@ namespace CapaPresentacion
 
         private void FormCompras_Load(object sender, EventArgs e)
         {
-            comboxTipoDocumento.Items.Add(new OpcionCombo() { Valor = "Factura Electrónica", Texto = "Factura Electrónica" });
-            comboxTipoDocumento.Items.Add(new OpcionCombo() { Valor = "Nota de Crédito", Texto = "Nota de Crédito" });
-            comboxTipoDocumento.Items.Add(new OpcionCombo() { Valor = "Recibo", Texto = "Recibo" });
-            comboxTipoDocumento.Items.Add(new OpcionCombo() { Valor = "Otro", Texto = "Otro" });
-            comboxTipoDocumento.DisplayMember = "Texto";
-            comboxTipoDocumento.ValueMember = "Valor";
-            comboxTipoDocumento.SelectedIndex = 0;
+            comboxTipoCompra.Items.Add(new OpcionCombo() { Valor = "Factura Electrónica", Texto = "Factura Electrónica" });
+            comboxTipoCompra.Items.Add(new OpcionCombo() { Valor = "Nota de Crédito", Texto = "Nota de Crédito" });
+            comboxTipoCompra.Items.Add(new OpcionCombo() { Valor = "Recibo", Texto = "Recibo" });
+            comboxTipoCompra.Items.Add(new OpcionCombo() { Valor = "Otro", Texto = "Otro" });
+            comboxTipoCompra.DisplayMember = "Texto";
+            comboxTipoCompra.ValueMember = "Valor";
+            comboxTipoCompra.SelectedIndex = 0;
 
             txtFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
 
@@ -364,6 +364,98 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("Debe agregar al menos un producto a la compra.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
+            }
+
+            DataTable detalle_compra = new DataTable();
+
+            detalle_compra.Columns.Add("IdProducto", typeof(int));
+            detalle_compra.Columns.Add("PrecioCompra", typeof(decimal));
+            detalle_compra.Columns.Add("PrecioVenta", typeof(decimal));
+            detalle_compra.Columns.Add("Cantidad", typeof(decimal));
+            detalle_compra.Columns.Add("MontoTotal", typeof(decimal));
+
+            foreach (DataGridViewRow row in dgv_Data.Rows)
+            {
+                detalle_compra.Rows.Add(
+                    new object[]
+                    {
+                        Convert.ToInt32(row.Cells["IdProducto"].Value.ToString()),
+                        row.Cells["PrecioCompra"].Value.ToString(),
+                        row.Cells["PrecioVenta"].Value.ToString(),
+                        row.Cells["Cantidad"].Value.ToString(),
+                        row.Cells["MontoNeto"].Value.ToString()
+                    });
+            }
+
+            int IdConsecutivo = new CapaNegocio_Compra().ObtenerConsecutivo();
+            string numerocompra = string.Format("{0:00000}",IdConsecutivo);
+
+            // Limpieza previa del formato antes de convertir
+            string montoNetoTexto = txtMontoNeto.Text.Replace("₡", "").Trim();
+            string subtotalTexto = txtSubTotal.Text.Replace("₡", "").Trim();
+            string ivaTexto = txtIVA.Text.Replace("₡", "").Trim();
+            string totalTexto = txtTotal.Text.Replace("₡", "").Trim();
+
+            if (!decimal.TryParse(montoNetoTexto, out decimal montoNeto))
+            {
+                MessageBox.Show("El campo Monto Neto contiene un valor inválido.", "Error de formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (!decimal.TryParse(txtDescuento.Text, out decimal descuento))
+            {
+                MessageBox.Show("El campo Descuento contiene un valor inválido.", "Error de formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (!decimal.TryParse(subtotalTexto, out decimal subtotal))
+            {
+                MessageBox.Show("El campo Subtotal contiene un valor inválido.", "Error de formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (!decimal.TryParse(ivaTexto, out decimal iva))
+            {
+                MessageBox.Show("El campo IVA contiene un valor inválido.", "Error de formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (!decimal.TryParse(totalTexto, out decimal total))
+            {
+                MessageBox.Show("El campo Total contiene un valor inválido.", "Error de formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            Compra ocompra = new Compra()
+            {
+                oUsuario = new Usuario() { IdUsuario = _Usuario.IdUsuario },
+                oProveedor = new Proveedor() { IdProveedor = Convert.ToInt32(txtIdProveedor.Text) },
+                TipoCompra = ((OpcionCombo)comboxTipoCompra.SelectedItem).Texto,
+                NumeroCompra = numerocompra,
+                MontoNeto = montoNeto,
+                Descuento = descuento,
+                Subtotal = subtotal,
+                IVA = iva,
+                Total = total
+            };
+
+            string mensaje = string.Empty;
+            bool respuesta = new CapaNegocio_Compra().Registrar(ocompra,detalle_compra,out mensaje);
+
+            if(respuesta)
+            {
+                var result = MessageBox.Show($"¡Compra registrada con éxito!\n\nNúmero de compra: {numerocompra}\n\n¿Desea copiarlo al portapapeles?","Registro Exitoso",
+                MessageBoxButtons.YesNo,MessageBoxIcon.Information);
+
+
+                if (result == DialogResult.Yes)
+                    Clipboard.SetText(numerocompra);
+
+                txtIdProducto.Text = "0";
+                txtNumeroIdentidadProveedor.Text = "";
+                txtNombreComercial.Text = "";
+                dgv_Data.Rows.Clear();
+                CalcularTotal();
+            }
+            else
+            {
+                MessageBox.Show(mensaje,"Mensaje",MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
     }

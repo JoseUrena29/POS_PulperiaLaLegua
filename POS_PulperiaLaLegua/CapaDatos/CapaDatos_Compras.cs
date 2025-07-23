@@ -65,6 +65,8 @@ namespace CapaDatos
 
                     objconexion.Open();
 
+                    comm.ExecuteNonQuery();
+
                     Respuesta = Convert.ToBoolean(comm.Parameters["Resultado"].Value);
                     Mensaje = comm.Parameters["Mensaje"].Value.ToString();
                 }
