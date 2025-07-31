@@ -153,15 +153,20 @@ CREATE TABLE VENTA(
 IdVenta INT PRIMARY KEY IDENTITY,
 IdUsuario INT FOREIGN KEY REFERENCES USUARIO(IdUsuario),
 IdCliente INT NULL FOREIGN KEY REFERENCES CLIENTE(IdCliente),
-TipoVenta varchar(50), --Modificar por Tipo de Pago (Efectivo, Sinpe, Tarjeta)
-NumeroVenta varchar(50),
+TipoPago varchar(50),
+NumeroVenta varchar(50) UNIQUE,
+MontoNeto DECIMAL(10,2), 
+Descuento DECIMAL(10,2),     
+Subtotal DECIMAL(10,2),      
+IVA DECIMAL(10,2),           
+Total DECIMAL(10,2),
 MontoPago decimal(10,2),
 MontoCambio decimal(10,2),
-MontoTotal decimal(10,2),
 FechaRegistro datetime default getdate()
 )
 GO
---NOTAS DE CORRECCIONES POR PROFESOR: Modificar por Tipo de Pago (Efectivo, Sinpe, Tarjeta) / Agregar los campos (monto neto, descuento, iva, total)
+--NOTAS DE CORRECCIONES POR PROFESOR: Modificar por Tipo de Pago 
+--(Efectivo, Sinpe, Tarjeta) / Agregar los campos (monto neto, descuento, iva, total) LISTO!
 
 -- Detalle de cada venta
 CREATE TABLE DETALLE_VENTA(
