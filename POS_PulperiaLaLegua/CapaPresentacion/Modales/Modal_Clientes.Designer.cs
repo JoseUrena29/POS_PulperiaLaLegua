@@ -36,7 +36,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dgv_Data = new System.Windows.Forms.DataGridView();
-            this.btnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumeroIdentidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,6 +59,7 @@
             this.btnfiltro.TabIndex = 68;
             this.btnfiltro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnfiltro.UseVisualStyleBackColor = false;
+            this.btnfiltro.Click += new System.EventHandler(this.btnfiltro_Click);
             // 
             // btnlimpiar
             // 
@@ -78,6 +78,7 @@
             this.btnlimpiar.TabIndex = 67;
             this.btnlimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnlimpiar.UseVisualStyleBackColor = false;
+            this.btnlimpiar.Click += new System.EventHandler(this.btnlimpiar_Click);
             // 
             // txtBusqueda
             // 
@@ -131,7 +132,6 @@
             this.dgv_Data.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_Data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Data.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.btnSeleccionar,
             this.ID,
             this.NumeroIdentidad,
             this.NombreCompleto});
@@ -140,15 +140,9 @@
             this.dgv_Data.Name = "dgv_Data";
             this.dgv_Data.ReadOnly = true;
             this.dgv_Data.RowTemplate.Height = 28;
-            this.dgv_Data.Size = new System.Drawing.Size(591, 445);
+            this.dgv_Data.Size = new System.Drawing.Size(591, 359);
             this.dgv_Data.TabIndex = 62;
-            // 
-            // btnSeleccionar
-            // 
-            this.btnSeleccionar.HeaderText = "";
-            this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.ReadOnly = true;
-            this.btnSeleccionar.Width = 30;
+            this.dgv_Data.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Data_CellDoubleClick);
             // 
             // ID
             // 
@@ -175,7 +169,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(615, 561);
+            this.ClientSize = new System.Drawing.Size(615, 463);
             this.Controls.Add(this.btnfiltro);
             this.Controls.Add(this.btnlimpiar);
             this.Controls.Add(this.txtBusqueda);
@@ -184,7 +178,9 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dgv_Data);
             this.Name = "Modal_Clientes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modal_Clientes";
+            this.Load += new System.EventHandler(this.Modal_Clientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Data)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -200,7 +196,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dgv_Data;
-        private System.Windows.Forms.DataGridViewButtonColumn btnSeleccionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumeroIdentidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreCompleto;

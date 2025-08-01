@@ -11,7 +11,7 @@ select * from NEGOCIO
 select * from COMPRA
 select * from DETALLE_COMPRA
 select * from VENTA
-select * from DETALLLE_VENTA
+select * from DETALLE_VENTA
 
 select * from COMPRA where IdCompra = '00001'
 select * from DETALLE_COMPRA where IdCompra = '1'

@@ -91,3 +91,4 @@ C:\Users\Jose Ureña\source\Repositorio_POS_PulperiaLaLegua\POS_PulperiaLaLegua\
 C:\Users\Jose Ureña\source\Repositorio_POS_PulperiaLaLegua\POS_PulperiaLaLegua\POS_PulperiaLaLegua\CapaPresentacion\bin\Debug\itextsharp.xmlworker.dll
 C:\Users\Jose Ureña\source\Repositorio_POS_PulperiaLaLegua\POS_PulperiaLaLegua\POS_PulperiaLaLegua\CapaPresentacion\bin\Debug\BouncyCastle.Cryptography.xml
 C:\Users\Jose Ureña\source\Repositorio_POS_PulperiaLaLegua\POS_PulperiaLaLegua\POS_PulperiaLaLegua\CapaPresentacion\bin\Debug\itextsharp.xml
+C:\Users\Jose Ureña\source\Repositorio_POS_PulperiaLaLegua\POS_PulperiaLaLegua\POS_PulperiaLaLegua\CapaPresentacion\obj\Debug\CapaPresentacion.Modales.Modal_Clientes.resources
