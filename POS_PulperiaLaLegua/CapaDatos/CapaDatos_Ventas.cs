@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CapaEntidad;
 
 namespace CapaDatos
 {
@@ -93,6 +94,51 @@ namespace CapaDatos
             }
             return respuesta;
         }
+
+        //Método para registrar las ventas en la Base de Datos SQL
+        public bool Registrar(Venta obj, DataTable DetalleVenta, out string Mensaje)
+        {
+            bool Respuesta = false;
+            Mensaje = String.Empty;
+
+            using (SqlConnection objconexion = new SqlConnection(Conexion.cadena))
+            {
+                try
+                {
+                    SqlCommand comm = new SqlCommand("SP_RegistrarVenta", objconexion);
+                    comm.Parameters.AddWithValue("IdUsuario", obj.oUsuario.IdUsuario);
+                    comm.Parameters.AddWithValue("IdCliente", obj.oCliente.IdCliente);
+                    comm.Parameters.AddWithValue("TipoPago", obj.TipoPago);
+                    comm.Parameters.AddWithValue("NumeroVenta", obj.NumeroVenta);
+                    comm.Parameters.AddWithValue("MontoNeto", obj.MontoNeto);
+                    comm.Parameters.AddWithValue("Descuento", obj.Descuento);
+                    comm.Parameters.AddWithValue("Subtotal", obj.Subtotal);
+                    comm.Parameters.AddWithValue("IVA", obj.IVA);
+                    comm.Parameters.AddWithValue("Total", obj.Total);
+                    comm.Parameters.AddWithValue("MontoPago", obj.MontoPago);
+                    comm.Parameters.AddWithValue("MontoCambio", obj.MontoCambio);
+                    comm.Parameters.AddWithValue("DetalleVenta", DetalleVenta);
+                    comm.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    comm.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+
+                    comm.CommandType = CommandType.StoredProcedure;
+
+                    objconexion.Open();
+
+                    comm.ExecuteNonQuery();
+
+                    Respuesta = Convert.ToBoolean(comm.Parameters["Resultado"].Value);
+                    Mensaje = comm.Parameters["Mensaje"].Value.ToString();
+                }
+                catch (Exception ex)
+                {
+                    Respuesta = false;
+                    Mensaje = ex.Message;
+                }
+            }
+            return Respuesta;
+        }
+
 
 
 

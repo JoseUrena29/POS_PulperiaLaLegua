@@ -261,18 +261,18 @@
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(126, 48);
             this.btnRegistrar.TabIndex = 38;
-            this.btnRegistrar.Text = "Crear Venta";
+            this.btnRegistrar.Text = "Registrar Venta";
             this.btnRegistrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRegistrar.UseVisualStyleBackColor = true;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // txtTotal
             // 
-            this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotal.Location = new System.Drawing.Point(941, 397);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
-            this.txtTotal.Size = new System.Drawing.Size(126, 38);
+            this.txtTotal.Size = new System.Drawing.Size(126, 30);
             this.txtTotal.TabIndex = 37;
             // 
             // btnAgregar
@@ -572,10 +572,10 @@
             // 
             // txtPago
             // 
-            this.txtPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPago.Location = new System.Drawing.Point(941, 465);
             this.txtPago.Name = "txtPago";
-            this.txtPago.Size = new System.Drawing.Size(126, 38);
+            this.txtPago.Size = new System.Drawing.Size(126, 30);
             this.txtPago.TabIndex = 48;
             this.txtPago.TextChanged += new System.EventHandler(this.txtPago_TextChanged_1);
             this.txtPago.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPago_KeyPress);

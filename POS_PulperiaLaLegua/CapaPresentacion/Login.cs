@@ -51,13 +51,18 @@ namespace CapaPresentacion
             List<Usuario> TEST = new CapaNegocio_Usuario().Listar();
             Usuario ousuario = new CapaNegocio_Usuario().Listar().Where(u => u.NumeroIdentidad == txtUsuario.Text && u.Clave == txtClave.Text).FirstOrDefault();
 
-            if (ousuario != null) 
+            if (ousuario != null)
             {
-                Inicio form = new Inicio(ousuario);
+                if (ousuario.Estado != true) // false = inactivo
+                {
+                    MessageBox.Show("Su usuario está inactivo. Contacte al administrador.", "Acceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    return;
+                }
 
+                // Usuario activo, abrir formulario principal
+                Inicio form = new Inicio(ousuario);
                 form.Show();
                 this.Hide();
-
                 form.FormClosing += frm_closing;
             }
             else

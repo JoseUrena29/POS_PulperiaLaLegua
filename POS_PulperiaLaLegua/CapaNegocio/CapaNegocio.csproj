@@ -50,6 +50,7 @@
     <Compile Include="CapaNegocio_Proveedor.cs" />
     <Compile Include="CapaNegocio_Rol.cs" />
     <Compile Include="CapaNegocio_Usuario.cs" />
+    <Compile Include="CapaNegocio_Venta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

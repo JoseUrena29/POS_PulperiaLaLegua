@@ -2,6 +2,8 @@
 using CapaNegocio;
 using CapaPresentacion.Modales;
 using CapaPresentacion.Utilidades;
+using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
+using DocumentFormat.OpenXml.Vml;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -37,7 +39,6 @@ namespace CapaPresentacion
 
             txtIdCliente.Text = "0";
             txtIdProducto.Text = "0";
-            txtMontoNeto.Text =
             txtMontoNeto.Text = "";
             txtDescuento.Text = "";
             txtSubTotal.Text = "";
@@ -178,16 +179,26 @@ namespace CapaPresentacion
 
             if (!productoExiste)
             {
-                decimal subtotal = cantidadNueva * precio;
+                /*bool respuesta = new CapaNegocio_Venta().RestarStock(
+                    Convert.ToInt32(txtIdProducto.Text),
+                    Convert.ToInt32(txtCantidad.Value.ToString())
+                    );
 
-                dgv_Data.Rows.Add(new object[]
-                {
-            txtIdProducto.Text,
-            txtNombreProducto.Text,
-            precio.ToString("0.00"),
-            cantidadNueva,
-            subtotal.ToString("0.00"),
-                });
+                if (respuesta) 
+                {*/
+                    decimal subtotal = cantidadNueva * precio;
+
+                    dgv_Data.Rows.Add(new object[]
+                    {
+                    txtIdProducto.Text,
+                    txtNombreProducto.Text,
+                    precio.ToString("0.00"),
+                    cantidadNueva,
+                    subtotal.ToString("0.00"),
+                    });
+                /*}*/
+
+
 
                 MessageBox.Show("Producto agregado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -284,7 +295,7 @@ namespace CapaPresentacion
                 var x = e.CellBounds.Left + (e.CellBounds.Width - iconSize) / 2;
                 var y = e.CellBounds.Top + (e.CellBounds.Height - iconSize) / 2;
 
-                e.Graphics.DrawImage(Properties.Resources.delete32, new Rectangle(x, y, iconSize, iconSize));
+                e.Graphics.DrawImage(Properties.Resources.delete32, new System.Drawing.Rectangle(x, y, iconSize, iconSize));
                 e.Handled = true;
             }
         }
@@ -309,8 +320,14 @@ namespace CapaPresentacion
 
                     if (resultado == DialogResult.Yes)
                     {
-                        dgv_Data.Rows.RemoveAt(indice);
-                        CalcularTotal();
+                        /*bool respuesta = new CapaNegocio_Venta().SumarStock(
+                            Convert.ToInt32(dgv_Data.Rows[indice].Cells["IdProducto"].Value.ToString()),
+                            Convert.ToInt32(dgv_Data.Rows[indice].Cells["Cantidad"].Value.ToString()));
+                        if (respuesta) 
+                        {*/
+                            dgv_Data.Rows.RemoveAt(indice);
+                            CalcularTotal();
+                        /*}*/
                     }
                 }
             }
@@ -370,6 +387,92 @@ namespace CapaPresentacion
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
+            if (Convert.ToInt32(txtIdCliente.Text) == 0)
+            {
+                MessageBox.Show("Por favor, seleccione un cliente antes de continuar.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtNombreCliente.Text))
+            {
+                MessageBox.Show("Por favor, digite el nombre del cliente antes de continuar.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (dgv_Data.Rows.Count < 1)
+            {
+                MessageBox.Show("Debe agregar al menos un producto a la venta.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DataTable detalle_venta = new DataTable();
+
+            detalle_venta.Columns.Add("IdProducto", typeof(int));
+            detalle_venta.Columns.Add("PrecioVenta", typeof(decimal));
+            detalle_venta.Columns.Add("Cantidad", typeof(int));
+            detalle_venta.Columns.Add("SubTotal", typeof(decimal));
+
+            foreach (DataGridViewRow row in dgv_Data.Rows)
+            {
+                detalle_venta.Rows.Add(new object[]
+                    {
+                        Convert.ToInt32(row.Cells["IdProducto"].Value.ToString()),
+                        row.Cells["Precio"].Value.ToString(),
+                        Convert.ToInt32(row.Cells["Cantidad"].Value.ToString()),
+                        row.Cells["SubTotal"].Value.ToString()
+                    });
+            }
+
+            int IdConsecutivo = new CapaNegocio_Venta().ObtenerConsecutivo();
+            string numeroventa = string.Format("{0:00000}", IdConsecutivo);
+
+            CalcularTotal();
+
+
+            Venta oventa = new Venta()
+            {
+                oUsuario = new Usuario() { IdUsuario = _Usuario.IdUsuario },
+                oCliente = new Cliente() { IdCliente = Convert.ToInt32(txtIdCliente.Text) },
+                TipoPago = ((OpcionCombo)comboxTipoPago.SelectedItem).Texto,
+                NumeroVenta = numeroventa,
+                MontoNeto = Convert.ToDecimal(txtMontoNeto.Text.Replace("₡", "").Trim()),
+                Descuento = Convert.ToDecimal(txtDescuento.Text.Replace("₡", "").Trim()),
+                Subtotal = Convert.ToDecimal(txtSubTotal.Text.Replace("₡", "").Trim()),
+                IVA = Convert.ToDecimal(txtIVA.Text.Replace("₡", "").Trim()),
+                Total = Convert.ToDecimal(txtTotal.Text.Replace("₡", "").Trim()),
+                MontoPago = Convert.ToDecimal(txtPago.Text.Replace("₡", "").Trim()),
+                MontoCambio = Convert.ToDecimal(txtCambio.Text.Replace("₡", "").Trim())
+            };
+
+            string mensaje = string.Empty;
+            bool respuesta = new CapaNegocio_Venta().Registrar(oventa, detalle_venta, out mensaje);
+
+            if (respuesta)
+            {
+                var result = MessageBox.Show($"¡Venta registrada con éxito!\n\nNúmero de venta: {numeroventa}\n\n¿Desea copiarlo al portapapeles?", "Registro Exitoso",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+
+                if (result == DialogResult.Yes)
+                    Clipboard.SetText(numeroventa);
+
+                txtIdProducto.Text = "0";
+                txtNumeroIdentidad.Text = "";
+                txtNombreCliente.Text = "";
+                txtDescuento.Text = "";
+                txtMontoNeto.Text = "";
+                txtSubTotal.Text = "";
+                txtIVA.Text = "";
+                txtTotal.Text = "";
+                txtCambio.Text = "";
+                txtPago.Text = "";
+                dgv_Data.Rows.Clear();
+                CalcularTotal();
+            }
+            else
+            {
+                MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
 
         }
     }   
