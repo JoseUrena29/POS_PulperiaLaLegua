@@ -70,6 +70,23 @@ from DETALLE_COMPRA dc
 inner join PRODUCTO p on p.IdProducto = dc.IdProducto
 where dc.IdCompra = 1
 
+/*CONSULTAR VENTAS*/
+select v.IdVenta,u.NombreCompleto,
+c.NumeroIdentidad,c.NombreCompleto,
+v.TipoPago,v.NumeroVenta,
+v.MontoNeto,v.Descuento,v.IVA,v.Subtotal,v.Total,v.MontoPago,v.MontoCambio,
+convert(char(10),v.FechaRegistro,103)[FechaRegistro]
+from VENTA v
+inner join USUARIO u on u.IdUsuario = v.IdUsuario
+inner join CLIENTE c on c.IdCliente = v.IdCliente
+where v.NumeroVenta = '00001'
+
+select p.Nombre,dv.PrecioVenta,dv.Cantidad,dv.SubTotal
+from DETALLE_VENTA dv
+inner join PRODUCTO p on p.IdProducto = dv.IdProducto
+where dv.IdVenta = 1
+
+
 insert into ROL(Descripcion)
 values ('ADMINISTRADOR')
 
