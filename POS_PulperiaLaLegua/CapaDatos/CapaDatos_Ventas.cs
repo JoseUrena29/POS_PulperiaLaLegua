@@ -150,8 +150,8 @@ namespace CapaDatos
                 {
                     StringBuilder query = new StringBuilder();
 
-                    query.AppendLine("select v.IdVenta,u.NombreCompleto,");
-                    query.AppendLine("c.NumeroIdentidad,c.NombreCompleto,");
+                    query.AppendLine("select v.IdVenta,u.NombreCompleto as NombreUsuario,");
+                    query.AppendLine("c.NumeroIdentidad,c.NombreCompleto as NombreCliente,");
                     query.AppendLine("v.TipoPago,v.NumeroVenta,");
                     query.AppendLine("v.MontoNeto,v.Descuento,v.IVA,v.Subtotal,v.Total,v.MontoPago,v.MontoCambio,");
                     query.AppendLine("convert(char(10), v.FechaRegistro, 103)[FechaRegistro]");
@@ -173,8 +173,8 @@ namespace CapaDatos
                             obj = new Venta()
                             {
                                 IdVenta = Convert.ToInt32(dr["IdVenta"]),
-                                oUsuario = new Usuario() { NombreCompleto = dr["NombreCompleto"].ToString() },
-                                oCliente = new Cliente() { NumeroIdentidad = dr["NumeroIdentidad"].ToString(), NombreCompleto = dr["NombreCompleto"].ToString() },
+                                oUsuario = new Usuario() { NombreCompleto = dr["NombreUsuario"].ToString() },
+                                oCliente = new Cliente() { NumeroIdentidad = dr["NumeroIdentidad"].ToString(), NombreCompleto = dr["NombreCliente"].ToString() },
                                 TipoPago = dr["TipoPago"].ToString(),
                                 NumeroVenta = dr["NumeroVenta"].ToString(),
                                 MontoNeto = Convert.ToDecimal(dr["MontoNeto"].ToString()),
@@ -200,6 +200,7 @@ namespace CapaDatos
         public List<DetalleVenta> ObtenerDetalleVenta(int IdVenta)
         {
             List<DetalleVenta> oLista = new List<DetalleVenta>();
+
             try
             {
                 using (SqlConnection objconexion = new SqlConnection(Conexion.cadena))
@@ -223,7 +224,7 @@ namespace CapaDatos
                             oLista.Add(new DetalleVenta()
                             {
                                 oProducto = new Producto() { Nombre = dr["Nombre"].ToString() },
-                                PrecioVenta = Convert.ToDecimal(dr["Precio"].ToString()),
+                                PrecioVenta = Convert.ToDecimal(dr["PrecioVenta"].ToString()),
                                 Cantidad = Convert.ToInt32(dr["Cantidad"].ToString()),
                                 SubTotal = Convert.ToDecimal(dr["SubTotal"].ToString()),
                             });

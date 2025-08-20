@@ -1,4 +1,6 @@
-﻿using FontAwesome.Sharp;
+﻿using CapaEntidad;
+using CapaNegocio;
+using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,7 +47,7 @@ namespace CapaPresentacion
             txtTipoPago.Text = "";
             txtUsuario.Text = "";
             txtNumeroIdentidad.Text = "";
-            txtNombreCompleto.Text = "";
+            txtNombreCompletoCliente.Text = "";
 
             dgv_Data.Rows.Clear();
 
@@ -59,7 +61,40 @@ namespace CapaPresentacion
 
         private void btnbuscar_Click(object sender, EventArgs e)
         {
+            Venta oVenta = new CapaNegocio_Venta().ObtenerVenta(txtBusqueda.Text);
 
+            if (oVenta != null && oVenta.IdVenta != 0)
+            {
+                txtNumeroVenta.Text = oVenta.NumeroVenta;
+                txtFecha.Text = oVenta.FechaRegistro;
+                txtTipoPago.Text = oVenta.TipoPago;
+                txtUsuario.Text = oVenta.oUsuario?.NombreCompleto ?? "";
+                txtNumeroIdentidad.Text = oVenta.oCliente?.NumeroIdentidad ?? "";
+                txtNombreCompletoCliente.Text = oVenta.oCliente?.NombreCompleto ?? "";
+
+                dgv_Data.Rows.Clear();
+                foreach (DetalleVenta dv in oVenta.oDetalleVenta)
+                {
+                    dgv_Data.Rows.Add(new object[]
+                    {
+                        dv.oProducto.Nombre,
+                        dv.PrecioVenta.ToString("C", new CultureInfo("es-CR")),
+                        dv.Cantidad,
+                        dv.SubTotal.ToString("C", new CultureInfo("es-CR"))
+                    });
+                }
+
+                var culture = new System.Globalization.CultureInfo("es-CR");
+                txtMontoNeto.Text = $"₡ {oVenta.MontoNeto.ToString("N2", culture)}";
+                txtIVA.Text = $"₡ {oVenta.IVA.ToString("N2", culture)}";
+                txtTotal.Text = $"₡ {oVenta.Total.ToString("N2", culture)}";
+                txtMontoPago.Text = $"₡ {oVenta.MontoPago.ToString("N2", culture)}";
+                txtMontoCambio.Text = $"₡ {oVenta.MontoCambio.ToString("N2", culture)}";
+            }
+            else
+            {
+                MessageBox.Show("No se encontró la venta.", "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

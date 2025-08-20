@@ -141,14 +141,19 @@ namespace CapaPresentacion
             AbrirFormulario(menuajustes, new FormAjustes());
         }
 
-        private void SubMenuConsultarAjuste_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(menuajustes, new FormDetalleAjustes());
-        }
-
         private void menuventas_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void SubMenuReporteVentas_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menureportes, new FormReporteVentas());
+        }
+
+        private void SubMenuReporteCompras_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menureportes, new FormReporteCompras());
         }
     }
 }

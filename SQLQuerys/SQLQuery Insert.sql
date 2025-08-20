@@ -71,8 +71,8 @@ inner join PRODUCTO p on p.IdProducto = dc.IdProducto
 where dc.IdCompra = 1
 
 /*CONSULTAR VENTAS*/
-select v.IdVenta,u.NombreCompleto,
-c.NumeroIdentidad,c.NombreCompleto,
+select v.IdVenta,u.NombreCompleto as NombreUsuario,
+c.NumeroIdentidad,c.NombreCompleto as NombreCliente,
 v.TipoPago,v.NumeroVenta,
 v.MontoNeto,v.Descuento,v.IVA,v.Subtotal,v.Total,v.MontoPago,v.MontoCambio,
 convert(char(10),v.FechaRegistro,103)[FechaRegistro]
@@ -104,9 +104,9 @@ values
 /*Rol Administrador*/
 insert into PERMISO(IdRol,NombreMenu)
 values 
-(1,'menuusuarios'),(1,'menumantenimiento'),(1,'menuventas'),(1,'menucompras'),(1,'menuajustes'),(1,'menureportes'),(1,'menuacercade'),(1,'menupendiente'),
+(1,'menuusuarios'),(1,'menumantenimiento'),(1,'menuventas'),(1,'menucompras'),(1,'menuajustes'),(1,'menureportes'),(1,'menuacercade'),
 (1,'SubMenuCategoría'),(1,'SubMenuProductos'),(1,'SubMenuClientes'),(1,'SubMenuProveedores'),(1,'SubMenuNegocio'),(1,'SubMenuRegistrarVenta'),(1,'SubMenuConsultarVenta'),
-(1,'SubMenuRegistrarCompras'),(1,'SubMenuConsultarCompras'),(1,'SubMenuRegistrarAjuste'),(1,'SubMenuConsultarAjuste')
+(1,'SubMenuRegistrarCompras'),(1,'SubMenuConsultarCompras'),(1,'SubMenuRegistrarAjuste'),(1,'SubMenuConsultarAjuste'),(1,'SubMenuReporteVentas'),(1,'SubMenuReporteCompras')
 
 /*Rol Empleado*/
 insert into PERMISO(IdRol,NombreMenu)
