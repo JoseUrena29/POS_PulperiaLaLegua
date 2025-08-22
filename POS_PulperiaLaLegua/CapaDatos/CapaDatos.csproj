@@ -49,6 +49,7 @@
     <Compile Include="CapaDatos_Permiso.cs" />
     <Compile Include="CapaDatos_Producto.cs" />
     <Compile Include="CapaDatos_Proveedor.cs" />
+    <Compile Include="CapaDatos_Reporte.cs" />
     <Compile Include="CapaDatos_Rol.cs" />
     <Compile Include="CapaDatos_Usuario.cs" />
     <Compile Include="CapaDatos_Ventas.cs" />

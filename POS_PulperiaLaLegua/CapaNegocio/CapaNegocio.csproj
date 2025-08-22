@@ -48,6 +48,7 @@
     <Compile Include="CapaNegocio_Permiso.cs" />
     <Compile Include="CapaNegocio_Producto.cs" />
     <Compile Include="CapaNegocio_Proveedor.cs" />
+    <Compile Include="CapaNegocio_Reporte.cs" />
     <Compile Include="CapaNegocio_Rol.cs" />
     <Compile Include="CapaNegocio_Usuario.cs" />
     <Compile Include="CapaNegocio_Venta.cs" />
