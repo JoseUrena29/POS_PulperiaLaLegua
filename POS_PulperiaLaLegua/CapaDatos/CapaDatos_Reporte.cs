@@ -38,11 +38,6 @@ namespace CapaDatos
                                 FechaRegistro = dr["FechaRegistro"].ToString(),
                                 TipoCompra = dr["TipoCompra"].ToString(),
                                 NumeroCompra = dr["NumeroCompra"].ToString(),
-                                MontoNeto = dr["MontoNeto"].ToString(),
-                                Descuento = dr["Descuento"].ToString(),
-                                SubTotal = dr["SubTotal"].ToString(),
-                                IVA = dr["IVA"].ToString(),
-                                Total = dr["Total"].ToString(),
                                 UsuarioRegistro = dr["UsuarioRegistro"].ToString(),
                                 NumeroIdentidadProveedor = dr["NumeroIdentidadProveedor"].ToString(),
                                 NombreProveedor = dr["NombreProveedor"].ToString(),
@@ -54,6 +49,11 @@ namespace CapaDatos
                                 PrecioVenta = dr["PrecioVenta"].ToString(),
                                 Cantidad = dr["Cantidad"].ToString(),
                                 SubTotalProductos = dr["SubTotalProductos"].ToString(),
+                                MontoNeto = dr["MontoNeto"].ToString(),
+                                Descuento = dr["Descuento"].ToString(),
+                                SubTotal = dr["SubTotal"].ToString(),
+                                IVA = dr["IVA"].ToString(),
+                                Total = dr["Total"].ToString(),
                             });
                         }
                     }
@@ -93,11 +93,6 @@ namespace CapaDatos
                                 FechaRegistro = dr["FechaRegistro"].ToString(),
                                 TipoPago = dr["TipoPago"].ToString(),
                                 NumeroVenta = dr["NumeroVenta"].ToString(),
-                                MontoNeto = dr["MontoNeto"].ToString(),
-                                Descuento = dr["Descuento"].ToString(),
-                                SubTotal = dr["SubTotal"].ToString(),
-                                IVA = dr["IVA"].ToString(),
-                                Total = dr["Total"].ToString(),
                                 UsuarioRegistro = dr["UsuarioRegistro"].ToString(),
                                 NumeroIdentidadCliente = dr["NumeroIdentidadCliente"].ToString(),
                                 NombreCliente = dr["NombreCliente"].ToString(),
@@ -108,6 +103,11 @@ namespace CapaDatos
                                 PrecioVenta = dr["PrecioVenta"].ToString(),
                                 Cantidad = dr["Cantidad"].ToString(),
                                 SubTotalProductos = dr["SubTotalProductos"].ToString(),
+                                MontoNeto = dr["MontoNeto"].ToString(),
+                                Descuento = dr["Descuento"].ToString(),
+                                SubTotal = dr["SubTotal"].ToString(),
+                                IVA = dr["IVA"].ToString(),
+                                Total = dr["Total"].ToString(),
                             });
                         }
                     }

@@ -93,3 +93,4 @@ C:\Users\Jose Ureña\source\Repositorio_POS_PulperiaLaLegua\POS_PulperiaLaLegua\
 C:\Users\Jose Ureña\source\Repositorio_POS_PulperiaLaLegua\POS_PulperiaLaLegua\POS_PulperiaLaLegua\CapaPresentacion\bin\Debug\itextsharp.xml
 C:\Users\Jose Ureña\source\Repositorio_POS_PulperiaLaLegua\POS_PulperiaLaLegua\POS_PulperiaLaLegua\CapaPresentacion\obj\Debug\CapaPresentacion.Modales.Modal_Clientes.resources
 C:\Users\Jose Ureña\source\Repositorio_POS_PulperiaLaLegua\POS_PulperiaLaLegua\POS_PulperiaLaLegua\CapaPresentacion\obj\Debug\CapaPresentacion.FormReporteCompras.resources
+C:\Users\Jose Ureña\source\Repositorio_POS_PulperiaLaLegua\POS_PulperiaLaLegua\POS_PulperiaLaLegua\CapaPresentacion\obj\Debug\CapaPresentacion.FormReporteVentas.resources

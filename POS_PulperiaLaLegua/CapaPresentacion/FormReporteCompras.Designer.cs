@@ -49,11 +49,6 @@
             this.FechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipoCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumeroCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MontoNeto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IVA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UsuarioRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumeroIdentidadProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,6 +60,11 @@
             this.PrecioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SubTotalProductos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MontoNeto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IVA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Data)).BeginInit();
             this.SuspendLayout();
             // 
@@ -186,11 +186,6 @@
             this.FechaRegistro,
             this.TipoCompra,
             this.NumeroCompra,
-            this.MontoNeto,
-            this.Descuento,
-            this.SubTotal,
-            this.IVA,
-            this.Total,
             this.UsuarioRegistro,
             this.NumeroIdentidadProveedor,
             this.NombreProveedor,
@@ -201,7 +196,12 @@
             this.PrecioCompra,
             this.PrecioVenta,
             this.Cantidad,
-            this.SubTotalProductos});
+            this.SubTotalProductos,
+            this.MontoNeto,
+            this.Descuento,
+            this.SubTotal,
+            this.IVA,
+            this.Total});
             this.dgv_Data.Location = new System.Drawing.Point(30, 188);
             this.dgv_Data.MultiSelect = false;
             this.dgv_Data.Name = "dgv_Data";
@@ -292,6 +292,7 @@
             this.btnexportar.Text = "Descargar Excel";
             this.btnexportar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnexportar.UseVisualStyleBackColor = false;
+            this.btnexportar.Click += new System.EventHandler(this.btnexportar_Click);
             // 
             // comboxProveedor
             // 
@@ -319,36 +320,6 @@
             this.NumeroCompra.HeaderText = "NumeroCompra";
             this.NumeroCompra.Name = "NumeroCompra";
             this.NumeroCompra.ReadOnly = true;
-            // 
-            // MontoNeto
-            // 
-            this.MontoNeto.HeaderText = "Monto Neto";
-            this.MontoNeto.Name = "MontoNeto";
-            this.MontoNeto.ReadOnly = true;
-            // 
-            // Descuento
-            // 
-            this.Descuento.HeaderText = "Descuento";
-            this.Descuento.Name = "Descuento";
-            this.Descuento.ReadOnly = true;
-            // 
-            // SubTotal
-            // 
-            this.SubTotal.HeaderText = "Sub Total";
-            this.SubTotal.Name = "SubTotal";
-            this.SubTotal.ReadOnly = true;
-            // 
-            // IVA
-            // 
-            this.IVA.HeaderText = "I.V.A";
-            this.IVA.Name = "IVA";
-            this.IVA.ReadOnly = true;
-            // 
-            // Total
-            // 
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            this.Total.ReadOnly = true;
             // 
             // UsuarioRegistro
             // 
@@ -417,6 +388,36 @@
             this.SubTotalProductos.Name = "SubTotalProductos";
             this.SubTotalProductos.ReadOnly = true;
             // 
+            // MontoNeto
+            // 
+            this.MontoNeto.HeaderText = "Monto Neto";
+            this.MontoNeto.Name = "MontoNeto";
+            this.MontoNeto.ReadOnly = true;
+            // 
+            // Descuento
+            // 
+            this.Descuento.HeaderText = "Descuento";
+            this.Descuento.Name = "Descuento";
+            this.Descuento.ReadOnly = true;
+            // 
+            // SubTotal
+            // 
+            this.SubTotal.HeaderText = "Sub Total";
+            this.SubTotal.Name = "SubTotal";
+            this.SubTotal.ReadOnly = true;
+            // 
+            // IVA
+            // 
+            this.IVA.HeaderText = "I.V.A";
+            this.IVA.Name = "IVA";
+            this.IVA.ReadOnly = true;
+            // 
+            // Total
+            // 
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
+            // 
             // FormReporteCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -470,11 +471,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaRegistro;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoCompra;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumeroCompra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MontoNeto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descuento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IVA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
         private System.Windows.Forms.DataGridViewTextBoxColumn UsuarioRegistro;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumeroIdentidadProveedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreProveedor;
@@ -486,5 +482,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn SubTotalProductos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MontoNeto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descuento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IVA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
     }
 }
