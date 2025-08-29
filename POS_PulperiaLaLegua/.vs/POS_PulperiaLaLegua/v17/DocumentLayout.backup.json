@@ -3,16 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\Jose Ure\u00F1a\\source\\Repositorio_POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E8F81A33-38A7-4CA4-AD28-1790AA3C49BB}|CapaPresentacion\\CapaPresentacion.csproj|c:\\users\\jose ure\u00F1a\\source\\repositorio_pos_pulperialalegua\\pos_pulperialalegua\\pos_pulperialalegua\\capapresentacion\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E8F81A33-38A7-4CA4-AD28-1790AA3C49BB}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{E8F81A33-38A7-4CA4-AD28-1790AA3C49BB}|CapaPresentacion\\CapaPresentacion.csproj|c:\\users\\jose ure\u00F1a\\source\\repositorio_pos_pulperialalegua\\pos_pulperialalegua\\pos_pulperialalegua\\capapresentacion\\inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8F81A33-38A7-4CA4-AD28-1790AA3C49BB}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E8F81A33-38A7-4CA4-AD28-1790AA3C49BB}|CapaPresentacion\\CapaPresentacion.csproj|c:\\users\\jose ure\u00F1a\\source\\repositorio_pos_pulperialalegua\\pos_pulperialalegua\\pos_pulperialalegua\\capapresentacion\\formnegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E8F81A33-38A7-4CA4-AD28-1790AA3C49BB}|CapaPresentacion\\CapaPresentacion.csproj|c:\\users\\jose ure\u00F1a\\source\\repositorio_pos_pulperialalegua\\pos_pulperialalegua\\pos_pulperialalegua\\capapresentacion\\inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E8F81A33-38A7-4CA4-AD28-1790AA3C49BB}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8F81A33-38A7-4CA4-AD28-1790AA3C49BB}|CapaPresentacion\\CapaPresentacion.csproj|c:\\users\\jose ure\u00F1a\\source\\repositorio_pos_pulperialalegua\\pos_pulperialalegua\\pos_pulperialalegua\\capapresentacion\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8F81A33-38A7-4CA4-AD28-1790AA3C49BB}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8F81A33-38A7-4CA4-AD28-1790AA3C49BB}|CapaPresentacion\\CapaPresentacion.csproj|C:\\Users\\Jose Ure\u00F1a\\source\\Repositorio_POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\capapresentacion\\formnegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8F81A33-38A7-4CA4-AD28-1790AA3C49BB}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\formnegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8F81A33-38A7-4CA4-AD28-1790AA3C49BB}|CapaPresentacion\\CapaPresentacion.csproj|C:\\Users\\Jose Ure\u00F1a\\source\\Repositorio_POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\capapresentacion\\formnegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E8F81A33-38A7-4CA4-AD28-1790AA3C49BB}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\formnegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E8F81A33-38A7-4CA4-AD28-1790AA3C49BB}|CapaPresentacion\\CapaPresentacion.csproj|c:\\users\\jose ure\u00F1a\\source\\repositorio_pos_pulperialalegua\\pos_pulperialalegua\\pos_pulperialalegua\\capapresentacion\\formnegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E8F81A33-38A7-4CA4-AD28-1790AA3C49BB}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\formnegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E8F81A33-38A7-4CA4-AD28-1790AA3C49BB}|CapaPresentacion\\CapaPresentacion.csproj|c:\\users\\jose ure\u00F1a\\source\\repositorio_pos_pulperialalegua\\pos_pulperialalegua\\pos_pulperialalegua\\capapresentacion\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E8F81A33-38A7-4CA4-AD28-1790AA3C49BB}|CapaPresentacion\\CapaPresentacion.csproj|solutionrelative:capapresentacion\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,7 +42,45 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Inicio.cs",
+              "DocumentMoniker": "C:\\Users\\Jose Ure\u00F1a\\source\\Repositorio_POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\CapaPresentacion\\Inicio.cs",
+              "RelativeDocumentMoniker": "CapaPresentacion\\Inicio.cs",
+              "ToolTip": "C:\\Users\\Jose Ure\u00F1a\\source\\Repositorio_POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\CapaPresentacion\\Inicio.cs",
+              "RelativeToolTip": "CapaPresentacion\\Inicio.cs",
+              "ViewState": "AgIAAJgAAAAAAAAAAAAowKgAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-29T03:55:55.305Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Inicio.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Jose Ure\u00F1a\\source\\Repositorio_POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\CapaPresentacion\\Inicio.cs",
+              "RelativeDocumentMoniker": "CapaPresentacion\\Inicio.cs",
+              "ToolTip": "C:\\Users\\Jose Ure\u00F1a\\source\\Repositorio_POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\CapaPresentacion\\Inicio.cs [Dise\u00F1o]",
+              "RelativeToolTip": "CapaPresentacion\\Inicio.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-29T03:55:54.294Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Login.cs",
+              "DocumentMoniker": "C:\\Users\\Jose Ure\u00F1a\\source\\Repositorio_POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\CapaPresentacion\\Login.cs",
+              "RelativeDocumentMoniker": "CapaPresentacion\\Login.cs",
+              "ToolTip": "C:\\Users\\Jose Ure\u00F1a\\source\\Repositorio_POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\CapaPresentacion\\Login.cs",
+              "RelativeToolTip": "CapaPresentacion\\Login.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAA5wBkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-29T03:55:23.04Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "FormNegocio.cs",
               "DocumentMoniker": "C:\\Users\\Jose Ure\u00F1a\\source\\Repositorio_POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\CapaPresentacion\\FormNegocio.cs",
               "RelativeDocumentMoniker": "CapaPresentacion\\FormNegocio.cs",
@@ -43,7 +93,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "FormNegocio.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\Jose Ure\u00F1a\\source\\Repositorio_POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\CapaPresentacion\\FormNegocio.cs",
               "RelativeDocumentMoniker": "CapaPresentacion\\FormNegocio.cs",
@@ -55,7 +105,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "Login.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\Jose Ure\u00F1a\\source\\Repositorio_POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\POS_PulperiaLaLegua\\CapaPresentacion\\Login.cs",
               "RelativeDocumentMoniker": "CapaPresentacion\\Login.cs",

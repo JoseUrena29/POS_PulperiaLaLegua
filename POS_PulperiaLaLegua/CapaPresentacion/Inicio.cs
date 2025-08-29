@@ -165,10 +165,10 @@ namespace CapaPresentacion
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Desea salir?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) 
+            if (MessageBox.Show("¿Está seguro de que desea salir del programa?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) 
             {
                 this.Close();             
-            } 
+            }
         }
     }
 }
