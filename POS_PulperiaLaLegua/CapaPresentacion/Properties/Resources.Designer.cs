@@ -63,6 +63,16 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Blanco_PNG {
+            get {
+                object obj = ResourceManager.GetObject("Blanco PNG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap check20 {
             get {
                 object obj = ResourceManager.GetObject("check20", resourceCulture);
@@ -76,6 +86,16 @@ namespace CapaPresentacion.Properties {
         internal static System.Drawing.Bitmap delete32 {
             get {
                 object obj = ResourceManager.GetObject("delete32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Original_PNG {
+            get {
+                object obj = ResourceManager.GetObject("Original PNG", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

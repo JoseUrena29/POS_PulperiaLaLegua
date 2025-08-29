@@ -195,6 +195,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modales\Modal_Ayuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modales\Modal_Ayuda.Designer.cs">
+      <DependentUpon>Modal_Ayuda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modales\Modal_Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -267,6 +273,9 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modales\Modal_Ayuda.resx">
+      <DependentUpon>Modal_Ayuda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modales\Modal_Clientes.resx">
       <DependentUpon>Modal_Clientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -315,6 +324,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\check20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Original PNG.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Blanco PNG.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
