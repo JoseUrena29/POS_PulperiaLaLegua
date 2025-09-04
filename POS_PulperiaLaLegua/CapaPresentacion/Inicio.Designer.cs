@@ -74,7 +74,7 @@
             this.menuacercade});
             this.menu.Location = new System.Drawing.Point(0, 65);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(1105, 73);
+            this.menu.Size = new System.Drawing.Size(1151, 73);
             this.menu.TabIndex = 0;
             this.menu.Text = "menuStrip1";
             // 
@@ -320,7 +320,7 @@
             this.menutitulo.Location = new System.Drawing.Point(0, 0);
             this.menutitulo.Name = "menutitulo";
             this.menutitulo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menutitulo.Size = new System.Drawing.Size(1105, 65);
+            this.menutitulo.Size = new System.Drawing.Size(1151, 65);
             this.menutitulo.TabIndex = 1;
             this.menutitulo.Text = "menuStrip2";
             // 
@@ -341,7 +341,7 @@
             this.contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contenedor.Location = new System.Drawing.Point(0, 138);
             this.contenedor.Name = "contenedor";
-            this.contenedor.Size = new System.Drawing.Size(1105, 480);
+            this.contenedor.Size = new System.Drawing.Size(1151, 480);
             this.contenedor.TabIndex = 3;
             this.contenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.contenedor_Paint);
             // 
@@ -351,7 +351,7 @@
             this.label2.BackColor = System.Drawing.Color.SteelBlue;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(868, 23);
+            this.label2.Location = new System.Drawing.Point(925, 23);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 16);
             this.label2.TabIndex = 4;
@@ -364,7 +364,7 @@
             this.lblusuario.BackColor = System.Drawing.Color.SteelBlue;
             this.lblusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblusuario.ForeColor = System.Drawing.Color.White;
-            this.lblusuario.Location = new System.Drawing.Point(923, 23);
+            this.lblusuario.Location = new System.Drawing.Point(982, 23);
             this.lblusuario.Name = "lblusuario";
             this.lblusuario.Size = new System.Drawing.Size(65, 16);
             this.lblusuario.TabIndex = 5;
@@ -394,7 +394,7 @@
             this.btnSalir.IconChar = FontAwesome.Sharp.IconChar.SignInAlt;
             this.btnSalir.IconColor = System.Drawing.Color.White;
             this.btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSalir.Location = new System.Drawing.Point(1038, 5);
+            this.btnSalir.Location = new System.Drawing.Point(1084, 5);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.btnSalir.Size = new System.Drawing.Size(55, 53);
@@ -406,7 +406,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1105, 618);
+            this.ClientSize = new System.Drawing.Size(1151, 618);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lblFechaHora);
             this.Controls.Add(this.lblusuario);

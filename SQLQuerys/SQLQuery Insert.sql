@@ -59,7 +59,7 @@ select * from DETALLE_COMPRA where IdCompra = '1'
 select c.IdCompra,
 u.NombreCompleto,
 pr.NumeroIdentidad,pr.NombreComercial,
-c.TipoCompra,c.NumeroCompra,c.MontoNeto,c.Descuento,c.Subtotal,c.IVA,c.Total,convert(char(10),c.FechaRegistro,103)[FechaRegistro]
+c.TipoCompra,c.NumeroCompra,c.MontoNeto,c.Descuento,c.Subtotal,c.IVA,c.Total,convert(char(10),c.FechaRegistro,103)[FechaRegistro],convert(char(8), c.FechaRegistro, 108) as Hora 
 from COMPRA c
 inner join USUARIO u on u.IdUsuario = c.IdUsuario
 inner join PROVEEDOR pr on pr.IdProveedor = c.IdProveedor
@@ -75,7 +75,7 @@ select v.IdVenta,u.NombreCompleto as NombreUsuario,
 c.NumeroIdentidad,c.NombreCompleto as NombreCliente,
 v.TipoPago,v.NumeroVenta,
 v.MontoNeto,v.Descuento,v.IVA,v.Subtotal,v.Total,v.MontoPago,v.MontoCambio,
-convert(char(10),v.FechaRegistro,103)[FechaRegistro]
+convert(char(10),v.FechaRegistro,103)[FechaRegistro],convert(char(8), v.FechaRegistro, 108) as Hora 
 from VENTA v
 inner join USUARIO u on u.IdUsuario = v.IdUsuario
 inner join CLIENTE c on c.IdCliente = v.IdCliente

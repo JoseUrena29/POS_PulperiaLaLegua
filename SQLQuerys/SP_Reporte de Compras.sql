@@ -3,7 +3,7 @@ use DB_POSPulperiaLaLegua
 ----- PROCEDIMIENTO PARA REPORTES DE COMPRAS -----
 
 select 
-CONVERT(char(10),c.FechaRegistro,103)[FechaRegistro],c.TipoCompra[TipoCompra],c.NumeroCompra[NumeroCompra],c.MontoNeto,c.Descuento,c.Subtotal[SubTotal],c.IVA,c.Total,
+CONVERT(char(10),c.FechaRegistro,103)[FechaRegistro],convert(char(8), c.FechaRegistro, 108)[Hora],c.TipoCompra[TipoCompra],c.NumeroCompra[NumeroCompra],c.MontoNeto,c.Descuento,c.Subtotal[SubTotal],c.IVA,c.Total,
 u.NombreCompleto[UsuarioRegistro],
 pr.NumeroIdentidad[NumeroIdentidadProveedor],pr.NombreComercial[NombreProveedor],
 p.Codigo[CodigoProducto],p.Nombre[NombreProducto],p.Descripcion[DescripcionProducto],
@@ -29,7 +29,7 @@ begin
 
 SET DATEFORMAT dmy;
 select 
-CONVERT(char(10),c.FechaRegistro,103)[FechaRegistro],c.TipoCompra[TipoCompra],c.NumeroCompra[NumeroCompra],c.MontoNeto,c.Descuento,c.Subtotal[SubTotal],c.IVA,c.Total,
+CONVERT(char(10),c.FechaRegistro,103)[FechaRegistro],convert(char(8), c.FechaRegistro, 108)[Hora],c.TipoCompra[TipoCompra],c.NumeroCompra[NumeroCompra],c.MontoNeto,c.Descuento,c.Subtotal[SubTotal],c.IVA,c.Total,
 u.NombreCompleto[UsuarioRegistro],
 pr.NumeroIdentidad[NumeroIdentidadProveedor],pr.NombreComercial[NombreProveedor],
 p.Codigo[CodigoProducto],p.Nombre[NombreProducto],p.Descripcion[DescripcionProducto],

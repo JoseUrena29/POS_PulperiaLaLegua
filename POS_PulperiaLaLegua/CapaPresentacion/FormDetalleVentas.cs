@@ -48,6 +48,7 @@ namespace CapaPresentacion
             txtNumeroVenta.Text = "";
             txtBusqueda.Text = "";
             txtFecha.Text = "";
+            txtHora.Text = "";
             txtTipoPago.Text = "";
             txtUsuario.Text = "";
             txtNumeroIdentidad.Text = "";
@@ -71,6 +72,7 @@ namespace CapaPresentacion
             {
                 txtNumeroVenta.Text = oVenta.NumeroVenta;
                 txtFecha.Text = oVenta.FechaRegistro;
+                txtHora.Text = oVenta.HoraRegistro;
                 txtTipoPago.Text = oVenta.TipoPago;
                 txtUsuario.Text = oVenta.oUsuario?.NombreCompleto ?? "";
                 txtNumeroIdentidad.Text = oVenta.oCliente?.NumeroIdentidad ?? "";
@@ -156,6 +158,7 @@ namespace CapaPresentacion
                         Paragraph info = new Paragraph(
                             $"Venta N°: {txtNumeroVenta.Text}\n" +
                             $"Fecha: {txtFecha.Text}\n" +
+                            $"Hora: {txtHora.Text}\n" +
                             $"Cliente: {txtNombreCompletoCliente.Text}\n" +
                             $"Tipo de Pago: {txtTipoPago.Text}\n" +
                             $"Usuario: {txtUsuario.Text}\n",
@@ -215,8 +218,6 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("Error al generar PDF: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
         }
     }
 }

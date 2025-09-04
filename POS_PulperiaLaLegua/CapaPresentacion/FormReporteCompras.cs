@@ -128,6 +128,7 @@ namespace CapaPresentacion
                 dgv_Data.Rows.Add(new object[]
                 {
                     rc.FechaRegistro,
+                    rc.Hora,
                     rc.TipoCompra,
                     rc.NumeroCompra,
                     rc.UsuarioRegistro,
@@ -188,6 +189,7 @@ namespace CapaPresentacion
                             row.Cells[16].Value.ToString(),
                             row.Cells[17].Value.ToString(),
                             row.Cells[18].Value.ToString(),
+                            row.Cells[19].Value.ToString(),
                         });
                 }
                 SaveFileDialog savefile = new SaveFileDialog();

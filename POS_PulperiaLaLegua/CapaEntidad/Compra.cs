@@ -20,5 +20,6 @@ namespace CapaEntidad
         public decimal IVA { get; set; }
         public decimal Total { get; set; }
         public string FechaRegistro { get; set; }
+        public string HoraRegistro { get; set; }
     }
 }

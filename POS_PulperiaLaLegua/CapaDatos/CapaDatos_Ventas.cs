@@ -154,7 +154,8 @@ namespace CapaDatos
                     query.AppendLine("c.NumeroIdentidad,c.NombreCompleto as NombreCliente,");
                     query.AppendLine("v.TipoPago,v.NumeroVenta,");
                     query.AppendLine("v.MontoNeto,v.Descuento,v.IVA,v.Subtotal,v.Total,v.MontoPago,v.MontoCambio,");
-                    query.AppendLine("convert(char(10), v.FechaRegistro, 103)[FechaRegistro]");
+                    query.AppendLine("convert(char(10), v.FechaRegistro, 103) as FechaRegistro,");
+                    query.AppendLine("convert(char(8), v.FechaRegistro, 108) as HoraRegistro");
                     query.AppendLine("from VENTA v");
                     query.AppendLine("inner join USUARIO u on u.IdUsuario = v.IdUsuario");
                     query.AppendLine("inner join CLIENTE c on c.IdCliente = v.IdCliente");
@@ -184,7 +185,8 @@ namespace CapaDatos
                                 Total = Convert.ToDecimal(dr["Total"].ToString()),
                                 MontoPago = Convert.ToDecimal(dr["MontoPago"].ToString()),
                                 MontoCambio = Convert.ToDecimal(dr["MontoCambio"].ToString()),
-                                FechaRegistro = dr["FechaRegistro"].ToString()
+                                FechaRegistro = dr["FechaRegistro"].ToString(),
+                                HoraRegistro = dr["HoraRegistro"].ToString()
                             };
                         }
                     }

@@ -47,6 +47,7 @@
             this.btnexportar = new FontAwesome.Sharp.IconButton();
             this.comboxProveedor = new System.Windows.Forms.ComboBox();
             this.FechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipoCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumeroCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UsuarioRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -184,6 +185,7 @@
             this.dgv_Data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Data.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FechaRegistro,
+            this.Hora,
             this.TipoCompra,
             this.NumeroCompra,
             this.UsuarioRegistro,
@@ -308,6 +310,12 @@
             this.FechaRegistro.HeaderText = "FechaRegistro";
             this.FechaRegistro.Name = "FechaRegistro";
             this.FechaRegistro.ReadOnly = true;
+            // 
+            // Hora
+            // 
+            this.Hora.HeaderText = "Hora";
+            this.Hora.Name = "Hora";
+            this.Hora.ReadOnly = true;
             // 
             // TipoCompra
             // 
@@ -469,6 +477,7 @@
         private FontAwesome.Sharp.IconButton btnexportar;
         private System.Windows.Forms.ComboBox comboxProveedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaRegistro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Hora;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoCompra;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumeroCompra;
         private System.Windows.Forms.DataGridViewTextBoxColumn UsuarioRegistro;

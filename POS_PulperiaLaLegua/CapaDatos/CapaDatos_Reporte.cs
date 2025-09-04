@@ -36,6 +36,7 @@ namespace CapaDatos
                             Lista.Add(new ReporteCompra()
                             {
                                 FechaRegistro = dr["FechaRegistro"].ToString(),
+                                Hora = dr["Hora"].ToString(),
                                 TipoCompra = dr["TipoCompra"].ToString(),
                                 NumeroCompra = dr["NumeroCompra"].ToString(),
                                 UsuarioRegistro = dr["UsuarioRegistro"].ToString(),
@@ -91,6 +92,7 @@ namespace CapaDatos
                             Lista.Add(new ReporteVenta()
                             {
                                 FechaRegistro = dr["FechaRegistro"].ToString(),
+                                Hora = dr["Hora"].ToString(),
                                 TipoPago = dr["TipoPago"].ToString(),
                                 NumeroVenta = dr["NumeroVenta"].ToString(),
                                 UsuarioRegistro = dr["UsuarioRegistro"].ToString(),

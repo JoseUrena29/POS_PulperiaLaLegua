@@ -9,6 +9,7 @@ namespace CapaEntidad
     public class ReporteCompra
     {
         public string FechaRegistro { get; set; }
+        public string Hora { get; set; }
         public string TipoCompra { get; set; }
         public string NumeroCompra { get; set; }
         public string MontoNeto { get; set; }

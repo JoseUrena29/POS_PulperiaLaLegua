@@ -64,6 +64,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtMontoCambio = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.txtHora = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Data)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -255,6 +257,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.txtHora);
+            this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.txtUsuario);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtTipoPago);
@@ -295,7 +299,7 @@
             // 
             this.txtFecha.Location = new System.Drawing.Point(17, 40);
             this.txtFecha.Name = "txtFecha";
-            this.txtFecha.Size = new System.Drawing.Size(267, 20);
+            this.txtFecha.Size = new System.Drawing.Size(140, 20);
             this.txtFecha.TabIndex = 3;
             // 
             // label3
@@ -435,6 +439,22 @@
             this.label10.TabIndex = 95;
             this.label10.Text = "Monto Cambio:";
             // 
+            // txtHora
+            // 
+            this.txtHora.Location = new System.Drawing.Point(165, 40);
+            this.txtHora.Name = "txtHora";
+            this.txtHora.Size = new System.Drawing.Size(136, 20);
+            this.txtHora.TabIndex = 8;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(162, 24);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(33, 13);
+            this.label11.TabIndex = 7;
+            this.label11.Text = "Hora:";
+            // 
             // FormDetalleVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -510,5 +530,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtMontoCambio;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtHora;
+        private System.Windows.Forms.Label label11;
     }
 }

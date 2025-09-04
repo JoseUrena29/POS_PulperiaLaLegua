@@ -22,6 +22,7 @@ namespace CapaEntidad
         public decimal MontoPago { get; set; }
         public decimal MontoCambio { get; set; }
         public string FechaRegistro { get; set; }
+        public string HoraRegistro { get; set; }
 
     }
 }
