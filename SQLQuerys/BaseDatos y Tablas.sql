@@ -82,7 +82,7 @@ Nombre varchar(50),
 Descripcion varchar(200),
 IdCategoria INT FOREIGN KEY REFERENCES CATEGORIA(IdCategoria),
 Stock int not null default 0,
-PrecioCompra decimal(10,2) default 0, --Eliminar
+PrecioCompra decimal(10,2) default 0,
 PrecioVenta decimal(10,2) default 0,
 Estado bit,
 FechaRegistro datetime default getdate()
@@ -181,23 +181,30 @@ FechaRegistro datetime default getdate()
 GO
 
 -- Cabecera del ajuste
-CREATE TABLE AJUSTE(
+CREATE TABLE AJUSTE (
     IdAjuste INT PRIMARY KEY IDENTITY,
     IdUsuario INT FOREIGN KEY REFERENCES USUARIO(IdUsuario),
-    MotivoGeneral nvarchar(255),
+    MotivoGeneral NVARCHAR(255) NOT NULL,    -- Ej: Ajuste de inventario, daño, pérdida
+    Observaciones NVARCHAR(MAX) NULL,        -- Comentarios adicionales
     FechaRegistro datetime default getdate()
-)
+);
 GO
 
 -- Detalle por producto
-CREATE TABLE DETALLE_AJUSTE(
+CREATE TABLE DETALLE_AJUSTE (
     IdDetalleAjuste INT PRIMARY KEY IDENTITY,
     IdAjuste INT FOREIGN KEY REFERENCES AJUSTE(IdAjuste),
     IdProducto INT FOREIGN KEY REFERENCES PRODUCTO(IdProducto),
-    TipoAjuste NVARCHAR(10), -- 'ENTRADA' o 'SALIDA'
-    Cantidad INT,
-    Motivo NVARCHAR(255)
-)
+    TipoAjuste NVARCHAR(10) CHECK (TipoAjuste IN ('ENTRADA','SALIDA')),
+    PrecioCompraAnterior DECIMAL(10,2) NULL,
+    PrecioCompraNuevo DECIMAL(10,2) NULL,
+    PrecioVentaAnterior DECIMAL(10,2) NULL,
+    PrecioVentaNuevo DECIMAL(10,2) NULL,
+    StockAnterior INT NULL,
+    StockNuevo INT NULL,
+    Motivo NVARCHAR(255) NOT NULL,-- Motivo específico del ajuste
+    FechaRegistro datetime default getdate()
+);
 GO
 
 -- Tabla de Información del Negocio
