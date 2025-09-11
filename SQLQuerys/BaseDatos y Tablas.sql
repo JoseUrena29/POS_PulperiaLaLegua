@@ -180,10 +180,23 @@ FechaRegistro datetime default getdate()
 )
 GO
 
+
+-- 1. Eliminar detalle primero (por FK)
+IF OBJECT_ID('dbo.DETALLE_AJUSTE', 'U') IS NOT NULL
+    DROP TABLE dbo.DETALLE_AJUSTE;
+GO
+
+-- 2. Luego eliminar cabecera
+IF OBJECT_ID('dbo.AJUSTE', 'U') IS NOT NULL
+    DROP TABLE dbo.AJUSTE;
+GO
+
 -- Cabecera del ajuste
 CREATE TABLE AJUSTE (
     IdAjuste INT PRIMARY KEY IDENTITY,
     IdUsuario INT FOREIGN KEY REFERENCES USUARIO(IdUsuario),
+	TipoAjuste NVARCHAR(10) NOT NULL CHECK (TipoAjuste IN ('ENTRADA','SALIDA')), -- Solo stock
+	NumeroAjuste VARCHAR(50) UNIQUE NOT NULL,
     MotivoGeneral NVARCHAR(255) NOT NULL,    -- Ej: Ajuste de inventario, daño, pérdida
     Observaciones NVARCHAR(MAX) NULL,        -- Comentarios adicionales
     FechaRegistro datetime default getdate()
@@ -195,14 +208,8 @@ CREATE TABLE DETALLE_AJUSTE (
     IdDetalleAjuste INT PRIMARY KEY IDENTITY,
     IdAjuste INT FOREIGN KEY REFERENCES AJUSTE(IdAjuste),
     IdProducto INT FOREIGN KEY REFERENCES PRODUCTO(IdProducto),
-    TipoAjuste NVARCHAR(10) CHECK (TipoAjuste IN ('ENTRADA','SALIDA')),
-    PrecioCompraAnterior DECIMAL(10,2) NULL,
-    PrecioCompraNuevo DECIMAL(10,2) NULL,
-    PrecioVentaAnterior DECIMAL(10,2) NULL,
-    PrecioVentaNuevo DECIMAL(10,2) NULL,
     StockAnterior INT NULL,
     StockNuevo INT NULL,
-    Motivo NVARCHAR(255) NOT NULL,-- Motivo específico del ajuste
     FechaRegistro datetime default getdate()
 );
 GO

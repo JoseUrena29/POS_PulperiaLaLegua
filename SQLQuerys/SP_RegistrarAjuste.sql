@@ -4,19 +4,18 @@ use DB_POSPulperiaLaLegua
 
 --PROCEDIMIENTO PARA REGISTRAR AJUSTE
 
+-- Tipo de tabla para los detalles del ajuste
 CREATE TYPE [dbo].[EDetalle_Ajuste] AS TABLE(
     IdProducto INT,
-    TipoAjuste NVARCHAR(10),
-    Cantidad INT,
-    PrecioCompraNuevo DECIMAL(10,2),
-    PrecioVentaNuevo DECIMAL(10,2),
-    Motivo NVARCHAR(255)
-)
+    StockNuevo INT
+);
 GO
 
 CREATE PROCEDURE SP_RegistrarAjuste
 (
     @IdUsuario INT,
+    @TipoAjuste NVARCHAR(10),  -- 'ENTRADA' o 'SALIDA'
+    @NumeroAjuste VARCHAR(50), -- Lo envías desde C#
     @MotivoGeneral NVARCHAR(255),
     @Observaciones NVARCHAR(MAX) = NULL,
     @DetalleAjuste [EDetalle_Ajuste] READONLY,
@@ -34,45 +33,26 @@ BEGIN
 
         BEGIN TRANSACTION RegistroAjuste;
 
-        -- Insertar encabezado del ajuste
-        INSERT INTO AJUSTE (IdUsuario, MotivoGeneral, Observaciones)
-        VALUES (@IdUsuario, @MotivoGeneral, @Observaciones);
+        -- Insertar cabecera del ajuste
+        INSERT INTO AJUSTE (IdUsuario, TipoAjuste, NumeroAjuste, MotivoGeneral, Observaciones)
+        VALUES (@IdUsuario, @TipoAjuste, @NumeroAjuste, @MotivoGeneral, @Observaciones);
 
         SET @IdAjuste = SCOPE_IDENTITY();
 
-        -- Insertar detalle del ajuste y calcular stock anterior/nuevo
-        INSERT INTO DETALLE_AJUSTE 
-        (IdAjuste, IdProducto, TipoAjuste, Cantidad, 
-         PrecioCompraAnterior, PrecioCompraNuevo,
-         PrecioVentaAnterior, PrecioVentaNuevo,
-         StockAnterior, StockNuevo, Motivo)
-        SELECT 
+        -- Insertar detalle del ajuste y guardar stock anterior
+        INSERT INTO DETALLE_AJUSTE
+        (IdAjuste, IdProducto, StockAnterior, StockNuevo)
+        SELECT
             @IdAjuste,
             da.IdProducto,
-            da.TipoAjuste,
-            da.Cantidad,
-            p.PrecioCompra AS PrecioCompraAnterior,
-            da.PrecioCompraNuevo,
-            p.PrecioVenta AS PrecioVentaAnterior,
-            da.PrecioVentaNuevo,
             p.Stock AS StockAnterior,
-            CASE 
-                WHEN da.TipoAjuste = 'ENTRADA' THEN p.Stock + da.Cantidad
-                ELSE p.Stock - da.Cantidad
-            END AS StockNuevo,
-            da.Motivo
+            da.StockNuevo AS StockNuevo
         FROM @DetalleAjuste da
         INNER JOIN PRODUCTO p ON p.IdProducto = da.IdProducto;
 
-        -- Actualizar PRODUCTO con stock y precios
+        -- Actualizar PRODUCTO con nuevo stock
         UPDATE p
-        SET 
-            p.Stock = CASE 
-                        WHEN da.TipoAjuste = 'ENTRADA' THEN p.Stock + da.Cantidad
-                        ELSE p.Stock - da.Cantidad
-                      END,
-            p.PrecioCompra = da.PrecioCompraNuevo,
-            p.PrecioVenta = da.PrecioVentaNuevo
+        SET p.Stock = da.StockNuevo
         FROM PRODUCTO p
         INNER JOIN @DetalleAjuste da ON p.IdProducto = da.IdProducto;
 

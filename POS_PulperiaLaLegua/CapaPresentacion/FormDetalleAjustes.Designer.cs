@@ -43,6 +43,9 @@
             this.dgv_Data = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.txtHora = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
@@ -56,10 +59,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Data)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -180,12 +180,12 @@
             this.PrecioCompra,
             this.Cantidad,
             this.MontoTotal});
-            this.dgv_Data.Location = new System.Drawing.Point(33, 228);
+            this.dgv_Data.Location = new System.Drawing.Point(33, 241);
             this.dgv_Data.MultiSelect = false;
             this.dgv_Data.Name = "dgv_Data";
             this.dgv_Data.ReadOnly = true;
             this.dgv_Data.RowTemplate.Height = 28;
-            this.dgv_Data.Size = new System.Drawing.Size(908, 280);
+            this.dgv_Data.Size = new System.Drawing.Size(908, 267);
             this.dgv_Data.TabIndex = 84;
             // 
             // label2
@@ -200,7 +200,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.richTextBox1);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label7);
@@ -214,10 +214,35 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(33, 79);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(908, 143);
+            this.groupBox1.Size = new System.Drawing.Size(908, 156);
             this.groupBox1.TabIndex = 82;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información Ajuste";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(304, 74);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(75, 13);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "Oservaciones:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(17, 90);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(284, 20);
+            this.textBox1.TabIndex = 10;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(14, 74);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(82, 13);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Motivo General:";
             // 
             // txtHora
             // 
@@ -353,37 +378,13 @@
             this.label5.TabIndex = 76;
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox1
+            // richTextBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(17, 90);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(284, 20);
-            this.textBox1.TabIndex = 10;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(14, 74);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(82, 13);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Motivo General:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(307, 90);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(550, 20);
-            this.textBox2.TabIndex = 12;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(304, 74);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(75, 13);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "Oservaciones:";
+            this.richTextBox1.Location = new System.Drawing.Point(307, 90);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(550, 54);
+            this.richTextBox1.TabIndex = 13;
+            this.richTextBox1.Text = "";
             // 
             // FormDetalleAjustes
             // 
@@ -444,9 +445,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }

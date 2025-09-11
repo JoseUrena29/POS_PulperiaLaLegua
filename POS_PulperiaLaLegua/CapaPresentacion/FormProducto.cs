@@ -237,6 +237,8 @@ namespace CapaPresentacion
                     txtCodigo.Text = dgv_Data.Rows[indice].Cells["Codigo"].Value.ToString();
                     txtNombre.Text = dgv_Data.Rows[indice].Cells["Nombre"].Value.ToString();
                     txtDescripcion.Text = dgv_Data.Rows[indice].Cells["Descripcion"].Value.ToString();
+                    txtPrecioCompra.Text = dgv_Data.Rows[indice].Cells["PrecioCompra"].Value.ToString();
+                    txtPrecioVenta.Text = dgv_Data.Rows[indice].Cells["PrecioVenta"].Value.ToString();
 
                     foreach (OpcionCombo oc in comboxCategoria.Items)
                     {

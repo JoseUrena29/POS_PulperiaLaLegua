@@ -220,7 +220,7 @@
             this.SubMenuRegistrarCompras.IconColor = System.Drawing.Color.Black;
             this.SubMenuRegistrarCompras.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuRegistrarCompras.Name = "SubMenuRegistrarCompras";
-            this.SubMenuRegistrarCompras.Size = new System.Drawing.Size(171, 22);
+            this.SubMenuRegistrarCompras.Size = new System.Drawing.Size(180, 22);
             this.SubMenuRegistrarCompras.Text = "Registrar Compra";
             this.SubMenuRegistrarCompras.Click += new System.EventHandler(this.SubMenuRegistrarCompras_Click);
             // 
@@ -230,7 +230,7 @@
             this.SubMenuConsultarCompras.IconColor = System.Drawing.Color.Black;
             this.SubMenuConsultarCompras.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuConsultarCompras.Name = "SubMenuConsultarCompras";
-            this.SubMenuConsultarCompras.Size = new System.Drawing.Size(171, 22);
+            this.SubMenuConsultarCompras.Size = new System.Drawing.Size(180, 22);
             this.SubMenuConsultarCompras.Text = "Consultar Compra";
             this.SubMenuConsultarCompras.Click += new System.EventHandler(this.SubMenuConsultarCompras_Click);
             // 
@@ -246,7 +246,7 @@
             this.menuajustes.IconSize = 50;
             this.menuajustes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.menuajustes.Name = "menuajustes";
-            this.menuajustes.Size = new System.Drawing.Size(95, 69);
+            this.menuajustes.Size = new System.Drawing.Size(122, 69);
             this.menuajustes.Text = "Ajustes";
             this.menuajustes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
@@ -256,7 +256,7 @@
             this.SubMenuRegistrarAjuste.IconColor = System.Drawing.Color.Black;
             this.SubMenuRegistrarAjuste.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuRegistrarAjuste.Name = "SubMenuRegistrarAjuste";
-            this.SubMenuRegistrarAjuste.Size = new System.Drawing.Size(161, 22);
+            this.SubMenuRegistrarAjuste.Size = new System.Drawing.Size(180, 22);
             this.SubMenuRegistrarAjuste.Text = "Registrar Ajuste";
             this.SubMenuRegistrarAjuste.Click += new System.EventHandler(this.SubMenuRegistrarAjuste_Click);
             // 
@@ -266,8 +266,9 @@
             this.SubMenuConsultarAjuste.IconColor = System.Drawing.Color.Black;
             this.SubMenuConsultarAjuste.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuConsultarAjuste.Name = "SubMenuConsultarAjuste";
-            this.SubMenuConsultarAjuste.Size = new System.Drawing.Size(161, 22);
+            this.SubMenuConsultarAjuste.Size = new System.Drawing.Size(180, 22);
             this.SubMenuConsultarAjuste.Text = "Consultar Ajuste";
+            this.SubMenuConsultarAjuste.Click += new System.EventHandler(this.SubMenuConsultarAjuste_Click);
             // 
             // menureportes
             // 

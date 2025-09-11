@@ -170,5 +170,10 @@ namespace CapaPresentacion
                 this.Close();             
             }
         }
+
+        private void SubMenuConsultarAjuste_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menuajustes, new FormDetalleAjustes());
+        }
     }
 }
