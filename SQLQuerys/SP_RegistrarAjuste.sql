@@ -4,10 +4,12 @@ use DB_POSPulperiaLaLegua
 
 --PROCEDIMIENTO PARA REGISTRAR AJUSTE
 
+SELECT COUNT(*) + 1 FROM AJUSTE
+
 -- Tipo de tabla para los detalles del ajuste
 CREATE TYPE [dbo].[EDetalle_Ajuste] AS TABLE(
     IdProducto INT,
-    StockNuevo INT
+    Cantidad INT
 );
 GO
 
@@ -15,10 +17,10 @@ CREATE PROCEDURE SP_RegistrarAjuste
 (
     @IdUsuario INT,
     @TipoAjuste NVARCHAR(10),  -- 'ENTRADA' o 'SALIDA'
-    @NumeroAjuste VARCHAR(50), -- Lo envías desde C#
+    @NumeroAjuste VARCHAR(50), -- Enviado desde C#
     @MotivoGeneral NVARCHAR(255),
     @Observaciones NVARCHAR(MAX) = NULL,
-    @DetalleAjuste [EDetalle_Ajuste] READONLY,
+    @DetalleAjuste [EDetalle_Ajuste] READONLY, -- ahora solo lleva IdProducto, Cantidad
     @Resultado INT OUTPUT,
     @Mensaje NVARCHAR(500) OUTPUT
 )
@@ -39,20 +41,27 @@ BEGIN
 
         SET @IdAjuste = SCOPE_IDENTITY();
 
-        -- Insertar detalle del ajuste y guardar stock anterior
-        INSERT INTO DETALLE_AJUSTE
-        (IdAjuste, IdProducto, StockAnterior, StockNuevo)
+        -- Insertar detalle y calcular stocks
+        INSERT INTO DETALLE_AJUSTE (IdAjuste, IdProducto, StockAnterior, StockNuevo, Cantidad)
         SELECT
             @IdAjuste,
             da.IdProducto,
             p.Stock AS StockAnterior,
-            da.StockNuevo AS StockNuevo
+            CASE 
+                WHEN @TipoAjuste = 'ENTRADA' THEN p.Stock + da.Cantidad
+                WHEN @TipoAjuste = 'SALIDA' THEN p.Stock - da.Cantidad
+            END AS StockNuevo,
+            da.Cantidad
         FROM @DetalleAjuste da
         INNER JOIN PRODUCTO p ON p.IdProducto = da.IdProducto;
 
-        -- Actualizar PRODUCTO con nuevo stock
+        -- Actualizar PRODUCTO según el tipo de ajuste
         UPDATE p
-        SET p.Stock = da.StockNuevo
+        SET p.Stock =
+            CASE 
+                WHEN @TipoAjuste = 'ENTRADA' THEN p.Stock + da.Cantidad
+                WHEN @TipoAjuste = 'SALIDA' THEN p.Stock - da.Cantidad
+            END
         FROM PRODUCTO p
         INNER JOIN @DetalleAjuste da ON p.IdProducto = da.IdProducto;
 
@@ -65,3 +74,11 @@ BEGIN
     END CATCH
 END
 GO
+
+--Elimnar tabla y SP
+
+IF TYPE_ID(N'EDetalle_Ajuste') IS NOT NULL
+    DROP TYPE EDetalle_Ajuste;
+GO
+
+DROP PROCEDURE IF EXISTS SP_RegistrarAjuste;

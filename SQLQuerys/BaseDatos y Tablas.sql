@@ -210,6 +210,7 @@ CREATE TABLE DETALLE_AJUSTE (
     IdProducto INT FOREIGN KEY REFERENCES PRODUCTO(IdProducto),
     StockAnterior INT NULL,
     StockNuevo INT NULL,
+	Cantidad INT NOT NULL,
     FechaRegistro datetime default getdate()
 );
 GO

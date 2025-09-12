@@ -48,6 +48,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtHora = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTipoPago = new System.Windows.Forms.TextBox();
@@ -64,8 +66,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtMontoCambio = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtHora = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Data)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -203,6 +203,7 @@
             // 
             this.txtNombreCompletoCliente.Location = new System.Drawing.Point(307, 41);
             this.txtNombreCompletoCliente.Name = "txtNombreCompletoCliente";
+            this.txtNombreCompletoCliente.ReadOnly = true;
             this.txtNombreCompletoCliente.Size = new System.Drawing.Size(267, 20);
             this.txtNombreCompletoCliente.TabIndex = 18;
             // 
@@ -233,6 +234,7 @@
             // 
             this.txtNumeroIdentidad.Location = new System.Drawing.Point(17, 41);
             this.txtNumeroIdentidad.Name = "txtNumeroIdentidad";
+            this.txtNumeroIdentidad.ReadOnly = true;
             this.txtNumeroIdentidad.Size = new System.Drawing.Size(267, 20);
             this.txtNumeroIdentidad.TabIndex = 3;
             // 
@@ -272,10 +274,28 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información Venta";
             // 
+            // txtHora
+            // 
+            this.txtHora.Location = new System.Drawing.Point(165, 40);
+            this.txtHora.Name = "txtHora";
+            this.txtHora.ReadOnly = true;
+            this.txtHora.Size = new System.Drawing.Size(136, 20);
+            this.txtHora.TabIndex = 8;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(162, 24);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(33, 13);
+            this.label11.TabIndex = 7;
+            this.label11.Text = "Hora:";
+            // 
             // txtUsuario
             // 
             this.txtUsuario.Location = new System.Drawing.Point(590, 40);
             this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.ReadOnly = true;
             this.txtUsuario.Size = new System.Drawing.Size(267, 20);
             this.txtUsuario.TabIndex = 6;
             // 
@@ -292,6 +312,7 @@
             // 
             this.txtTipoPago.Location = new System.Drawing.Point(307, 40);
             this.txtTipoPago.Name = "txtTipoPago";
+            this.txtTipoPago.ReadOnly = true;
             this.txtTipoPago.Size = new System.Drawing.Size(267, 20);
             this.txtTipoPago.TabIndex = 4;
             // 
@@ -299,6 +320,7 @@
             // 
             this.txtFecha.Location = new System.Drawing.Point(17, 40);
             this.txtFecha.Name = "txtFecha";
+            this.txtFecha.ReadOnly = true;
             this.txtFecha.Size = new System.Drawing.Size(140, 20);
             this.txtFecha.TabIndex = 3;
             // 
@@ -438,22 +460,6 @@
             this.label10.Size = new System.Drawing.Size(78, 13);
             this.label10.TabIndex = 95;
             this.label10.Text = "Monto Cambio:";
-            // 
-            // txtHora
-            // 
-            this.txtHora.Location = new System.Drawing.Point(165, 40);
-            this.txtHora.Name = "txtHora";
-            this.txtHora.Size = new System.Drawing.Size(136, 20);
-            this.txtHora.TabIndex = 8;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(162, 24);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(33, 13);
-            this.label11.TabIndex = 7;
-            this.label11.Text = "Hora:";
             // 
             // FormDetalleVentas
             // 

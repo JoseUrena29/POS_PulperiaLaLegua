@@ -36,6 +36,8 @@
             this.btnlimpiar = new FontAwesome.Sharp.IconButton();
             this.btnbuscar = new FontAwesome.Sharp.IconButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtHora = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTipoCompra = new System.Windows.Forms.TextBox();
@@ -60,8 +62,6 @@
             this.txtMontoNeto = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
-            this.txtHora = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Data)).BeginInit();
@@ -166,10 +166,28 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información Compra";
             // 
+            // txtHora
+            // 
+            this.txtHora.Location = new System.Drawing.Point(167, 40);
+            this.txtHora.Name = "txtHora";
+            this.txtHora.ReadOnly = true;
+            this.txtHora.Size = new System.Drawing.Size(134, 20);
+            this.txtHora.TabIndex = 8;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(164, 24);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(33, 13);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "Hora:";
+            // 
             // txtUsuario
             // 
             this.txtUsuario.Location = new System.Drawing.Point(590, 40);
             this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.ReadOnly = true;
             this.txtUsuario.Size = new System.Drawing.Size(267, 20);
             this.txtUsuario.TabIndex = 6;
             // 
@@ -186,6 +204,7 @@
             // 
             this.txtTipoCompra.Location = new System.Drawing.Point(307, 40);
             this.txtTipoCompra.Name = "txtTipoCompra";
+            this.txtTipoCompra.ReadOnly = true;
             this.txtTipoCompra.Size = new System.Drawing.Size(267, 20);
             this.txtTipoCompra.TabIndex = 4;
             // 
@@ -193,6 +212,7 @@
             // 
             this.txtFecha.Location = new System.Drawing.Point(17, 40);
             this.txtFecha.Name = "txtFecha";
+            this.txtFecha.ReadOnly = true;
             this.txtFecha.Size = new System.Drawing.Size(144, 20);
             this.txtFecha.TabIndex = 3;
             // 
@@ -233,6 +253,7 @@
             // 
             this.txtNombreComercial.Location = new System.Drawing.Point(307, 41);
             this.txtNombreComercial.Name = "txtNombreComercial";
+            this.txtNombreComercial.ReadOnly = true;
             this.txtNombreComercial.Size = new System.Drawing.Size(267, 20);
             this.txtNombreComercial.TabIndex = 18;
             // 
@@ -248,6 +269,7 @@
             // 
             this.txtNumeroIdentidadProveedor.Location = new System.Drawing.Point(17, 41);
             this.txtNumeroIdentidadProveedor.Name = "txtNumeroIdentidadProveedor";
+            this.txtNumeroIdentidadProveedor.ReadOnly = true;
             this.txtNumeroIdentidadProveedor.Size = new System.Drawing.Size(267, 20);
             this.txtNumeroIdentidadProveedor.TabIndex = 3;
             // 
@@ -393,22 +415,6 @@
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(126, 20);
             this.txtTotal.TabIndex = 70;
-            // 
-            // txtHora
-            // 
-            this.txtHora.Location = new System.Drawing.Point(167, 40);
-            this.txtHora.Name = "txtHora";
-            this.txtHora.Size = new System.Drawing.Size(134, 20);
-            this.txtHora.TabIndex = 8;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(164, 24);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(33, 13);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "Hora:";
             // 
             // FormDetalleCompras
             // 

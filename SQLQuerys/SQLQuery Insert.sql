@@ -88,6 +88,22 @@ from DETALLE_VENTA dv
 inner join PRODUCTO p on p.IdProducto = dv.IdProducto
 where dv.IdVenta = 1
 
+/*CONSULTAR AJUSTES*/
+SELECT 
+    a.IdAjuste,u.NombreCompleto,a.TipoAjuste,a.NumeroAjuste,a.MotivoGeneral,a.Observaciones,
+    CONVERT(CHAR(10), a.FechaRegistro, 103) AS FechaRegistro,
+    CONVERT(CHAR(8), a.FechaRegistro, 108) AS HoraRegistro
+FROM AJUSTE a
+INNER JOIN USUARIO u ON u.IdUsuario = a.IdUsuario
+WHERE a.NumeroAjuste = '00001';
+
+SELECT 
+	p.Codigo AS Codigo,p.Nombre AS Producto,da.StockAnterior,da.Cantidad,da.StockNuevo
+FROM DETALLE_AJUSTE da
+INNER JOIN PRODUCTO p ON p.IdProducto = da.IdProducto
+WHERE da.IdAjuste = 1;
+
+
 
 insert into ROL(Descripcion)
 values ('ADMINISTRADOR')
@@ -108,7 +124,7 @@ insert into PERMISO(IdRol,NombreMenu)
 values 
 (1,'menuusuarios'),(1,'menumantenimiento'),(1,'menuventas'),(1,'menucompras'),(1,'menuajustes'),(1,'menureportes'),(1,'menuacercade'),
 (1,'SubMenuCategoría'),(1,'SubMenuProductos'),(1,'SubMenuClientes'),(1,'SubMenuProveedores'),(1,'SubMenuNegocio'),(1,'SubMenuRegistrarVenta'),(1,'SubMenuConsultarVenta'),
-(1,'SubMenuRegistrarCompras'),(1,'SubMenuConsultarCompras'),(1,'SubMenuRegistrarAjuste'),(1,'SubMenuConsultarAjuste'),(1,'SubMenuReporteVentas'),(1,'SubMenuReporteCompras')
+(1,'SubMenuRegistrarCompras'),(1,'SubMenuConsultarCompras'),(1,'SubMenuRegistrarAjuste'),(1,'SubMenuConsultarAjuste'),(1,'SubMenuReporteVentas'),(1,'SubMenuReporteCompras'),(1,'SubMenuReporteAjustes')
 
 /*Rol Empleado*/
 insert into PERMISO(IdRol,NombreMenu)
@@ -116,6 +132,7 @@ values
 (2,'menumantenimiento'),(2,'menuventas'),(2,'menucompras'),(2,'menuajustes'),(2,'menuacercade'),
 (2,'SubMenuClientes'),(2,'SubMenuProveedores'),(2,'SubMenuRegistrarVenta'),(2,'SubMenuConsultarVenta'),
 (2,'SubMenuRegistrarCompras'),(2,'SubMenuConsultarCompras'),(2,'SubMenuRegistrarAjuste'),(2,'SubMenuConsultarAjuste')
+
 
 INSERT INTO CATEGORIA (Descripcion, Estado)
 VALUES 

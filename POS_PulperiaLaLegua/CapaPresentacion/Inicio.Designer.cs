@@ -49,6 +49,7 @@
             this.menureportes = new FontAwesome.Sharp.IconMenuItem();
             this.SubMenuReporteVentas = new System.Windows.Forms.ToolStripMenuItem();
             this.SubMenuReporteCompras = new System.Windows.Forms.ToolStripMenuItem();
+            this.SubMenuReporteAjustes = new System.Windows.Forms.ToolStripMenuItem();
             this.menuacercade = new FontAwesome.Sharp.IconMenuItem();
             this.menutitulo = new System.Windows.Forms.MenuStrip();
             this.label1 = new System.Windows.Forms.Label();
@@ -220,7 +221,7 @@
             this.SubMenuRegistrarCompras.IconColor = System.Drawing.Color.Black;
             this.SubMenuRegistrarCompras.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuRegistrarCompras.Name = "SubMenuRegistrarCompras";
-            this.SubMenuRegistrarCompras.Size = new System.Drawing.Size(180, 22);
+            this.SubMenuRegistrarCompras.Size = new System.Drawing.Size(171, 22);
             this.SubMenuRegistrarCompras.Text = "Registrar Compra";
             this.SubMenuRegistrarCompras.Click += new System.EventHandler(this.SubMenuRegistrarCompras_Click);
             // 
@@ -230,7 +231,7 @@
             this.SubMenuConsultarCompras.IconColor = System.Drawing.Color.Black;
             this.SubMenuConsultarCompras.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuConsultarCompras.Name = "SubMenuConsultarCompras";
-            this.SubMenuConsultarCompras.Size = new System.Drawing.Size(180, 22);
+            this.SubMenuConsultarCompras.Size = new System.Drawing.Size(171, 22);
             this.SubMenuConsultarCompras.Text = "Consultar Compra";
             this.SubMenuConsultarCompras.Click += new System.EventHandler(this.SubMenuConsultarCompras_Click);
             // 
@@ -256,7 +257,7 @@
             this.SubMenuRegistrarAjuste.IconColor = System.Drawing.Color.Black;
             this.SubMenuRegistrarAjuste.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuRegistrarAjuste.Name = "SubMenuRegistrarAjuste";
-            this.SubMenuRegistrarAjuste.Size = new System.Drawing.Size(180, 22);
+            this.SubMenuRegistrarAjuste.Size = new System.Drawing.Size(161, 22);
             this.SubMenuRegistrarAjuste.Text = "Registrar Ajuste";
             this.SubMenuRegistrarAjuste.Click += new System.EventHandler(this.SubMenuRegistrarAjuste_Click);
             // 
@@ -266,7 +267,7 @@
             this.SubMenuConsultarAjuste.IconColor = System.Drawing.Color.Black;
             this.SubMenuConsultarAjuste.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SubMenuConsultarAjuste.Name = "SubMenuConsultarAjuste";
-            this.SubMenuConsultarAjuste.Size = new System.Drawing.Size(180, 22);
+            this.SubMenuConsultarAjuste.Size = new System.Drawing.Size(161, 22);
             this.SubMenuConsultarAjuste.Text = "Consultar Ajuste";
             this.SubMenuConsultarAjuste.Click += new System.EventHandler(this.SubMenuConsultarAjuste_Click);
             // 
@@ -275,7 +276,8 @@
             this.menureportes.AutoSize = false;
             this.menureportes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SubMenuReporteVentas,
-            this.SubMenuReporteCompras});
+            this.SubMenuReporteCompras,
+            this.SubMenuReporteAjustes});
             this.menureportes.IconChar = FontAwesome.Sharp.IconChar.ChartBar;
             this.menureportes.IconColor = System.Drawing.Color.Black;
             this.menureportes.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -299,6 +301,13 @@
             this.SubMenuReporteCompras.Size = new System.Drawing.Size(182, 22);
             this.SubMenuReporteCompras.Text = "Reporte de Compras";
             this.SubMenuReporteCompras.Click += new System.EventHandler(this.SubMenuReporteCompras_Click);
+            // 
+            // SubMenuReporteAjustes
+            // 
+            this.SubMenuReporteAjustes.Name = "SubMenuReporteAjustes";
+            this.SubMenuReporteAjustes.Size = new System.Drawing.Size(182, 22);
+            this.SubMenuReporteAjustes.Text = "Reporte de Ajustes";
+            this.SubMenuReporteAjustes.Click += new System.EventHandler(this.SubMenuReporteAjustes_Click);
             // 
             // menuacercade
             // 
@@ -459,6 +468,7 @@
         private System.Windows.Forms.ToolStripMenuItem SubMenuReporteVentas;
         private System.Windows.Forms.ToolStripMenuItem SubMenuReporteCompras;
         private FontAwesome.Sharp.IconButton btnSalir;
+        private System.Windows.Forms.ToolStripMenuItem SubMenuReporteAjustes;
     }
 }
 

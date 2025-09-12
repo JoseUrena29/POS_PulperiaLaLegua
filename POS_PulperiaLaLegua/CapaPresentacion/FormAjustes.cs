@@ -1,5 +1,8 @@
-﻿using CapaPresentacion.Modales;
+﻿using CapaEntidad;
+using CapaNegocio;
+using CapaPresentacion.Modales;
 using CapaPresentacion.Utilidades;
+using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,13 +17,22 @@ namespace CapaPresentacion
 {
     public partial class FormAjustes : Form
     {
-        public FormAjustes()
+        private Usuario _Usuario;
+
+        public FormAjustes(Usuario oUsuario = null)
         {
+            _Usuario = oUsuario;
             InitializeComponent();
         }
 
         private void FormAjustes_Load(object sender, EventArgs e)
         {
+            // Botón Buscar
+            btnBuscarProducto.IconChar = IconChar.Search;
+            btnBuscarProducto.IconColor = Color.Black;
+            btnBuscarProducto.IconSize = 18;
+            btnBuscarProducto.TextImageRelation = TextImageRelation.ImageBeforeText;
+
             comboxTipoAjuste.Items.Add(new OpcionCombo() { Valor = "ENTRADA", Texto = "Entrada de Inventario" });
             comboxTipoAjuste.Items.Add(new OpcionCombo() { Valor = "SALIDA", Texto = "Salida de Inventario" });
             comboxTipoAjuste.DisplayMember = "Texto";
@@ -78,13 +90,31 @@ namespace CapaPresentacion
                 }
             }
 
+            // Calcular StockNuevo según tipo de ajuste
+            int stockAnterior = Convert.ToInt32(txtStock.Text);
+            int stockNuevo = stockAnterior;
+
+            if (((OpcionCombo)comboxTipoAjuste.SelectedItem).Valor.ToString() == "ENTRADA")
+                stockNuevo += cantidad;
+            else
+            {
+                stockNuevo -= cantidad;
+                if (stockNuevo < 0)
+                {
+                    MessageBox.Show("La cantidad excede el stock disponible", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+
+            // Agregar fila al DataGridView incluyendo StockNuevo
             dgv_Data.Rows.Add(new object[]
             {
             txtIdProducto.Text,
             txtCodigoProducto.Text,
             txtNombreProducto.Text,
-            txtStock.Text,
-            cantidad,
+            stockAnterior, 
+            cantidad,      
+            stockNuevo     
             });
 
             MessageBox.Show("Producto agregado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -107,7 +137,7 @@ namespace CapaPresentacion
             if (e.RowIndex < 0)
                 return;
 
-            if (e.ColumnIndex == 5)
+            if (e.ColumnIndex == 6)
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
@@ -144,6 +174,82 @@ namespace CapaPresentacion
                         dgv_Data.Rows.RemoveAt(indice);
                     }
                 }
+            }
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+
+            // Validar que haya al menos un producto
+            if (dgv_Data.Rows.Count < 1)
+            {
+                MessageBox.Show("Debe agregar al menos un producto al ajuste de inventario.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Validar que se haya ingresado un motivo
+            if (string.IsNullOrWhiteSpace(txtMotivoGeneral.Text))
+            {
+                MessageBox.Show("Debe ingresar un motivo para el ajuste.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtMotivoGeneral.Focus();
+                return;
+            }
+
+            // Validar que se hayan ingresado observaciones
+            if (string.IsNullOrWhiteSpace(txtObservaciones.Text))
+            {
+                MessageBox.Show("Debe ingresar observaciones para el ajuste.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtObservaciones.Focus();
+                return;
+            }
+
+            DataTable detalle_ajuste = new DataTable();
+
+            detalle_ajuste.Columns.Add("IdProducto", typeof(int));
+            detalle_ajuste.Columns.Add("Cantidad", typeof(int));
+
+            foreach (DataGridViewRow row in dgv_Data.Rows)
+            {
+                detalle_ajuste.Rows.Add(
+                    new object[]
+                    {
+                        Convert.ToInt32(row.Cells["IdProducto"].Value.ToString()),
+                        Convert.ToInt32(row.Cells["Cantidad"].Value.ToString()),
+                    });
+            }
+
+            int IdConsecutivo = new CapaNegocio_Ajuste().ObtenerConsecutivo();
+            string numeroajuste = string.Format("{0:00000}", IdConsecutivo);
+
+            Ajuste oajuste = new Ajuste()
+            {
+                oUsuario = new Usuario() { IdUsuario = _Usuario.IdUsuario },
+                TipoAjuste = ((OpcionCombo)comboxTipoAjuste.SelectedItem).Valor.ToString(),
+                NumeroAjuste = numeroajuste,
+                MotivoGeneral = txtMotivoGeneral.Text,
+                Observaciones = txtObservaciones.Text,
+            };
+
+            string mensaje = string.Empty;
+            bool respuesta = new CapaNegocio_Ajuste().Registrar(oajuste, detalle_ajuste, out mensaje);
+
+            if (respuesta)
+            {
+                var result = MessageBox.Show($"¡Ajuste registrado con éxito!\n\nNúmero de ajuste: {numeroajuste}\n\n¿Desea copiarlo al portapapeles?", "Registro Exitoso",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+
+                if (result == DialogResult.Yes)
+                    Clipboard.SetText(numeroajuste);
+
+                txtIdProducto.Text = "0";
+                txtMotivoGeneral.Text = "";
+                txtObservaciones.Text = "";
+                dgv_Data.Rows.Clear();
+            }
+            else
+            {
+                MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
     }

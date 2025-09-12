@@ -54,6 +54,7 @@
     <Compile Include="CapaDatos_Usuario.cs" />
     <Compile Include="CapaDatos_Ventas.cs" />
     <Compile Include="Conexion.cs" />
+    <Compile Include="CapaDatos_Ajuste.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
