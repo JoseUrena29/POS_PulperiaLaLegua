@@ -80,6 +80,8 @@ namespace CapaPresentacion
             txtCodigo.Text = "";
             txtNombre.Text = "";
             txtDescripcion.Text = "";
+            txtPrecioCompra.Text = "";
+            txtPrecioVenta.Text = "";
             comboxCategoria.SelectedIndex = 0;
             comboxEstado.SelectedIndex = 0;
 

@@ -45,25 +45,25 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.FechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumeroVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UsuarioRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumeroIdentidadCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CodigoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DescripcionProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SubTotalProductos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MontoNeto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IVA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IVA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MontoNeto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubTotalProductos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescripcionProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodigoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumeroIdentidadCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UsuarioRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumeroVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Data)).BeginInit();
             this.SuspendLayout();
             // 
@@ -293,71 +293,47 @@
             this.label6.TabIndex = 54;
             this.label6.Text = "Proveedor:";
             // 
-            // FechaRegistro
+            // Total
             // 
-            this.FechaRegistro.HeaderText = "FechaRegistro";
-            this.FechaRegistro.Name = "FechaRegistro";
-            this.FechaRegistro.ReadOnly = true;
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
             // 
-            // Hora
+            // IVA
             // 
-            this.Hora.HeaderText = "Hora";
-            this.Hora.Name = "Hora";
-            this.Hora.ReadOnly = true;
+            this.IVA.HeaderText = "I.V.A";
+            this.IVA.Name = "IVA";
+            this.IVA.ReadOnly = true;
             // 
-            // TipoPago
+            // SubTotal
             // 
-            this.TipoPago.HeaderText = "TipoPago";
-            this.TipoPago.Name = "TipoPago";
-            this.TipoPago.ReadOnly = true;
+            this.SubTotal.HeaderText = "Sub Total";
+            this.SubTotal.Name = "SubTotal";
+            this.SubTotal.ReadOnly = true;
             // 
-            // NumeroVenta
+            // Descuento
             // 
-            this.NumeroVenta.HeaderText = "NumeroVenta";
-            this.NumeroVenta.Name = "NumeroVenta";
-            this.NumeroVenta.ReadOnly = true;
+            this.Descuento.HeaderText = "Descuento";
+            this.Descuento.Name = "Descuento";
+            this.Descuento.ReadOnly = true;
             // 
-            // UsuarioRegistro
+            // MontoNeto
             // 
-            this.UsuarioRegistro.HeaderText = "UsuarioRegistro";
-            this.UsuarioRegistro.Name = "UsuarioRegistro";
-            this.UsuarioRegistro.ReadOnly = true;
+            this.MontoNeto.HeaderText = "Monto Neto";
+            this.MontoNeto.Name = "MontoNeto";
+            this.MontoNeto.ReadOnly = true;
             // 
-            // NumeroIdentidadCliente
+            // SubTotalProductos
             // 
-            this.NumeroIdentidadCliente.HeaderText = "NumeroIdentidadCliente";
-            this.NumeroIdentidadCliente.Name = "NumeroIdentidadCliente";
-            this.NumeroIdentidadCliente.ReadOnly = true;
+            this.SubTotalProductos.HeaderText = "SubTotalProductos";
+            this.SubTotalProductos.Name = "SubTotalProductos";
+            this.SubTotalProductos.ReadOnly = true;
             // 
-            // NombreCliente
+            // Cantidad
             // 
-            this.NombreCliente.HeaderText = "NombreCliente";
-            this.NombreCliente.Name = "NombreCliente";
-            this.NombreCliente.ReadOnly = true;
-            // 
-            // CodigoProducto
-            // 
-            this.CodigoProducto.HeaderText = "CodigoProducto";
-            this.CodigoProducto.Name = "CodigoProducto";
-            this.CodigoProducto.ReadOnly = true;
-            // 
-            // NombreProducto
-            // 
-            this.NombreProducto.HeaderText = "NombreProducto";
-            this.NombreProducto.Name = "NombreProducto";
-            this.NombreProducto.ReadOnly = true;
-            // 
-            // DescripcionProducto
-            // 
-            this.DescripcionProducto.HeaderText = "DescripcionProducto";
-            this.DescripcionProducto.Name = "DescripcionProducto";
-            this.DescripcionProducto.ReadOnly = true;
-            // 
-            // Categoria
-            // 
-            this.Categoria.HeaderText = "Categoria";
-            this.Categoria.Name = "Categoria";
-            this.Categoria.ReadOnly = true;
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
             // 
             // PrecioVenta
             // 
@@ -366,47 +342,71 @@
             this.PrecioVenta.ReadOnly = true;
             this.PrecioVenta.Visible = false;
             // 
-            // Cantidad
+            // Categoria
             // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
+            this.Categoria.HeaderText = "Categoria";
+            this.Categoria.Name = "Categoria";
+            this.Categoria.ReadOnly = true;
             // 
-            // SubTotalProductos
+            // DescripcionProducto
             // 
-            this.SubTotalProductos.HeaderText = "SubTotalProductos";
-            this.SubTotalProductos.Name = "SubTotalProductos";
-            this.SubTotalProductos.ReadOnly = true;
+            this.DescripcionProducto.HeaderText = "DescripcionProducto";
+            this.DescripcionProducto.Name = "DescripcionProducto";
+            this.DescripcionProducto.ReadOnly = true;
             // 
-            // MontoNeto
+            // NombreProducto
             // 
-            this.MontoNeto.HeaderText = "Monto Neto";
-            this.MontoNeto.Name = "MontoNeto";
-            this.MontoNeto.ReadOnly = true;
+            this.NombreProducto.HeaderText = "NombreProducto";
+            this.NombreProducto.Name = "NombreProducto";
+            this.NombreProducto.ReadOnly = true;
             // 
-            // Descuento
+            // CodigoProducto
             // 
-            this.Descuento.HeaderText = "Descuento";
-            this.Descuento.Name = "Descuento";
-            this.Descuento.ReadOnly = true;
+            this.CodigoProducto.HeaderText = "CodigoProducto";
+            this.CodigoProducto.Name = "CodigoProducto";
+            this.CodigoProducto.ReadOnly = true;
             // 
-            // SubTotal
+            // NombreCliente
             // 
-            this.SubTotal.HeaderText = "Sub Total";
-            this.SubTotal.Name = "SubTotal";
-            this.SubTotal.ReadOnly = true;
+            this.NombreCliente.HeaderText = "NombreCliente";
+            this.NombreCliente.Name = "NombreCliente";
+            this.NombreCliente.ReadOnly = true;
             // 
-            // IVA
+            // NumeroIdentidadCliente
             // 
-            this.IVA.HeaderText = "I.V.A";
-            this.IVA.Name = "IVA";
-            this.IVA.ReadOnly = true;
+            this.NumeroIdentidadCliente.HeaderText = "NumeroIdentidadCliente";
+            this.NumeroIdentidadCliente.Name = "NumeroIdentidadCliente";
+            this.NumeroIdentidadCliente.ReadOnly = true;
             // 
-            // Total
+            // UsuarioRegistro
             // 
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            this.Total.ReadOnly = true;
+            this.UsuarioRegistro.HeaderText = "UsuarioRegistro";
+            this.UsuarioRegistro.Name = "UsuarioRegistro";
+            this.UsuarioRegistro.ReadOnly = true;
+            // 
+            // NumeroVenta
+            // 
+            this.NumeroVenta.HeaderText = "NumeroVenta";
+            this.NumeroVenta.Name = "NumeroVenta";
+            this.NumeroVenta.ReadOnly = true;
+            // 
+            // TipoPago
+            // 
+            this.TipoPago.HeaderText = "TipoPago";
+            this.TipoPago.Name = "TipoPago";
+            this.TipoPago.ReadOnly = true;
+            // 
+            // Hora
+            // 
+            this.Hora.HeaderText = "Hora";
+            this.Hora.Name = "Hora";
+            this.Hora.ReadOnly = true;
+            // 
+            // FechaRegistro
+            // 
+            this.FechaRegistro.HeaderText = "FechaRegistro";
+            this.FechaRegistro.Name = "FechaRegistro";
+            this.FechaRegistro.ReadOnly = true;
             // 
             // FormReporteVentas
             // 
