@@ -480,6 +480,7 @@
             this.txtPrecioCompra.Name = "txtPrecioCompra";
             this.txtPrecioCompra.Size = new System.Drawing.Size(209, 20);
             this.txtPrecioCompra.TabIndex = 45;
+            this.txtPrecioCompra.Text = "0.00";
             // 
             // label9
             // 
@@ -497,6 +498,7 @@
             this.txtPrecioVenta.Name = "txtPrecioVenta";
             this.txtPrecioVenta.Size = new System.Drawing.Size(209, 20);
             this.txtPrecioVenta.TabIndex = 47;
+            this.txtPrecioVenta.Text = "0.00";
             // 
             // label10
             // 

@@ -10,6 +10,8 @@ CREATE PROCEDURE SP_RegistrarProducto(
 	@Nombre VARCHAR(30),
 	@Descripcion VARCHAR(100),
 	@IdCategoria INT,
+	@PrecioCompra DECIMAL(10,2),
+    @PrecioVenta DECIMAL(10,2),
 	@Estado BIT,
     @Resultado INT OUTPUT,
     @Mensaje VARCHAR(500) OUTPUT
@@ -19,7 +21,7 @@ BEGIN
     SET @Resultado = 0
     IF NOT EXISTS (SELECT * FROM PRODUCTO WHERE Codigo = @Codigo)
     BEGIN
-        INSERT INTO PRODUCTO(Codigo,Nombre,Descripcion,IdCategoria,Estado) VALUES (@Codigo,@Nombre,@Descripcion,@IdCategoria,@Estado)
+        INSERT INTO PRODUCTO(Codigo,Nombre,Descripcion,IdCategoria,PrecioCompra,PrecioVenta,Estado) VALUES (@Codigo,@Nombre,@Descripcion,@IdCategoria,@PrecioCompra,@PrecioVenta,@Estado)
         SET @Resultado = SCOPE_IDENTITY()
         SET @Mensaje = 'Producto creado con éxito.'
     END
@@ -37,6 +39,8 @@ CREATE PROCEDURE SP_EditarProducto(
 	@Nombre VARCHAR(30),
 	@Descripcion VARCHAR(100),
 	@IdCategoria INT,
+	@PrecioCompra DECIMAL(10,2),
+	@PrecioVenta DECIMAL(10,2),
 	@Estado BIT,
     @Resultado INT OUTPUT,
     @Mensaje VARCHAR(500) OUTPUT
@@ -51,6 +55,8 @@ BEGIN
 		Nombre = @Nombre,
 		Descripcion = @Descripcion,
 		IdCategoria = @IdCategoria,
+		PrecioCompra = @PrecioCompra,
+		PrecioVenta = @PrecioVenta,
 		Estado = @Estado
         WHERE IdProducto = @IdProducto
 

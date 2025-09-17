@@ -37,6 +37,16 @@ namespace CapaNegocio
                 Mensaje += "Por favor digitar la descripción del producto";
             }
 
+            if (obj.PrecioCompra < 0)
+            {
+                Mensaje += "El Precio de Compra no puede ser negativo.\n";
+            }
+
+            if (obj.PrecioVenta < 0)
+            {
+                Mensaje += "El Precio de Venta no puede ser negativo.\n";
+            }
+
             if (Mensaje != string.Empty)
             {
                 return 0;

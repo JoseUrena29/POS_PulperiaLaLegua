@@ -75,6 +75,8 @@ namespace CapaDatos
                     comm.Parameters.AddWithValue("Nombre", obj.Nombre);
                     comm.Parameters.AddWithValue("Descripcion", obj.Descripcion);
                     comm.Parameters.AddWithValue("IdCategoria", obj.oCategoria.IdCategoria);
+                    comm.Parameters.AddWithValue("PrecioCompra", obj.PrecioCompra);
+                    comm.Parameters.AddWithValue("PrecioVenta", obj.PrecioVenta);
                     comm.Parameters.AddWithValue("Estado", obj.Estado);
                     comm.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     comm.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
@@ -112,6 +114,8 @@ namespace CapaDatos
                     comm.Parameters.AddWithValue("Nombre", obj.Nombre);
                     comm.Parameters.AddWithValue("Descripcion", obj.Descripcion);
                     comm.Parameters.AddWithValue("IdCategoria", obj.oCategoria.IdCategoria);
+                    comm.Parameters.AddWithValue("PrecioCompra", obj.PrecioCompra);
+                    comm.Parameters.AddWithValue("PrecioVenta", obj.PrecioVenta);
                     comm.Parameters.AddWithValue("Estado", obj.Estado);
                     comm.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     comm.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;

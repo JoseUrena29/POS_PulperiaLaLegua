@@ -312,36 +312,42 @@
             this.MotivoGeneral.HeaderText = "MotivoGeneral";
             this.MotivoGeneral.Name = "MotivoGeneral";
             this.MotivoGeneral.ReadOnly = true;
+            this.MotivoGeneral.Width = 200;
             // 
             // Observaciones
             // 
             this.Observaciones.HeaderText = "Observaciones";
             this.Observaciones.Name = "Observaciones";
             this.Observaciones.ReadOnly = true;
+            this.Observaciones.Width = 350;
             // 
             // UsuarioRegistro
             // 
             this.UsuarioRegistro.HeaderText = "UsuarioRegistro";
             this.UsuarioRegistro.Name = "UsuarioRegistro";
             this.UsuarioRegistro.ReadOnly = true;
+            this.UsuarioRegistro.Width = 150;
             // 
             // CodigoProducto
             // 
             this.CodigoProducto.HeaderText = "CodigoProducto";
             this.CodigoProducto.Name = "CodigoProducto";
             this.CodigoProducto.ReadOnly = true;
+            this.CodigoProducto.Width = 150;
             // 
             // NombreProducto
             // 
             this.NombreProducto.HeaderText = "NombreProducto";
             this.NombreProducto.Name = "NombreProducto";
             this.NombreProducto.ReadOnly = true;
+            this.NombreProducto.Width = 150;
             // 
             // DescripcionProducto
             // 
             this.DescripcionProducto.HeaderText = "DescripcionProducto";
             this.DescripcionProducto.Name = "DescripcionProducto";
             this.DescripcionProducto.ReadOnly = true;
+            this.DescripcionProducto.Width = 150;
             // 
             // Categoria
             // 

@@ -71,6 +71,10 @@ namespace CapaPresentacion
                     item.Estado == true ? "Activo" : "Inactivo",
                 });
             }
+
+            // Inicializar precios por defecto
+            txtPrecioCompra.Text = "0.00";
+            txtPrecioVenta.Text = "0.00";
         }
 
         private void Limpiar()
@@ -80,8 +84,8 @@ namespace CapaPresentacion
             txtCodigo.Text = "";
             txtNombre.Text = "";
             txtDescripcion.Text = "";
-            txtPrecioCompra.Text = "";
-            txtPrecioVenta.Text = "";
+            txtPrecioCompra.Text = "0.00";
+            txtPrecioVenta.Text = "0.00";
             comboxCategoria.SelectedIndex = 0;
             comboxEstado.SelectedIndex = 0;
 
@@ -139,6 +143,39 @@ namespace CapaPresentacion
         {
             string mensaje = string.Empty;
 
+            decimal precioCompra = 0;
+            decimal precioVenta = 0;
+
+            if (!string.IsNullOrWhiteSpace(txtPrecioCompra.Text))
+            {
+                if (!decimal.TryParse(txtPrecioCompra.Text, out precioCompra))
+                {
+                    MessageBox.Show(
+                        "Debe ingresar un valor numérico válido para el Precio de Compra.\nEjemplo: 500",
+                        "Validación de Precio de Compra",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning
+                    );
+                    txtPrecioCompra.Focus();
+                    return;
+                }
+            }
+
+            if (!string.IsNullOrWhiteSpace(txtPrecioVenta.Text))
+            {
+                if (!decimal.TryParse(txtPrecioVenta.Text, out precioVenta))
+                {
+                    MessageBox.Show(
+                        "Debe ingresar un valor numérico válido para el Precio de Venta.\nEjemplo: 550",
+                        "Validación de Precio de Venta",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning
+                    );
+                    txtPrecioVenta.Focus();
+                    return;
+                }
+            }
+
             Producto obj = new Producto()
             {
                 IdProducto = Convert.ToInt32(txtID.Text),
@@ -146,6 +183,8 @@ namespace CapaPresentacion
                 Nombre = txtNombre.Text,
                 Descripcion = txtDescripcion.Text,
                 oCategoria = new Categoria() { IdCategoria = Convert.ToInt32(((OpcionCombo)comboxCategoria.SelectedItem).Valor) },
+                PrecioCompra = precioCompra,   
+                PrecioVenta = precioVenta,    
                 Estado = Convert.ToInt32(((OpcionCombo)comboxEstado.SelectedItem).Valor) == 1 ? true : false
             };
 
@@ -155,6 +194,9 @@ namespace CapaPresentacion
 
                 if (idgenerado != 0)
                 {
+                    string precioCompraFormat = precioCompra.ToString("0.00");
+                    string precioVentaFormat = precioVenta.ToString("0.00");
+
                     dgv_Data.Rows.Add(new object[] {
                         "",
                         idgenerado,
@@ -164,8 +206,8 @@ namespace CapaPresentacion
                         ((OpcionCombo)comboxCategoria.SelectedItem).Valor.ToString(),
                         ((OpcionCombo)comboxCategoria.SelectedItem).Texto.ToString(),
                         "0",
-                        "0.00",
-                        "0.00",
+                        precioCompraFormat,
+                        precioVentaFormat,
                         ((OpcionCombo)comboxEstado.SelectedItem).Valor.ToString(),
                         ((OpcionCombo)comboxEstado.SelectedItem).Texto.ToString()
                     });
@@ -192,6 +234,8 @@ namespace CapaPresentacion
                     row.Cells["Descripcion"].Value = txtDescripcion.Text;
                     row.Cells["IdCategoria"].Value = ((OpcionCombo)comboxCategoria.SelectedItem).Valor.ToString();
                     row.Cells["Categoria"].Value = ((OpcionCombo)comboxCategoria.SelectedItem).Texto.ToString();
+                    row.Cells["PrecioCompra"].Value = precioCompra.ToString("0.00");
+                    row.Cells["PrecioVenta"].Value = precioVenta.ToString("0.00");
                     row.Cells["EstadoValor"].Value = ((OpcionCombo)comboxEstado.SelectedItem).Valor.ToString();
                     row.Cells["Estado"].Value = ((OpcionCombo)comboxEstado.SelectedItem).Texto.ToString();
                     Limpiar();
