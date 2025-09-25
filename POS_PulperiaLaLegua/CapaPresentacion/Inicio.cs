@@ -180,5 +180,38 @@ namespace CapaPresentacion
         {
             AbrirFormulario(menureportes, new FormReporteAjustes());
         }
+
+        private void SubMenuVersion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SubMenuManualUsuario_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Construye la ruta al PDF dentro de la carpeta Resources en la carpeta de salida
+                string rutaManual = System.IO.Path.Combine(Application.StartupPath, "Resources", "ManualUsuario.pdf");
+
+                if (System.IO.File.Exists(rutaManual))
+                {
+                    System.Diagnostics.Process.Start(rutaManual);
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró el archivo del Manual de Usuario.",
+                                    "Error",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error al intentar abrir el manual.\n" + ex.Message,
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
+        }
     }
 }

@@ -95,7 +95,6 @@ namespace CapaPresentacion
             {
                 string codigoBuscado = txtCodigoProducto.Text.Trim().ToUpper();
 
-                // Buscar el producto independientemente del estado
                 Producto oProducto = new CapaNegocio_Producto()
                     .Listar()
                     .FirstOrDefault(p => p.Codigo.Trim().ToUpper() == codigoBuscado);
@@ -125,8 +124,19 @@ namespace CapaPresentacion
                     txtNombreProducto.Text = oProducto.Nombre;
                     txtPrecio.Text = oProducto.PrecioVenta.ToString();
                     txtStock.Text = oProducto.Stock.ToString();
-                    txtCantidad.Select();
+                    txtCantidad.Value = 1;
+
+                    //Agregar directamente
+                    btnAgregar.PerformClick();
+
+                    //Preparar para el siguiente escaneo
+                    txtCodigoProducto.Clear();
+                    txtCodigoProducto.Focus();
                 }
+
+                //Evita el beep de Enter
+                e.Handled = true;
+                e.SuppressKeyPress = true;
             }
         }
 

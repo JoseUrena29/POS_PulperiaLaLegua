@@ -51,6 +51,8 @@
             this.SubMenuReporteCompras = new System.Windows.Forms.ToolStripMenuItem();
             this.SubMenuReporteAjustes = new System.Windows.Forms.ToolStripMenuItem();
             this.menuacercade = new FontAwesome.Sharp.IconMenuItem();
+            this.SubMenuVersion = new System.Windows.Forms.ToolStripMenuItem();
+            this.SubMenuManualUsuario = new System.Windows.Forms.ToolStripMenuItem();
             this.menutitulo = new System.Windows.Forms.MenuStrip();
             this.label1 = new System.Windows.Forms.Label();
             this.contenedor = new System.Windows.Forms.Panel();
@@ -312,16 +314,33 @@
             // menuacercade
             // 
             this.menuacercade.AutoSize = false;
+            this.menuacercade.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.SubMenuVersion,
+            this.SubMenuManualUsuario});
             this.menuacercade.IconChar = FontAwesome.Sharp.IconChar.CircleInfo;
             this.menuacercade.IconColor = System.Drawing.Color.Black;
             this.menuacercade.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.menuacercade.IconSize = 50;
             this.menuacercade.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.menuacercade.Name = "menuacercade";
-            this.menuacercade.Size = new System.Drawing.Size(95, 69);
+            this.menuacercade.Size = new System.Drawing.Size(122, 69);
             this.menuacercade.Text = "Ayuda";
             this.menuacercade.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.menuacercade.Click += new System.EventHandler(this.menuacercade_Click);
+            // 
+            // SubMenuVersion
+            // 
+            this.SubMenuVersion.Name = "SubMenuVersion";
+            this.SubMenuVersion.Size = new System.Drawing.Size(180, 22);
+            this.SubMenuVersion.Text = "Versión";
+            this.SubMenuVersion.Click += new System.EventHandler(this.SubMenuVersion_Click);
+            // 
+            // SubMenuManualUsuario
+            // 
+            this.SubMenuManualUsuario.Name = "SubMenuManualUsuario";
+            this.SubMenuManualUsuario.Size = new System.Drawing.Size(180, 22);
+            this.SubMenuManualUsuario.Text = "Manual de Usuario";
+            this.SubMenuManualUsuario.Click += new System.EventHandler(this.SubMenuManualUsuario_Click);
             // 
             // menutitulo
             // 
@@ -469,6 +488,8 @@
         private System.Windows.Forms.ToolStripMenuItem SubMenuReporteCompras;
         private FontAwesome.Sharp.IconButton btnSalir;
         private System.Windows.Forms.ToolStripMenuItem SubMenuReporteAjustes;
+        private System.Windows.Forms.ToolStripMenuItem SubMenuVersion;
+        private System.Windows.Forms.ToolStripMenuItem SubMenuManualUsuario;
     }
 }
 
