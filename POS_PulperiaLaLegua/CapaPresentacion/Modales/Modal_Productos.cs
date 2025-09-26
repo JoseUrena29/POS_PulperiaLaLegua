@@ -62,10 +62,18 @@ namespace CapaPresentacion.Modales
             {
                 row.Visible = true;
             }
+
+            txtBusqueda.Focus();
         }
 
         private void Modal_Productos_Load(object sender, EventArgs e)
         {
+            // Dar focus al txtBusqueda después de que se cargue el formulario
+            this.BeginInvoke(new Action(() => txtBusqueda.Focus()));
+
+            // Asociar evento KeyDown para detectar Enter
+            txtBusqueda.KeyDown += txtBusqueda_KeyDown;
+
             //Filtro de Busqueda
             foreach (DataGridViewColumn columna in dgv_Data.Columns)
             {
@@ -98,6 +106,16 @@ namespace CapaPresentacion.Modales
                     item.PrecioCompra,
                     item.PrecioVenta,
                 });
+            }
+        }
+
+        private void txtBusqueda_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnfiltro.PerformClick(); // Ejecuta el filtro
+                e.Handled = true;
+                e.SuppressKeyPress = true;
             }
         }
 

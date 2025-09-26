@@ -27,6 +27,9 @@ namespace CapaPresentacion
 
         private void FormVentas_Load(object sender, EventArgs e)
         {
+            // Dar focus al txtCodigoProducto después de que se cargue el formulario
+            this.BeginInvoke(new Action(() => txtCodigoProducto.Focus()));
+
             comboxTipoPago.Items.Add(new OpcionCombo() { Valor = "Efectivo", Texto = "Efectivo" });
             comboxTipoPago.Items.Add(new OpcionCombo() { Valor = "Tarjeta", Texto = "Tarjeta" });
             comboxTipoPago.Items.Add(new OpcionCombo() { Valor = "Sinpe", Texto = "Sinpe" });
@@ -46,6 +49,28 @@ namespace CapaPresentacion
             txtTotal.Text = "";
             txtPago.Text = "";
             txtCambio.Text = "";
+
+            // Cargar cliente por defecto
+            CargarClientePorDefecto("0");
+        }
+
+        private void CargarClientePorDefecto(string numeroIdentidad)
+        {
+            Cliente oCliente = new CapaNegocio_Cliente().Listar()
+                                .FirstOrDefault(c => c.NumeroIdentidad == numeroIdentidad);
+
+            if (oCliente != null)
+            {
+                txtIdCliente.Text = oCliente.IdCliente.ToString();
+                txtNumeroIdentidad.Text = oCliente.NumeroIdentidad;
+                txtNombreCliente.Text = oCliente.NombreCompleto;
+            }
+            else
+            {
+                txtIdCliente.Text = "0";
+                txtNumeroIdentidad.Text = "";
+                txtNombreCliente.Text = "";
+            }
         }
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)
@@ -254,6 +279,7 @@ namespace CapaPresentacion
 
                 subtotal = montoNeto - totalDescuento;
                 iva = subtotal * 0.13m;
+                subtotal = subtotal - iva;
                 totalFinal = subtotal + iva;
             }
 
