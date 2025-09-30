@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace CapaPresentacion
 {
@@ -184,20 +185,15 @@ namespace CapaPresentacion
         {
             try
             {
-                // Construye la ruta al PDF dentro de la carpeta Resources en la carpeta de salida
-                string rutaManual = System.IO.Path.Combine(Application.StartupPath, "Resources", "ManualUsuario.pdf");
+                // Obtener PDF desde Resources
+                byte[] pdfBytes = Properties.Resources.MANUAL_DE_USUARIO;
 
-                if (System.IO.File.Exists(rutaManual))
-                {
-                    System.Diagnostics.Process.Start(rutaManual);
-                }
-                else
-                {
-                    MessageBox.Show("No se encontró el archivo del Manual de Usuario.",
-                                    "Error",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Error);
-                }
+                // Guardar en un archivo temporal
+                string rutaTemp = Path.Combine(System.IO.Path.GetTempPath(), "MANUAL_DE_USUARIO.pdf");
+                File.WriteAllBytes(rutaTemp, pdfBytes);
+
+                // Abrir con el lector de PDF predeterminado
+                System.Diagnostics.Process.Start(rutaTemp);
             }
             catch (Exception ex)
             {

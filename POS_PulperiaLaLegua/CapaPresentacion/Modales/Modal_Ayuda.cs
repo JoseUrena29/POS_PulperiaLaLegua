@@ -34,5 +34,10 @@ namespace CapaPresentacion.Modales
             "El sistema está diseñado para optimizar la gestión del negocio e\r\n" +
             "integrar periféricos como lector de código de barras para mayor eficiencia.\r\n";
         }
+
+        private void Modal_Ayuda_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

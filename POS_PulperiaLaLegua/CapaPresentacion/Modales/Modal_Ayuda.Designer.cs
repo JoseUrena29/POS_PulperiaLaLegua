@@ -48,6 +48,7 @@
             this.Name = "Modal_Ayuda";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modal_Ayuda";
+            this.Load += new System.EventHandler(this.Modal_Ayuda_Load);
             this.ResumeLayout(false);
 
         }

@@ -96,3 +96,4 @@ C:\Users\Jose Ureña\source\Repositorio_POS_PulperiaLaLegua\POS_PulperiaLaLegua\
 C:\Users\Jose Ureña\source\Repositorio_POS_PulperiaLaLegua\POS_PulperiaLaLegua\POS_PulperiaLaLegua\CapaPresentacion\obj\Debug\CapaPresentacion.FormReporteVentas.resources
 C:\Users\Jose Ureña\source\Repositorio_POS_PulperiaLaLegua\POS_PulperiaLaLegua\POS_PulperiaLaLegua\CapaPresentacion\obj\Debug\CapaPresentacion.Modales.Modal_Ayuda.resources
 C:\Users\Jose Ureña\source\Repositorio_POS_PulperiaLaLegua\POS_PulperiaLaLegua\POS_PulperiaLaLegua\CapaPresentacion\obj\Debug\CapaPresentacion.FormReporteAjustes.resources
+C:\Users\Jose Ureña\source\Repositorio_POS_PulperiaLaLegua\POS_PulperiaLaLegua\POS_PulperiaLaLegua\CapaPresentacion\obj\Debug\CapaPresentacion.FormVersion.resources

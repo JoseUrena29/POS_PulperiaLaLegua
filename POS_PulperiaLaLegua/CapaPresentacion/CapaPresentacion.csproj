@@ -282,6 +282,9 @@
     <EmbeddedResource Include="FormVentas.resx">
       <DependentUpon>FormVentas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormVersion.resx">
+      <DependentUpon>FormVersion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
@@ -341,6 +344,7 @@
     <None Include="Resources\check20.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\MANUAL DE USUARIO.pdf" />
     <None Include="Resources\Original PNG.PNG" />
   </ItemGroup>
   <ItemGroup>
