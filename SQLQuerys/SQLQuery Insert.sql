@@ -124,15 +124,15 @@ insert into PERMISO(IdRol,NombreMenu)
 values 
 (1,'menuusuarios'),(1,'menumantenimiento'),(1,'menuventas'),(1,'menucompras'),(1,'menuajustes'),(1,'menureportes'),(1,'menuacercade'),
 (1,'SubMenuCategoría'),(1,'SubMenuProductos'),(1,'SubMenuClientes'),(1,'SubMenuProveedores'),(1,'SubMenuNegocio'),(1,'SubMenuRegistrarVenta'),(1,'SubMenuConsultarVenta'),
-(1,'SubMenuRegistrarCompras'),(1,'SubMenuConsultarCompras'),(1,'SubMenuRegistrarAjuste'),(1,'SubMenuConsultarAjuste'),(1,'SubMenuReporteVentas'),(1,'SubMenuReporteCompras'),(1,'SubMenuReporteAjustes')
+(1,'SubMenuRegistrarCompras'),(1,'SubMenuConsultarCompras'),(1,'SubMenuRegistrarAjuste'),(1,'SubMenuConsultarAjuste'),(1,'SubMenuReporteVentas'),(1,'SubMenuReporteCompras'),(1,'SubMenuReporteAjustes'),
+(1,'SubMenuVersion'),(1,'SubMenuManualUsuario')
 
 /*Rol Empleado*/
 insert into PERMISO(IdRol,NombreMenu)
 values 
-(2,'menumantenimiento'),(2,'menuventas'),(2,'menucompras'),(2,'menuajustes'),(2,'menuacercade'),
+(2,'menumantenimiento'),(2,'menuventas'),(2,'menucompras'),(2,'menuacercade'),
 (2,'SubMenuClientes'),(2,'SubMenuProveedores'),(2,'SubMenuRegistrarVenta'),(2,'SubMenuConsultarVenta'),
-(2,'SubMenuRegistrarCompras'),(2,'SubMenuConsultarCompras'),(2,'SubMenuRegistrarAjuste'),(2,'SubMenuConsultarAjuste')
-
+(2,'SubMenuRegistrarCompras'),(2,'SubMenuConsultarCompras'),(2,'SubMenuVersion'),(2,'SubMenuManualUsuario')
 
 INSERT INTO CATEGORIA (Descripcion, Estado)
 VALUES 

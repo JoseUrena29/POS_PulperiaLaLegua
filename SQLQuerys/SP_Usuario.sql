@@ -2,7 +2,7 @@ use DB_POSPulperiaLaLegua
 
 /* ----------------- PROCEDIMIENTOS PARA USUARIO ------------------*/
 
---PROCEDIMIENTO PARA GUARDAR USUARIO
+--PROCEDIMIENTO PARA REGISTRAR USUARIO
 CREATE PROCEDURE SP_RegistrarUsuario(
     @NumeroIdentidad VARCHAR(50),
 	@NombreCompleto VARCHAR(100),

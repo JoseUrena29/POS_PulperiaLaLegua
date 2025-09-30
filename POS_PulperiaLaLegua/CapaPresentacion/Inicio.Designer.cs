@@ -77,7 +77,7 @@
             this.menuacercade});
             this.menu.Location = new System.Drawing.Point(0, 65);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(1151, 73);
+            this.menu.Size = new System.Drawing.Size(1203, 73);
             this.menu.TabIndex = 0;
             this.menu.Text = "menuStrip1";
             // 
@@ -326,19 +326,18 @@
             this.menuacercade.Size = new System.Drawing.Size(122, 69);
             this.menuacercade.Text = "Ayuda";
             this.menuacercade.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.menuacercade.Click += new System.EventHandler(this.menuacercade_Click);
             // 
             // SubMenuVersion
             // 
             this.SubMenuVersion.Name = "SubMenuVersion";
-            this.SubMenuVersion.Size = new System.Drawing.Size(180, 22);
+            this.SubMenuVersion.Size = new System.Drawing.Size(173, 22);
             this.SubMenuVersion.Text = "Versión";
             this.SubMenuVersion.Click += new System.EventHandler(this.SubMenuVersion_Click);
             // 
             // SubMenuManualUsuario
             // 
             this.SubMenuManualUsuario.Name = "SubMenuManualUsuario";
-            this.SubMenuManualUsuario.Size = new System.Drawing.Size(180, 22);
+            this.SubMenuManualUsuario.Size = new System.Drawing.Size(173, 22);
             this.SubMenuManualUsuario.Text = "Manual de Usuario";
             this.SubMenuManualUsuario.Click += new System.EventHandler(this.SubMenuManualUsuario_Click);
             // 
@@ -349,7 +348,7 @@
             this.menutitulo.Location = new System.Drawing.Point(0, 0);
             this.menutitulo.Name = "menutitulo";
             this.menutitulo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menutitulo.Size = new System.Drawing.Size(1151, 65);
+            this.menutitulo.Size = new System.Drawing.Size(1203, 65);
             this.menutitulo.TabIndex = 1;
             this.menutitulo.Text = "menuStrip2";
             // 
@@ -370,7 +369,7 @@
             this.contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contenedor.Location = new System.Drawing.Point(0, 138);
             this.contenedor.Name = "contenedor";
-            this.contenedor.Size = new System.Drawing.Size(1151, 480);
+            this.contenedor.Size = new System.Drawing.Size(1203, 480);
             this.contenedor.TabIndex = 3;
             this.contenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.contenedor_Paint);
             // 
@@ -423,7 +422,7 @@
             this.btnSalir.IconChar = FontAwesome.Sharp.IconChar.SignInAlt;
             this.btnSalir.IconColor = System.Drawing.Color.White;
             this.btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSalir.Location = new System.Drawing.Point(1084, 5);
+            this.btnSalir.Location = new System.Drawing.Point(1136, 5);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.btnSalir.Size = new System.Drawing.Size(55, 53);
@@ -435,7 +434,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1151, 618);
+            this.ClientSize = new System.Drawing.Size(1203, 618);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lblFechaHora);
             this.Controls.Add(this.lblusuario);

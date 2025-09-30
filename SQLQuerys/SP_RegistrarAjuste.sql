@@ -16,11 +16,11 @@ GO
 CREATE PROCEDURE SP_RegistrarAjuste
 (
     @IdUsuario INT,
-    @TipoAjuste NVARCHAR(10),  -- 'ENTRADA' o 'SALIDA'
-    @NumeroAjuste VARCHAR(50), -- Enviado desde C#
+    @TipoAjuste NVARCHAR(10), 
+    @NumeroAjuste VARCHAR(50), 
     @MotivoGeneral NVARCHAR(255),
     @Observaciones NVARCHAR(MAX) = NULL,
-    @DetalleAjuste [EDetalle_Ajuste] READONLY, -- ahora solo lleva IdProducto, Cantidad
+    @DetalleAjuste [EDetalle_Ajuste] READONLY, 
     @Resultado INT OUTPUT,
     @Mensaje NVARCHAR(500) OUTPUT
 )

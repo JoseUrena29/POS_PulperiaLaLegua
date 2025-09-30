@@ -25,6 +25,8 @@ INNER JOIN CATEGORIA ca ON ca.IdCategoria = p.IdCategoria
 WHERE CONVERT(date, a.FechaRegistro) BETWEEN '2025-09-01' AND '2025-09-30';
 
 
+--PROCEDIMIENTO PARA REPORTES DE AJUSTES
+
 CREATE PROCEDURE SP_ReporteAjustes
 (
     @fechainicio VARCHAR(10),

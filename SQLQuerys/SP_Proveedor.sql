@@ -2,7 +2,7 @@ use DB_POSPulperiaLaLegua
 
 /* ----------------- PROCEDIMIENTOS PARA PROVEEDORES ------------------*/
 
---PROCEDIMIENTO PARA GUARDAR PROVEEDOR
+--PROCEDIMIENTO PARA REGISTRAR PROVEEDOR
 CREATE PROCEDURE SP_RegistrarProveedor(
     @NumeroIdentidad VARCHAR(50),
 	@NombreComercial VARCHAR(50),

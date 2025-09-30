@@ -91,19 +91,6 @@ GO
 --NOTAS DE CORRECCIONES POR PROFESOR: Precio compra está en la tabla compras, agregar ID Usuario y registrar los cambios que se realizaron
 
 -- Tabla de Compras
-CREATE TABLE COMPRA(
-IdCompra INT PRIMARY KEY IDENTITY,
-IdUsuario INT FOREIGN KEY REFERENCES USUARIO(IdUsuario),
-IdProveedor INT FOREIGN KEY REFERENCES PROVEEDOR(IdProveedor),
-TipoCompra varchar(50),
-NumeroCompra varchar(50),
-MontoTotal decimal(10,2),
-FechaRegistro datetime default getdate()
-)
-GO
---NOTAS DE CORRECCIONES POR PROFESOR: Eliminar MontoTotal y agregar los campos (monto neto, descuento, iva, total)
-
---TABLA CORREGIDA
 CREATE TABLE COMPRA (
     IdCompra INT PRIMARY KEY IDENTITY,
     IdUsuario INT FOREIGN KEY REFERENCES USUARIO(IdUsuario),
@@ -119,7 +106,7 @@ CREATE TABLE COMPRA (
 );
 GO
 
---TABLA CORREGIDA
+-- Tabla Detalle de Compras
 CREATE TABLE DETALLE_COMPRA (
     IdDetalleCompra INT PRIMARY KEY IDENTITY,
     IdCompra INT FOREIGN KEY REFERENCES COMPRA(IdCompra),
@@ -131,22 +118,6 @@ CREATE TABLE DETALLE_COMPRA (
     FechaRegistro DATETIME DEFAULT GETDATE()
 );
 GO
-
-
-
--- Detalle de cada compra
-CREATE TABLE DETALLE_COMPRA(
-IdDetalleCompra INT PRIMARY KEY IDENTITY,
-IdCompra INT FOREIGN KEY REFERENCES COMPRA(IdCompra),
-IdProducto INT FOREIGN KEY REFERENCES PRODUCTO(IdProducto),
-PrecioCompra decimal(10,2) default 0,
-PrecioVenta decimal(10,2) default 0, --Eliminar
-Cantidad int,
-MontoTotal decimal(10,2),
-FechaRegistro datetime default getdate()
-)
-GO
---NOTAS DE CORRECCIONES POR PROFESOR: Eliminar Precio venta, ya que esta en la tabla productos
 
 -- Tabla de Ventas
 CREATE TABLE VENTA(
@@ -165,10 +136,8 @@ MontoCambio decimal(10,2),
 FechaRegistro datetime default getdate()
 )
 GO
---NOTAS DE CORRECCIONES POR PROFESOR: Modificar por Tipo de Pago 
---(Efectivo, Sinpe, Tarjeta) / Agregar los campos (monto neto, descuento, iva, total) LISTO!
 
--- Detalle de cada venta
+-- Tabla Detalle de Ventas
 CREATE TABLE DETALLE_VENTA(
 IdDetalleVenta INT PRIMARY KEY IDENTITY,
 IdVenta INT FOREIGN KEY REFERENCES VENTA(IdVenta),
@@ -191,7 +160,7 @@ IF OBJECT_ID('dbo.AJUSTE', 'U') IS NOT NULL
     DROP TABLE dbo.AJUSTE;
 GO
 
--- Cabecera del ajuste
+-- Tabla Ajustes
 CREATE TABLE AJUSTE (
     IdAjuste INT PRIMARY KEY IDENTITY,
     IdUsuario INT FOREIGN KEY REFERENCES USUARIO(IdUsuario),
@@ -203,7 +172,7 @@ CREATE TABLE AJUSTE (
 );
 GO
 
--- Detalle por producto
+-- Tabla Detalle de Ajustes
 CREATE TABLE DETALLE_AJUSTE (
     IdDetalleAjuste INT PRIMARY KEY IDENTITY,
     IdAjuste INT FOREIGN KEY REFERENCES AJUSTE(IdAjuste),

@@ -17,6 +17,7 @@ inner join PRODUCTO p on p.IdProducto = dv.IdProducto
 inner join CATEGORIA ca on ca.IdCategoria = p.IdCategoria
 where CONVERT(date,c.FechaRegistro) between '01/07/2025' and '30/07/2025'
 
+--PROCEDIMIENTO PARA REPORTE DE VENTAS
 
 CREATE PROCEDURE SP_ReporteVentas(
 	@fechainicio varchar(10),

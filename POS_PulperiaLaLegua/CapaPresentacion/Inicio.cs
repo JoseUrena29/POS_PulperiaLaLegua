@@ -157,12 +157,6 @@ namespace CapaPresentacion
             AbrirFormulario(menureportes, new FormReporteCompras());
         }
 
-        private void menuacercade_Click(object sender, EventArgs e)
-        {
-            Modal_Ayuda md = new Modal_Ayuda();
-            md.ShowDialog();
-        }
-
         private void btnSalir_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Está seguro de que desea salir del programa?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) 
@@ -183,7 +177,7 @@ namespace CapaPresentacion
 
         private void SubMenuVersion_Click(object sender, EventArgs e)
         {
-
+            AbrirFormulario(menuacercade, new FormVersion());
         }
 
         private void SubMenuManualUsuario_Click(object sender, EventArgs e)

@@ -4,7 +4,7 @@ select * from PRODUCTO
 
 /* ----------------- PROCEDIMIENTOS PARA PRODUCTOS ------------------*/
 
---PROCEDIMIENTO PARA GUARDAR PRODUCTOS
+--PROCEDIMIENTO PARA REGISTRAR PRODUCTOS
 CREATE PROCEDURE SP_RegistrarProducto(
     @Codigo VARCHAR(30),
 	@Nombre VARCHAR(30),
@@ -60,7 +60,7 @@ BEGIN
 		Estado = @Estado
         WHERE IdProducto = @IdProducto
 
-        SET @Mensaje = 'Categoría editada con éxito.'
+        SET @Mensaje = 'Producto editado con éxito.'
     END
 	ELSE
     BEGIN

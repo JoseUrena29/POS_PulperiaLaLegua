@@ -126,6 +126,7 @@
             // 
             this.txtFecha.Location = new System.Drawing.Point(17, 52);
             this.txtFecha.Name = "txtFecha";
+            this.txtFecha.ReadOnly = true;
             this.txtFecha.Size = new System.Drawing.Size(126, 20);
             this.txtFecha.TabIndex = 3;
             // 

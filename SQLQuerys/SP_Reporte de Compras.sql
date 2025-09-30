@@ -18,6 +18,7 @@ inner join CATEGORIA ca on ca.IdCategoria = p.IdCategoria
 where CONVERT(date,c.FechaRegistro) between '01/07/2025' and '30/07/2025'
 and pr.IdProveedor = 1
 
+--PROCEDIMIENTO PARA REPORTE DE COMPRAS
 
 CREATE PROCEDURE SP_ReporteCompras(
 	@FechaInicio varchar(10),
