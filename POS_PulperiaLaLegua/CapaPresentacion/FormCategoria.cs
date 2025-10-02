@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using CapaEntidad;
 using CapaNegocio;
 using CapaPresentacion.Utilidades;
+using FontAwesome.Sharp;
 
 namespace CapaPresentacion
 {
@@ -22,6 +23,11 @@ namespace CapaPresentacion
 
         private void FormCategoria_Load(object sender, EventArgs e)
         {
+            // Botón Lupa Filtro
+            btnbuscar.IconChar = IconChar.Search;
+            btnbuscar.IconColor = Color.Black;
+            btnbuscar.IconSize = 18;
+
             comboxEstado.Items.Add(new OpcionCombo() { Valor = 1, Texto = "Activo" });
             comboxEstado.Items.Add(new OpcionCombo() { Valor = 0, Texto = "Inactivo" });
             comboxEstado.DisplayMember = "Texto";

@@ -3,6 +3,7 @@ using CapaNegocio;
 using CapaPresentacion.Modales;
 using CapaPresentacion.Utilidades;
 using DocumentFormat.OpenXml.Wordprocessing;
+using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,6 +27,12 @@ namespace CapaPresentacion
 
         private void FormCompras_Load(object sender, EventArgs e)
         {
+            // Botón Lupa
+            btnBuscarProveedor.IconChar = IconChar.Search;
+            btnBuscarProveedor.IconSize = 18;
+            btnBuscarProducto.IconChar = IconChar.Search;
+            btnBuscarProducto.IconSize = 18;
+
             comboxTipoCompra.Items.Add(new OpcionCombo() { Valor = "Factura Electrónica", Texto = "Factura Electrónica" });
             comboxTipoCompra.Items.Add(new OpcionCombo() { Valor = "Nota de Crédito", Texto = "Nota de Crédito" });
             comboxTipoCompra.Items.Add(new OpcionCombo() { Valor = "Recibo", Texto = "Recibo" });
@@ -144,6 +151,12 @@ namespace CapaPresentacion
 
             int cantidadNueva = (int)txtCantidad.Value;
 
+            if (cantidadNueva <= 0)
+            {
+                MessageBox.Show("La cantidad debe ser mayor a 0", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             foreach (DataGridViewRow fila in dgv_Data.Rows)
             {
                 if (fila.Cells["IdProducto"].Value.ToString() == txtIdProducto.Text)
@@ -155,6 +168,7 @@ namespace CapaPresentacion
                     decimal descuento = montoNeto * (descuentoPorcentaje / 100);
                     decimal subtotal = montoNeto - descuento;
                     decimal iva = subtotal * 0.13m;
+                    subtotal = subtotal - iva;
                     decimal total = subtotal + iva;
 
                     fila.Cells["Cantidad"].Value = nuevaCantidad;
@@ -180,6 +194,7 @@ namespace CapaPresentacion
                 decimal descuento = montoNeto * (descuentoPorcentaje / 100);
                 decimal subtotal = montoNeto - descuento;
                 decimal iva = subtotal * 0.13m;
+                subtotal = subtotal - iva;
                 decimal totalLinea = subtotal + iva;
 
                 dgv_Data.Rows.Add(new object[]
@@ -242,6 +257,7 @@ namespace CapaPresentacion
                 }
 
                 iva = subtotal * 0.13m; // 13% de IVA
+                subtotal = subtotal - iva;
                 totalFinal = subtotal + iva;
             }
 

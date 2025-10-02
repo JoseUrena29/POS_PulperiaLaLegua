@@ -4,6 +4,7 @@ using CapaPresentacion.Modales;
 using CapaPresentacion.Utilidades;
 using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
 using DocumentFormat.OpenXml.Vml;
+using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,6 +28,12 @@ namespace CapaPresentacion
 
         private void FormVentas_Load(object sender, EventArgs e)
         {
+            // Botón Lupa
+            btnBuscarCliente.IconChar = IconChar.Search;
+            btnBuscarCliente.IconSize = 18;
+            btnBuscarProducto.IconChar = IconChar.Search;
+            btnBuscarProducto.IconSize = 18;
+
             // Dar focus al txtCodigoProducto después de que se cargue el formulario
             this.BeginInvoke(new Action(() => txtCodigoProducto.Focus()));
 
@@ -189,6 +196,12 @@ namespace CapaPresentacion
             }
 
             int cantidadNueva = (int)txtCantidad.Value;
+
+            if (cantidadNueva <= 0)
+            {
+                MessageBox.Show("La cantidad debe ser mayor a 0", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             foreach (DataGridViewRow fila in dgv_Data.Rows)
             {

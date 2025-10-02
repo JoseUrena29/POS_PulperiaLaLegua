@@ -112,9 +112,9 @@ namespace CapaPresentacion
             txtIdProducto.Text,
             txtCodigoProducto.Text,
             txtNombreProducto.Text,
-            stockAnterior, 
-            cantidad,      
-            stockNuevo     
+            stockAnterior,
+            cantidad,
+            stockNuevo
             });
 
             MessageBox.Show("Producto agregado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -252,5 +252,48 @@ namespace CapaPresentacion
                 MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
+
+        private void txtCodigoProducto_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string codigoBuscado = txtCodigoProducto.Text.Trim().ToUpper();
+
+                Producto oProducto = new CapaNegocio_Producto()
+                    .Listar()
+                    .FirstOrDefault(p => p.Codigo.Trim().ToUpper() == codigoBuscado);
+
+                if (oProducto == null)
+                {
+                    txtCodigoProducto.BackColor = System.Drawing.Color.MistyRose;
+                    txtIdProducto.Text = "0";
+                    txtNombreProducto.Text = "";
+                    txtStock.Text = "0";
+                    MessageBox.Show("Producto no encontrado.", "Búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (!oProducto.Estado)
+                {
+                    txtCodigoProducto.BackColor = System.Drawing.Color.MistyRose;
+                    txtIdProducto.Text = "0";
+                    txtNombreProducto.Text = "";
+                    txtStock.Text = "0";
+                    MessageBox.Show("El producto está inactivo.", "Búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    txtCodigoProducto.BackColor = System.Drawing.Color.Honeydew;
+                    txtIdProducto.Text = oProducto.IdProducto.ToString();
+                    txtNombreProducto.Text = oProducto.Nombre;
+                    txtStock.Text = oProducto.Stock.ToString();
+                    txtCantidad.Value = 1;
+
+                    txtCodigoProducto.Focus();
+                }
+
+                //Evita el beep de Enter
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+        }
     }
-}
+}   
